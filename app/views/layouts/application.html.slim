@@ -1,0 +1,14 @@
+doctype html
+html
+	head
+	  title MktConsulting
+	  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true 
+	  = javascript_include_tag 'application', 'data-turbolinks-track' => true 
+	  = csrf_meta_tags 
+	body
+		.container
+			.row
+				.col-md-12.col-sm-12.col-lg-12.col-xs-12
+					= yield
+
+
