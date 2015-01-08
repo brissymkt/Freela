@@ -1,0 +1,17 @@
+h2
+	= "#{t :sign_up_title}"
+
+= simple_form_for([:user, resource], as: resource_name, url: registration_path(resource_name)) do |f| 
+  = f.error_notification 
+
+  .form-inputs
+  	= f.input :name, required: true, autofocus: true
+    = f.input :email, required: true
+    = f.input :password, required: true, hint: ("#{@minimum_password_length} #{I18n.t('.devise.hints.password_length')}" if @validatable) 
+    = f.input :password_confirmation, required: true 
+
+  .form-actions
+    = f.button :submit, "#{t :submit_text}"
+
+
+= render "devise/shared/links"

@@ -1,0 +1,16 @@
+h2
+	= "#{t('.login_message')}"
+
+= simple_form_for([:user, resource], as: resource_name, url: session_path(resource_name)) do |f|
+	- if alert
+		.alert.alert-danger
+			= alert
+	.form-inputs
+		= f.input :email, required: true
+		= f.input :password, required: true
+		= f.input :remember_me, as: :boolean if devise_mapping.rememberable? 
+
+	.form-actions
+		= f.button :submit, "#{t :submit_text}"
+
+= render "devise/shared/links" 

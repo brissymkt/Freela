@@ -1,0 +1,9 @@
+.title 
+	p
+		= "#{t :hello}"
+	- if current_user
+		p 
+			= link_to "#{t :logout_text_message}", locale_link_to("destroy_user_session"), :method => :delete
+	- else
+		p
+			= link_to "#{t :login_text}", locale_link_to("new_user_session")
