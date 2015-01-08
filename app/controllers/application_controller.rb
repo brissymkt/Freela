@@ -5,15 +5,11 @@ class ApplicationController < ActionController::Base
 
   #Devise extra parameters
   before_action :configure_permitted_parameters, if: :devise_controller?
-  #Internationalization setup
-  before_action :set_locale
-  protected
+
+  skip_around_filter :set_locale_from_url
+  private
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
-
-	def set_locale
-	 	I18n.locale = params[:locale] || I18n.default_locale
-	end
 end

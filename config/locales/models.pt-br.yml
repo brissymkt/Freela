@@ -1,10 +1,24 @@
-pt-br:
+pt-BR:
   activemodel:
     errors: &errors
       <<: *errors
   activerecord:
     errors:
       <<: *errors
+      models:
+        user:
+          attributes:
+            name:
+              blank: "Não pode ficar em branco."
+            password:
+              blank: "Não pode ficar em branco."
+              too_short: "Senha muito curta. Deve ter %{count} caracters, no mínimo."
+            email:
+              taken: "E-mail já cadastrado. Insira outro e-mail."
+              blank: "Não pode ficar em branco."
+            password_confirmation:
+              blank: "Não pode ficar em branco."
+              confirmation: "Senhas diferentes foram fornecidas."
     models:
       user: "Usuário"
     attributes:

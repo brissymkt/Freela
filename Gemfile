@@ -18,6 +18,7 @@ gem 'slim-rails'
 gem 'devise'
 gem 'factory_girl'
 gem 'responders', '~> 2.0'
+gem 'route_translator'
 
 group :development, :test do
 	gem 'capybara'

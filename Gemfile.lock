@@ -130,6 +130,9 @@ GEM
       json (~> 1.4)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
+    route_translator (4.0.0)
+      actionpack (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -210,6 +213,7 @@ DEPENDENCIES
   pg
   rails (= 4.2.0)
   responders (~> 2.0)
+  route_translator
   rspec
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
