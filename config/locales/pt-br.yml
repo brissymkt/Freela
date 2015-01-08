@@ -1,2 +1,4 @@
 pt-br:
-	hello: "Seja Bem-vindo!"
+  translation:
+    en: "Inglês"
+    pt-br: "Português"

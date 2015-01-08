@@ -1,0 +1,16 @@
+pt-br:
+  activemodel:
+    errors: &errors
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
+    models:
+      user: "Usuário"
+    attributes:
+      user:
+        email: "E-mail"
+        password: "Senha"
+        password_confirmation: "Confirmar Senha"
+        current_password: "Senha Atual"
+        remember_me: "Mantenha-me conectado"
