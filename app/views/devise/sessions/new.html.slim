@@ -11,7 +11,6 @@ h2
 		= f.input :remember_me, as: :boolean if devise_mapping.rememberable? 
 
 	.form-actions
-		= f.button :submit, "Log in"
+		= f.button :submit, "#{t :submit_text}"
 
-= link_to "home", locale_link_to("authenticated_root")
 = render "devise/shared/links" 

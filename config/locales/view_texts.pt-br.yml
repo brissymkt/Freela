@@ -3,3 +3,8 @@ pt-BR:
   login_message: "Autenticação"
   change_language_message: "Ver em Inglês"
   logout_text_message: "Sair"
+  recover_password_title: "Recuperar minha senha"
+  sign_up_title: "Cadastre-se"
+  recover_my_password: "Enviar e-mail com instruções para recuperar minha senha"
+  submit_text: "Enviar"
+  login_text: "Fazer Login"

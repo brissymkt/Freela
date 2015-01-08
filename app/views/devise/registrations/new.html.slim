@@ -1,5 +1,5 @@
 h2
-	| Sign up
+	= "#{t :sign_up_title}"
 
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| 
   = f.error_notification 
@@ -11,7 +11,7 @@ h2
     = f.input :password_confirmation, required: true 
 
   .form-actions
-    = f.button :submit, "Sign up"
+    = f.button :submit, "#{t :submit_text}"
 
 
 = render "devise/shared/links"

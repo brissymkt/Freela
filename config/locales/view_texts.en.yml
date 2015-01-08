@@ -3,3 +3,8 @@ en:
   login_message: "Sign in"
   change_language_message: "View in Portuguese"
   logout_text_message: "Logout"
+  recover_password_title: "Recover my password"
+  sign_up_title: "Sign up"
+  recover_my_password: "Send me an email with instructions of how to recover my password"
+  submit_text: "Submit"
+  login_text: "Login"

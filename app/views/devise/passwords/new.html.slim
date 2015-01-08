@@ -1,0 +1,13 @@
+h2
+	= "#{t :recover_password_title}"
+
+= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  = f.error_notification 
+
+  .form-inputs
+    = f.input :email, required: true, autofocus: true
+
+  .form-actions
+    = f.button :submit, "#{t :recover_my_password}"
+
+= render "devise/shared/links"
