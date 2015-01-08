@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  factor_id: 1
+  name: MyString
+  description: MyText
+  importance: 1
+  situation: 1
+  grade: 9.99
+
+two:
+  factor_id: 1
+  name: MyString
+  description: MyText
+  importance: 1
+  situation: 1
+  grade: 9.99

@@ -1,1 +1,29 @@
 en:
+  activerecord:
+    attributes:
+      user:
+        email: "E-mail"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        current_password: "Current Password"
+        remember_me: "Remeber me"
+      environmental_analysis:
+        year_and_month: "Month And Year"
+        grade: "Grade"
+        user_id: "Responsible user"
+        user: "Responsible user"
+      factor:
+        name: "Name"
+        description: "Description"
+        importance: "Importance"
+        grade: "Grade"
+        analysis_id: "Analysis"
+        analysis: "Analysis"
+      sub_factor:
+        name: "Name"
+        importance: "Importance"
+        situation: "Situation"
+        description: "Descriptino"
+        grade: "Grade"
+        factor_id: "Factor"
+        factor: "Factor"

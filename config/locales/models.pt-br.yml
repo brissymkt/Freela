@@ -19,6 +19,21 @@ pt-BR:
             password_confirmation:
               blank: "Não pode ficar em branco."
               confirmation: "Senhas diferentes foram fornecidas."
+          analysis:
+            year_and_month: 
+              blank: "Não pode ficar em branco."
+              future: "Não pode ser no futuro."
+            grade:
+              blank: "Não pode ficar em branco."
+            user_id:
+              blank: "Não pode ficar em branco."
+          factor:
+            analysis_id:
+              blank: "Não pode ficar em branco."
+            importance:
+              blank: "Não pode ficar em branco."
+            name: 
+              blank: "Não pode ficar em branco."
     models:
       user: "Usuário"
     attributes:
@@ -28,3 +43,25 @@ pt-BR:
         password_confirmation: "Confirmar Senha"
         current_password: "Senha Atual"
         remember_me: "Mantenha-me conectado"
+      environmental_analysis:
+        year_and_month: "Mês e Ano"
+        grade: "Nota"
+        user_id: "Responsável"
+        user: "Responsável"
+      factor:
+        name: "Nome"
+        description: "Descrição"
+        importance: "Importância"
+        grade: "Nota"
+        analysis_id: "Análise"
+        analysis: "Análise"
+      sub_factor:
+        name: "Nome"
+        importance: "Importância"
+        situation: "Situação"
+        description: "Descrição"
+        grade: "Nota"
+        factor_id: "Fator"
+        factor: "Fator"
+
+
