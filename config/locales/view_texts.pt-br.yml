@@ -2,3 +2,4 @@ pt-BR:
   hello: "Seja Bem-vindo!"
   login_message: "Autenticação"
   change_language_message: "Ver em Inglês"
+  logout_text_message: "Sair"

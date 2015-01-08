@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def locale_link_to(path)
-		send(path+"_#{I18n.locale}_path")
+		send(path+"_#{I18n.locale.to_s.tableize.singularize}_path")
 	end
 
 	def change_language()
@@ -12,6 +12,5 @@ module ApplicationHelper
 	def determine_other_language
 		all_locales = I18n.available_locales.map { |locale| locale.to_s }
 		new_locale = [ all_locales - [params[:locale]]].first.first.to_s
-		I18n.locale = new_locale
 	end
 end

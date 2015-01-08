@@ -6,9 +6,11 @@ class ApplicationController < ActionController::Base
   #Devise extra parameters
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  skip_around_filter :set_locale_from_url
+  before_action :check_locale
   private
-
+  def check_locale
+    I18n.default_locale = params[:locale].to_sym if I18n.default_locale != params[:locale].to_sym
+  end
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
   end

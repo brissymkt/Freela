@@ -2,3 +2,4 @@ en:
   hello: "Hello world"
   login_message: "Sign in"
   change_language_message: "View in Portuguese"
+  logout_text_message: "Logout"

@@ -1,3 +1,6 @@
 .title 
-	= "#{t :hello}"
-	= link_to "#{t :change_language_message}", change_language
+	p
+		= "#{t :hello}"
+	- if current_user
+		p 
+			= link_to "#{t :logout_text_message}", locale_link_to("destroy_user_session"), :method => :delete
