@@ -8,5 +8,6 @@ $(document).ready(function() {
 		return false;
 	}, function() {
 		$(this).find(".glyphicon, .caption").removeClass("js_white_color");
+		return false;
 	});
 });

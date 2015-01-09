@@ -11,7 +11,7 @@
 			.fields_container
 				.row.field_container
 					.col-md-12.col-lg-12.col-sm-12.col-xs-12
-						= f.input :year_and_month
+						= f.input :year_and_month, :order => [:month, :year]
 			.form_actions
 				ul
 					li
