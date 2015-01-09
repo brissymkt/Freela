@@ -1,5 +1,8 @@
 pt-BR:
   hello: "Seja Bem-vindo!"
+  menu_new_text: "Novo"
+  menu_history_text: "Histórico"
+  menu_chart_text: "Gráfico"
   actions_text: "Ações"
   login_message: "Autenticação"
   change_language_message: "Ver em Inglês"

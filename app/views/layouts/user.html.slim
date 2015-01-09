@@ -7,19 +7,16 @@ html
 	  = javascript_include_tag 'application', 'data-turbolinks-track' => true 
 	  = csrf_meta_tags 
 	body
-		.container
-			.row
+		.container.container_full_size
+			.row.header_container
 				.col-md-12.col-sm-12.col-lg-12.col-xs-12
 					.header
-						.col-md-1.col-lg-1.col-sm-6.col-xs6
-							= image_tag 'logo.png', :class => "logo_image"
-						.col-md-11.col-lg-11.col-sm-6.col-xs-12
-							.title_container
-								h1.title Othsys | 
-								h1.analysis_type
-									= yield :analysis_type
-			.row
-				.col-md-12.col-sm-12.col-lg-12.col-xs-12
+						= render :partial => "layouts/user_partials/header"
+			.row.body_container
+				.col-md-2.col-sm-12.col-lg-2.col-xs-12
+					= render :partial => "layouts/user_partials/menu"
+				.col-md-10.col-sm-12.col-lg-10.col-xs-12
 					= yield
-					p
-						= link_to "#{t :change_language_message}", change_language
+			.row.footer_container
+				.col-md-12.col-lg-12.col-sm-12.col-xs-12
+					= render :partial => "layouts/user_partials/footer"

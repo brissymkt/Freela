@@ -1,19 +1,33 @@
-.header
-	height: 90px
-	.title_container
-		margin:
-			top: 35px
-			left: 10px
-	h1.title, h1.analysis_type
-		color: white
-		display: inline
-	@include background(linear-gradient(#3888B6, #29B1AB) left repeat)
 
-	.logo_image
-		height: 80px
-		width: 80px
-		margin:
-			top: 5px
-			bottom: 5px
-			left: 20px
-		display: inline
+a
+  text-decoration: none
+  color: black
+a:hover, a:focus
+  text-decoration: none
+  color:black
+.header
+  height: 90px
+  .title_container
+    margin:
+      top: 35px
+      left: 10px
+  h1.title, h1.analysis_type
+    color: white
+    display: inline
+  @include background(linear-gradient(#3888B6, #29B1AB) left repeat)
+
+  .logo_image
+    height: 80px
+    width: 80px
+    margin:
+      top: 5px
+      bottom: 5px
+      left: 20px
+    display: inline
+
+.left_menu_item
+  span.glyphicon, span.caption, a.caption
+    margin-left: 10px
+    font-size: 20px
+  a.caption:focus, a.caption:hover
+    @include background(linear-gradient(#3888B6, #29B1AB) left repeat)

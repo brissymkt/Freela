@@ -1,5 +1,8 @@
 en:
   hello: "Hello world"
+  menu_new_text: "New"
+  menu_history_text: "History"
+  menu_chart_text: "Chart"
   actions_text: "Actions"
   login_message: "Sign in"
   change_language_message: "View in Portuguese"

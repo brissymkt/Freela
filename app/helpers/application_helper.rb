@@ -1,6 +1,6 @@
 module ApplicationHelper
-	def locale_link_to(path)
-		send(path+"_#{I18n.locale.to_s.tableize.singularize}_path")
+	def locale_link_to(path, ids = {})
+		send(path+"_#{I18n.locale.to_s.tableize.singularize}_path", ids)
 	end
 
 	def change_language()
