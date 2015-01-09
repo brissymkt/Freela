@@ -4,6 +4,7 @@ pt-BR:
       <<: *errors
   activerecord:
     errors:
+      date_in_the_future: "Não pode estar no futuro."
       <<: *errors
       models:
         user:

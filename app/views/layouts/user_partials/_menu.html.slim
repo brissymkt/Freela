@@ -21,3 +21,8 @@
 				span.glyphicon.glyphicon-stats
 				span.caption
 					= "#{t :menu_chart_text}" 
+		li.left_menu_item
+			= link_to locale_link_to("destroy_user_session"), :method => :delete do
+				span.glyphicon.glyphicon-off
+				span.caption
+					= "#{t :logout_text_message}" 

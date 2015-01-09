@@ -3,6 +3,7 @@ class Factor < ActiveRecord::Base
 	has_many :sub_factors
 	validates :name, :presence => true, :length => {:minimum => 3}
 	validates :analysis_id, :presence => true
+	validates :importance, :presence => true
 	validates :analysis, :presence => true
 	validates :grade, :presence => true
 end

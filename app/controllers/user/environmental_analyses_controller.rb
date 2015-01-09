@@ -9,7 +9,8 @@ class User::EnvironmentalAnalysesController < UserController
 	end
 
 	def create
-		@analysis = EnvironmentalAnalysis.new
+		@analysis = EnvironmentalAnalysis.new environmental_analysis_params
+		@analysis.user = current_user
 		if @analysis.valid? 
 			@analysis.save
 			redirect_to locale_link_to("edit_user_environmental_analysis", {:id => @analysis.id})
@@ -37,5 +38,9 @@ class User::EnvironmentalAnalysesController < UserController
 	def chart
 
 	end
+	private
 
+	def environmental_analysis_params
+		params.require(:environmental_analysis).permit(:year_and_month, :factors_attributes => [:name, :description, :importance, :_destroy])
+	end
 end

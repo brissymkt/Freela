@@ -1,5 +1,7 @@
 en:
   activerecord:
+    errors:
+      date_in_the_future: "Cannot be in the future."
     attributes:
       user:
         email: "E-mail"
