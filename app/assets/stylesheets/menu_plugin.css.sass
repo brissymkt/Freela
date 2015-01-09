@@ -16,7 +16,7 @@
 #left_menu ul li
     background-color: white
     border-bottom: solid 1px white
-    width: 150px
+    width: 100%
     cursor: pointer
 
 
@@ -46,6 +46,7 @@
 #left_menu ul li ul
     position: absolute
     display: none
+    z-index: 1
 
 #left_menu ul li ul li
     border-bottom: 1px solid black
@@ -53,7 +54,7 @@
 
 /* When user has hovered the li item, we show the ul list by applying display: block, note:  150px is the individual menu width.  */
 #left_menu ul li:hover ul
-    left: 150px
+    left: 100%
     top: 0px
     display: block
 

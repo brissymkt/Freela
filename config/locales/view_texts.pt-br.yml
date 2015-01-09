@@ -14,3 +14,5 @@ pt-BR:
   login_text: "Fazer Login"
   user_area_title: "Área do Usuário"
   environmental_analysis_title: "Análise Ambiental"
+  new_environmental_analysis_title: "Nova análise Ambiental"
+  form_new_environmental_analysis_title: "Com qual período essa análise está relacionada?"

@@ -1,4 +1,4 @@
-= content_for :analysis_type
+= content_for :analysis_title
 	="#{t :environmental_analysis_title}"
 .row
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
@@ -10,3 +10,9 @@
 					th = "#{I18n.t('activerecord.attributes.environmental_analysis.grade')}"
 					th = "#{t :actions_text}"
 			tbody
+				- @analyses.each do | analysis |
+					tr id="#{analysis.id}"
+						td = analysis.id
+						td = analysis.year_and_month
+						td = analysis.grade
+						td Not Implemented

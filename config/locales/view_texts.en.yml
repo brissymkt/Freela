@@ -14,3 +14,5 @@ en:
   login_text: "Login"
   user_area_title: "User's Area"
   environmental_analysis_title: "Environmental Analysis"
+  new_environmental_analysis_title: "New Environmental Analysis"
+  form_new_environmental_analysis_title: "To which period is this analysis related?"

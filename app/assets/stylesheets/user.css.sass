@@ -26,8 +26,35 @@ a:hover, a:focus
     display: inline
 
 .left_menu_item
+  span.glyphicon
+    color: #29B1AB
   span.glyphicon, span.caption, a.caption
     margin-left: 10px
     font-size: 20px
+  span.extra_menu
+    float: right
   a.caption:focus, a.caption:hover
     @include background(linear-gradient(#3888B6, #29B1AB) left repeat)
+  span.js_white_color
+    color: white
+
+
+.form_actions
+  ul
+    list-style: none
+    li
+      display: inline
+  .glyphicon
+    font-size: 40px
+  .glyphicon-remove
+    color: red
+    border: solid red
+  .glyphicon-remove:hover
+    color: white 
+    background-color: red
+  .glyphicon-ok
+    color: green
+    border: solid green
+  .glyphicon-ok:hover
+    color: white 
+    background-color: green
