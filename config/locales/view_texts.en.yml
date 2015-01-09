@@ -1,5 +1,6 @@
 en:
   hello: "Hello world"
+  actions_text: "Actions"
   login_message: "Sign in"
   change_language_message: "View in Portuguese"
   logout_text_message: "Logout"
@@ -9,3 +10,4 @@ en:
   submit_text: "Submit"
   login_text: "Login"
   user_area_title: "User's Area"
+  environmental_analysis_title: "Environmental Analysis"

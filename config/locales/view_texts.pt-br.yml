@@ -1,5 +1,6 @@
 pt-BR:
   hello: "Seja Bem-vindo!"
+  actions_text: "Ações"
   login_message: "Autenticação"
   change_language_message: "Ver em Inglês"
   logout_text_message: "Sair"
@@ -9,3 +10,4 @@ pt-BR:
   submit_text: "Enviar"
   login_text: "Fazer Login"
   user_area_title: "Área do Usuário"
+  environmental_analysis_title: "Análise Ambiental"

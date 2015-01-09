@@ -19,6 +19,7 @@ gem 'devise'
 gem 'factory_girl'
 gem 'responders', '~> 2.0'
 gem 'route_translator'
+gem 'bourbon'
 
 group :development, :test do
 	gem 'capybara'

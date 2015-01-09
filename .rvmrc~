@@ -1,3 +1,0 @@
-rvm use ruby-2.1.5@mkt_consulting --create
-rvm use gemset mkt_consulting
-bundle install
