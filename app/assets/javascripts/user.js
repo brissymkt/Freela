@@ -10,7 +10,4 @@ $(document).ready(function() {
 		$(this).find(".glyphicon, .caption").removeClass("js_white_color");
 		return false;
 	});
-	$('.left_menu_item').click(function() { 
-		window.location = $(this).find('a').attr('href');
-	});
 });

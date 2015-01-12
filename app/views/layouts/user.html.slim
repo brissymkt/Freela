@@ -10,7 +10,7 @@ html
 		.container.container_full_size
 			.row.header_container
 				.col-md-12.col-sm-12.col-lg-12.col-xs-12
-					.header
+					.row.row_header
 						= render :partial => "layouts/user_partials/header"
 			- if flash[:error]
 				.row.error_container
@@ -18,9 +18,9 @@ html
 						.alert.alert-error
 							p = flash[:error]
 			.row.body_container
-				.col-md-3.col-sm-12.col-lg-3.col-xs-12
+				.col-md-2.col-sm-12.col-lg-2.col-xs-12
 					= render :partial => "layouts/user_partials/menu"
-				.col-md-9.col-sm-12.col-lg-9.col-xs-12
+				.col-md-10.col-sm-12.col-lg-10.col-xs-12
 					= yield
 			.row.footer_container
 				.col-md-12.col-lg-12.col-sm-12.col-xs-12

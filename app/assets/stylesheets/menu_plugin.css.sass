@@ -1,10 +1,12 @@
 #left_menu
     ul
-        border-right: 1px solid black
+        border-right: 1px solid #29B1AB
 #left_menu
     ul
         li.left_menu_item
             border-bottom: 1px solid black
+#left_menu .left_menu_item .nav li a
+    padding: 0px 0px
 /* We remove the margin, padding, and list style of UL and LI components */
 #left_menu ul, #left_menu ul li
     margin: 0
@@ -12,11 +14,11 @@
     list-style: none
 
 
-/* We apply background color and border bottom white and width to 150px */
+/* We apply background color and border bottom white and width to 99% */
 #left_menu ul li
     background-color: white
     border-bottom: solid 1px white
-    width: 100%
+    width: 99%
     cursor: pointer
 
 
@@ -29,13 +31,11 @@
 
 /* We apply the link style */
 #left_menu ul li a
-    padding: 5px 15px
     color: black
     display: inline-block
     text-decoration: none
 
 #left_menu ul li a:hover
-    padding: 5px 15px
     color: white
     display: inline-block
     text-decoration: none
@@ -62,7 +62,9 @@
 /* we apply different background color to 2nd level menu items*/
 #left_menu ul li ul li
     background-color: #white
-
+    width: 120px
+    height: 30px
+    padding: 5px
 
 /* We change the background color for the level 2 submenu when hovering the menu */
 #left_menu ul li:hover ul li:hover

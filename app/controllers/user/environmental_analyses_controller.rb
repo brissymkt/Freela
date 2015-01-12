@@ -20,7 +20,7 @@ class User::EnvironmentalAnalysesController < UserController
 	end
 
 	def edit
-
+		@analysis = EnvironmentalAnalysis.find params[:id]
 	end
 
 	def update
