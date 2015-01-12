@@ -9,3 +9,22 @@
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
 		h2.form_title
 			= "#{t :form_add_factors_to_environmental_analysis_title}"
+.row.form_container
+	.col-md-12.col-lg-12.col-sm-12.col-xs-12
+		= simple_form_for([:user, @analysis], :html => {:class => "horizontal-form"}) do |f|
+			.fields_container
+				.row.field_container
+					.col-md-12.col-lg-12.col-sm-12.col-xs-12
+						= f.simple_fields_for :factors do |factors_builder|
+							= render :partial => "factor_fields", :locals => {:f => factors_builder}
+						.links
+							= link_to_add_association "asdf", f, :factors
+			.form_actions
+				ul
+					li
+						= link_to locale_link_to("user_environmental_analyses") do  
+							span.glyphicon.glyphicon-remove 
+					li
+						= f.submit "#{t :submit_text}", :class => "hidden"
+						a href="javascript:void(0)" 
+							span.glyphicon.glyphicon-ok.js_submit_button

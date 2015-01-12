@@ -11,27 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108191839) do
+ActiveRecord::Schema.define(version: 20150108184610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "environmental_analyses", force: :cascade do |t|
     t.integer  "user_id",                                             null: false
-    t.date     "year_and_month",               default: '2015-01-08'
+    t.date     "year_and_month",               default: '2015-01-12'
     t.decimal  "grade",          precision: 5, default: 0
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
   end
 
   create_table "factors", force: :cascade do |t|
-    t.integer  "analysis_id",                           null: false
-    t.string   "name",                                  null: false
+    t.integer  "environmental_analysis_id",                           null: false
+    t.string   "name",                                                null: false
     t.text     "description"
-    t.integer  "importance",                default: 1, null: false
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.decimal  "grade",       precision: 5, default: 1
+    t.integer  "importance",                              default: 1, null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.decimal  "grade",                     precision: 5, default: 1
   end
 
   create_table "sub_factors", force: :cascade do |t|
