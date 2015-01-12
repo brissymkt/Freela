@@ -21,6 +21,7 @@ gem 'factory_girl'
 gem 'responders', '~> 2.0'
 gem 'route_translator'
 gem 'bourbon'
+gem 'cocoon'
 
 group :development, :test do
 	gem 'capybara'

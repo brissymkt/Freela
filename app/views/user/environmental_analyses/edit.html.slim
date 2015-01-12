@@ -1,2 +1,11 @@
+= content_for :analysis_title
+	="#{t :environmental_analysis_title}"
+
 = content_for :analysis_title_header
 	= l @analysis.year_and_month
+
+
+.row.form_title_container
+	.col-md-12.col-lg-12.col-sm-12.col-xs-12
+		h2.form_title
+			= "#{t :form_add_factors_to_environmental_analysis_title}"
