@@ -1,12 +1,14 @@
 #left_menu
-    margin-top: 10px
+    margin-top: 1px
+    margin-left: -15px
 #left_menu
     ul
-        border-right: 1px solid #29B1AB
+        border-right: 1px solid #8C8C8C
 #left_menu
     ul
         li.left_menu_item
-            border-bottom: 1px solid black
+            border-bottom: 1px solid #8C8C8C
+            padding-bottom: 7px
 #left_menu .left_menu_item .nav li a
     padding: 0px 0px
 /* We remove the margin, padding, and list style of UL and LI components */
@@ -18,9 +20,9 @@
 
 /* We apply background color and border bottom white and width to 99% */
 #left_menu ul li
-    background-color: white
+    background-color: #F0F0F0
     border-bottom: solid 1px white
-    width: 90%
+    width: 95%
     cursor: pointer
 
 
@@ -49,9 +51,11 @@
     position: absolute
     display: none
     z-index: 1
+    border-right: 1px solid lighten(#8C8C8C, 20%)
 
 #left_menu ul li ul li
-    border-bottom: 1px solid black
+    border-bottom: 1px solid lighten(#8C8C8C, 20%)
+
 
 
 /* When user has hovered the li item, we show the ul list by applying display: block, note:  150px is the individual menu width.  */
@@ -63,7 +67,7 @@
 
 /* we apply different background color to 2nd level menu items*/
 #left_menu ul li ul li
-    background-color: #white
+    background-color: #F0F0F0
     width: 120px
     height: 30px
     padding: 5px
