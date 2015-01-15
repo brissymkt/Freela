@@ -4,7 +4,7 @@ class CreateFactors < ActiveRecord::Migration
       t.integer :environmental_analysis_id, :null => false
       t.string :name, :null => false
       t.text :description
-      t.integer :importance, :null => false, :default => 1
+      t.integer :importance, :null => false, :default => 5
 
       t.timestamps null: false
     end

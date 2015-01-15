@@ -1,5 +1,8 @@
-.nested_fields
+.nested-fields.factor_container
 	= f.input :name
 	= f.input :description
-	= f.input :importance
+	.importance_container
+		= f.hidden_field :importance, :class => "js_importance_input"
+		.js_slider
+	= f.input :_destroy
 	= link_to_remove_association "#{t :remove_factor_text}", f
