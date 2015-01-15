@@ -17,3 +17,5 @@ en:
   new_environmental_analysis_title: "New Environmental Analysis"
   form_new_environmental_analysis_title: "To which period is this analysis related?"
   form_add_factors_to_environmental_analysis_title: "Market Environment"
+  remove_factor_text: "Remove factor"
+  add_factors_text: "+"

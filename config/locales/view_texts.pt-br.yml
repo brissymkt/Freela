@@ -17,3 +17,5 @@ pt-BR:
   new_environmental_analysis_title: "Nova análise Ambiental"
   form_new_environmental_analysis_title: "Com qual período essa análise está relacionada?"
   form_add_factors_to_environmental_analysis_title: "Ambiente Mercadológico"
+  remove_factor_text: "Remover fator"
+  add_factors_text: "+"

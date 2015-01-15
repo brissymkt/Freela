@@ -10,7 +10,9 @@
 		h2.form_title
 			= "#{t :form_add_factors_to_environmental_analysis_title}"
 .row.form_header
-	.col-md-12
+	.col-md-12.col-lg-12.col-sm-12.col-xs-12
+		.slider-container
+			.js-slider
 .row.form_container
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
 		= simple_form_for([:user, @analysis], :html => {:class => "horizontal-form"}) do |f|
@@ -20,7 +22,7 @@
 						= f.simple_fields_for :factors do |factors_builder|
 							= render :partial => "factor_fields", :locals => {:f => factors_builder}
 						.links
-							= link_to_add_association "asdf", f, :factors
+							= link_to_add_association "#{t :add_factors_text}", f, :factors
 			.form_actions
 				ul
 					li
