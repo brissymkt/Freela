@@ -2,17 +2,21 @@
 	ul
 		= link_to locale_link_to("new_user_environmental_analysis") do
 			li.left_menu_item
-				span.glyphicon.glyphicon-file
-				span.caption
-					= "#{t :menu_new_text}" 
+				.icon_container
+					span.glyphicon.glyphicon-file
+				.caption_container	
+					span.caption
+						= "#{t :menu_new_text}" 
 		
 		= link_to locale_link_to("user_environmental_analyses") do
 			li.left_menu_item
-				span.glyphicon.glyphicon-time
-				span.caption
-					= "#{t :menu_history_text}"
-				span.caption.extra_menu
-					| >
+				.icon_container
+					span.glyphicon.glyphicon-time
+				.caption_container
+					span.caption
+						= "#{t :menu_history_text}"
+					span.caption.extra_menu
+						| >
 				ul.nav
 					-5.times 
 						a
@@ -20,12 +24,16 @@
 		
 		= link_to locale_link_to("chart_user_environmental_analysis", {:id => 1}) do
 			li.left_menu_item
-				span.glyphicon.glyphicon-stats
-				span.caption
+				.icon_container
+					span.glyphicon.glyphicon-stats
+				.caption_container
+					span.caption
 					= "#{t :menu_chart_text}" 
 		
 		= link_to locale_link_to("destroy_user_session"), :method => :delete do
 			li.left_menu_item
-				span.glyphicon.glyphicon-off
-				span.caption
+				.icon_container
+					span.glyphicon.glyphicon-off
+				.caption_container
+					span.caption
 					= "#{t :logout_text_message}" 

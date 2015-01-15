@@ -1,3 +1,14 @@
+#left_menu .caption_container, #left_menu .icon_container
+    display: inline
+
+#left_menu .icon_container
+    position: relative
+    top: 3px
+#left_menu .caption.extra_menu
+    position: relative
+    top: 5px
+    float: right
+    display: block
 #left_menu
     margin-top: 1px
     margin-left: -15px
@@ -57,7 +68,6 @@
     border-bottom: 1px solid lighten(#8C8C8C, 20%)
 
 
-
 /* When user has hovered the li item, we show the ul list by applying display: block, note:  150px is the individual menu width.  */
 #left_menu ul li:hover ul
     left: 100%
@@ -69,8 +79,8 @@
 #left_menu ul li ul li
     background-color: #F0F0F0
     width: 120px
-    height: 30px
-    padding: 5px
+    height: 39px
+    padding: 10px
 
 /* We change the background color for the level 2 submenu when hovering the menu */
 #left_menu ul li:hover ul li:hover
