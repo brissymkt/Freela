@@ -16,9 +16,8 @@
 		= simple_form_for([:user, @analysis], :html => {:class => "horizontal-form"}) do |f|
 			.fields_container
 				.row.field_container
-					.col-md-12.col-lg-12.col-sm-12.col-xs-12
+					.col-md-12.col-lg-12.col-sm-12.col-xs-12.factors_container
 						= f.simple_fields_for :factors do |factors_builder|
-							.factors_container
 								= render :partial => "factor_fields", :locals => {:f => factors_builder}
 						.links
 							= link_to_add_association "#{t :add_factors_text}", f, :factors, :class => "js_add_factors"
