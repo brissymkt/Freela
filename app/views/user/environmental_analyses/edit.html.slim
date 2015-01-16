@@ -5,12 +5,9 @@
 	= l @analysis.year_and_month
 
 
-.row.form_title_container
-	.col-md-12.col-lg-12.col-sm-12.col-xs-12
-		h2.form_title
-			= "#{t :form_add_factors_to_environmental_analysis_title}"
 .row.form_header
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
+		= render :partial => "form_header"
 .row.form_container
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
 		= simple_form_for([:user, @analysis], :html => {:class => "horizontal-form"}) do |f|
