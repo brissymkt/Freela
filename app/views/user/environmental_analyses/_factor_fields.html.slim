@@ -1,8 +1,13 @@
-.nested-fields.factor_container
-	= f.input :name
-	= f.input :description
-	.importance_container
-		= f.hidden_field :importance, :class => "js_importance_input"
-		.js_slider
-	= f.input :_destroy
-	= link_to_remove_association "#{t :remove_factor_text}", f
+.nested-fields.factor_container.row
+	.col-md-6.col-xs-6.col-lg-6.col-sm-6
+		= f.input :name
+		= f.input :description
+		= link_to_remove_association "#{t :remove_factor_text}", f
+	.col-md-3.col-xs-3.col-lg-3.col-sm-3
+		.importance_container
+			= f.hidden_field :importance, :class => "js_importance_input"
+			.js_slider
+	.col-md-3.col-xs-3.col-lg-3.col-sm-3
+		h3.text-center
+			= f.object[:grade]
+	

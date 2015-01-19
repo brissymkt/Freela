@@ -6,7 +6,9 @@ a:hover, a:focus
   text-decoration: none
   color:black
 .js_slider
-  @include background(linear-gradient(to right, #FF0000, #FFFF00,#00FF00))
+  position: relative
+  top: 30px
+  @include background(linear-gradient(to right, #FF0000, #FFFF00,#00FF00) no-repeat)
 .analysis_title_header
   h3
     position: relative
@@ -100,3 +102,13 @@ a:hover, a:focus
   .glyphicon-ok:hover
     color: white 
     background-color: green
+
+.factors_container
+  min-height: 400px
+  max-height: 400px
+  overflow-x: hidden
+  overflow: auto
+.form_title_container
+  text-align: center
+  .aligned_to_left
+    text-align: left

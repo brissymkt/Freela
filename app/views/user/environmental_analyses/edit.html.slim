@@ -6,18 +6,25 @@
 
 
 .row.form_header
-	.col-md-12.col-lg-12.col-sm-12.col-xs-12
+	.col-md-10.col-lg-10.col-sm-10.col-xs-10
 		= render :partial => "form_header"
+	.col-md-2.col-lg-2.col-sm-2.col-xs-2
 .row.form_container
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
 		= simple_form_for([:user, @analysis], :html => {:class => "horizontal-form"}) do |f|
 			.fields_container
 				.row.field_container
-					.col-md-12.col-lg-12.col-sm-12.col-xs-12.factors_container
+					.col-md-10.col-lg-10.col-sm-10.col-xs-10.factors_container
 						= f.simple_fields_for :factors do |factors_builder|
 								= render :partial => "factor_fields", :locals => {:f => factors_builder}
 						.links
 							= link_to_add_association "#{t :add_factors_text}", f, :factors, :class => "js_add_factors"
+					.col-md-2.col-lg-2.col-xs-2.col-sm-2
+						.grade_container
+							h3.grade
+								= @analysis.grade
+							h3.caption
+								= "#{t :environmental_grade_caption}"
 			.form_actions
 				ul
 					li
