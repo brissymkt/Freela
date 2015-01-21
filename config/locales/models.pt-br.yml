@@ -13,7 +13,7 @@ pt-BR:
               blank: "Não pode ficar em branco."
             password:
               blank: "Não pode ficar em branco."
-              too_short: "Senha muito curta. Deve ter %{count} caracters, no mínimo."
+              too_short: "Senha muito curta. Deve ter %{count} caracteres no mínimo."
             email:
               taken: "E-mail já cadastrado. Insira outro e-mail."
               blank: "Não pode ficar em branco."
@@ -28,12 +28,14 @@ pt-BR:
               blank: "Não pode ficar em branco."
             user_id:
               blank: "Não pode ficar em branco."
-          factor:
+        factor:
+          attributes:
             analysis_id:
               blank: "Não pode ficar em branco."
             importance:
               blank: "Não pode ficar em branco."
             name: 
+              too_short: "Nome muito curto. Deve ter %{count} caracteres no mínimo."
               blank: "Não pode ficar em branco."
     models:
       user: "Usuário"
