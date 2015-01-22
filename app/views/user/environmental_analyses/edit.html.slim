@@ -16,7 +16,7 @@
 				.row.field_container
 					.col-md-10.col-lg-10.col-sm-10.col-xs-10.factors_container
 						= f.simple_fields_for :factors do |factors_builder|
-								= render :partial => "factor_fields", :locals => {:f => factors_builder}
+								= render :partial => "factor_fields", :locals => {:f => factors_builder}	
 						.links
 							= link_to_add_association "#{t :add_factors_text}", f, :factors, :class => "js_add_factors"
 					.col-md-2.col-lg-2.col-xs-2.col-sm-2
@@ -28,9 +28,9 @@
 			.form_actions
 				ul
 					li
-						= link_to locale_link_to("user_environmental_analyses") do  
-							span.glyphicon.glyphicon-remove 
-					li
 						= f.submit "#{t :submit_text}", :class => "hidden"
 						a href="javascript:void(0)" 
 							span.glyphicon.glyphicon-ok.js_submit_button
+					li
+						= link_to locale_link_to("user_environmental_analyses") do  
+							span.glyphicon.glyphicon-remove 

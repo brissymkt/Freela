@@ -2,8 +2,8 @@ $(document).ready(function(){
 	// Create slider input to existing factors
 	$('.js_slider').slider({
 		value: $(this).parents('.importance_container').find('.js_importance_input').val(),
-		min: 1,
-		max: 10,
+		min: 0,
+		max: 20,
 		step: 1,
 		slide: function(event, ui) {
 			$(this).parents('.importance_container').find('.js_importance_input').val(ui.value);
@@ -17,8 +17,8 @@ $(document).ready(function(){
 	$('.factors_container').on('cocoon:after-insert', function(e, insertedElement){
 		$(insertedElement).find('.js_slider').slider({ 
 			value: $(this).parents('.importance_container').find('.js_importance_input').val(),
-			min: 1,
-			max: 10,
+			min: 0,
+			max: 20,
 			step: 1,
 			slide: function(event, ui) {
 				$(this).parents('.importance_container').find('.js_importance_input').val(ui.value);

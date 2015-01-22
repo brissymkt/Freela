@@ -12,6 +12,16 @@ html
 				.col-md-12.col-sm-12.col-lg-12.col-xs-12
 					.row.row_header
 						= render :partial => "layouts/user_partials/header"
+			
+			.row.body_container
+				.col-md-2.col-sm-12.col-lg-2.col-xs-12
+					= render :partial => "layouts/user_partials/menu"
+				.col-md-10.col-sm-12.col-lg-10.col-xs-12
+					= yield
+
+			.row.footer_container
+				.col-md-12.col-lg-12.col-sm-12.col-xs-12
+					= render :partial => "layouts/user_partials/footer"
 			- if flash[:error] or notice
 				.row.error_container
 					.col-md-12.col-sm-12.col-lg-12.col-xs-12
@@ -21,11 +31,3 @@ html
 						- if notice
 							.alert.alert-success
 								p = notice
-			.row.body_container
-				.col-md-2.col-sm-12.col-lg-2.col-xs-12
-					= render :partial => "layouts/user_partials/menu"
-				.col-md-10.col-sm-12.col-lg-10.col-xs-12
-					= yield
-			.row.footer_container
-				.col-md-12.col-lg-12.col-sm-12.col-xs-12
-					= render :partial => "layouts/user_partials/footer"
