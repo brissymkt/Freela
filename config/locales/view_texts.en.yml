@@ -24,3 +24,5 @@ en:
   environmental_grade_caption: "Environmental Factor"
   environmental_analysis_updated_successfully: "Environmental Analysis updated successfully"
   edit_environmental_analysis_link_text: "Edit"
+  name_placeholder: "Name"
+  description_placeholder: "Description"

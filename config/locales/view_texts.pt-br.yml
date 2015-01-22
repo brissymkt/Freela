@@ -24,3 +24,5 @@ pt-BR:
   environmental_grade_caption: "Fator Ambiental"
   environmental_analysis_updated_successfully: "Análise Ambiental atualizada com sucesso."
   edit_environmental_analysis_link_text: "Editar"
+  name_placeholder: "Nome"
+  description_placeholder: "Descrição"

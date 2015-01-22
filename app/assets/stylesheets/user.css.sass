@@ -12,7 +12,8 @@ a:hover, a:focus
   margin-left: 15px
 .js_slider
   position: relative
-  top: 30px
+  top: 13px
+  left: 35px
   @include background(linear-gradient(to right, #FF0000, #FFFF00,#00FF00) no-repeat)
   height: 6px
 .analysis_title_header
@@ -61,7 +62,7 @@ a:hover, a:focus
 .importance_caption
   text-align: center
   position: relative
-  top: 20px
+  top: 7px
 .form_title_container
   color: $gradient_bottom
 .body_container
@@ -88,7 +89,6 @@ a:hover, a:focus
     display: inline
 
 .left_menu_item
-  font-family: "Myriad Pro Light"
   font-size: 16px
   padding: 5px
   span.glyphicon
@@ -150,9 +150,15 @@ a:hover, a:focus
 .form_title_container
   h2.form_title
     font-size: 35px
-  h2.importance_title, h2.grade_title
+  h2.importance_title
     position: relative
     top: 15px
+    left: 17px
+    font-size: 16px
+  h2.grade_title
+    position: relative
+    top: 15px
+    left: 10
     font-size: 16px
 
 .grade_container
@@ -172,11 +178,27 @@ a:hover, a:focus
 
 .factor_container
   h3.grade_field
+    color: $gray_color
     font-size: 40px
+    position: relative
+    left: 30px
 
 .align_to_factor
   margin-left: 20px
+h3.js_slider_caption
+  margin-left: 70px
+  font-size: 16px
+  color: $gray_color
+span.ui-slider-handle.ui-state-default.ui-corner-all
+  height: 6px  
+  width: 20px
+  top: -1px
 
-.ui-slider-handle .ui-state-default .ui-corner-all
-  height: 25px 
-  width: 10px
+.factor_grade_container
+  position: relative
+  top: -10px
+
+.links
+  .js_add_factors
+    color: $gray_color
+    display: block
