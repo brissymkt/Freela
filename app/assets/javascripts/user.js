@@ -10,4 +10,5 @@ $(document).ready(function() {
 		$(this).find(".glyphicon, .caption").removeClass("js_white_color");
 		return false;
 	});
+
 });

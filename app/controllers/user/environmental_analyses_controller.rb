@@ -24,7 +24,13 @@ class User::EnvironmentalAnalysesController < UserController
 	end
 
 	def update
-
+		@analysis = EnvironmentalAnalysis.find params[:id]
+		if @analysis.update_attributes environmental_analysis_params
+			@analysis.save
+			redirect_to locale_link_to("user_environmental_analyses"), :notice => "#{I18n.t :environmental_analysis_updated_successfully}"
+		else
+			render :edit
+		end
 	end
 
 	def show
@@ -41,6 +47,6 @@ class User::EnvironmentalAnalysesController < UserController
 	private
 
 	def environmental_analysis_params
-		params.require(:environmental_analysis).permit(:year_and_month, :factors_attributes => [:name, :description, :importance, :_destroy])
+		params.require(:environmental_analysis).permit(:year_and_month, :factors_attributes => [:id, :name, :description, :importance, :_destroy])
 	end
 end

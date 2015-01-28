@@ -15,4 +15,5 @@
 						td = analysis.id
 						td = l analysis.year_and_month
 						td = analysis.grade
-						td Not Implemented
+						td 
+							= link_to "#{t :edit_environmental_analysis_link_text}", locale_link_to("edit_user_environmental_analysis", id: analysis.id)

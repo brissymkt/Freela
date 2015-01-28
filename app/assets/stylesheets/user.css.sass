@@ -1,12 +1,21 @@
 
+$menu-background: #29B1AB
 a
   text-decoration: none
   color: black
 a:hover, a:focus
   text-decoration: none
   color:black
+
+.bordered_div
+  border: solid 1px $gray_color 
+  margin-left: 15px
 .js_slider
-  @include background(linear-gradient(to right, #FF0000, #FFFF00,#00FF00))
+  position: relative
+  top: 13px
+  left: 35px
+  @include background(linear-gradient(to right, #FF0000, #FFFF00,#00FF00) no-repeat)
+  height: 6px
 .analysis_title_header
   h3
     position: relative
@@ -28,24 +37,45 @@ a:hover, a:focus
     font-size: 16px
     margin:
       top: 35px
-  h1.analysis_type, h1.vertical_bar
-    font-size: 12px
+  h1.analysis_type
+    margin-left: 10px
+    font-size: 13px
+  h1.title
+    font-size: 17px
   h1.vertical_bar
     display: inline
     color: white
   h1.vertical_bar:before
+    position: relative
+    top: -6px
+    left: -6px
     content: "|"
+    font-size: 22px
+
+.links
+  margin-top: 20px
+  text-align: center
+  font-size: 30px
+  border: solid 1px $gray_color 
+.glyphicon
+  font-size: 20px
+.importance_caption
+  text-align: center
+  position: relative
+  top: 7px
 .form_title_container
-  color: #3888B6
+  color: $gradient_bottom
 .body_container
   position: relative
   top: -16px
 .row_header
-  @include background(linear-gradient(#3888B6, #29B1AB) left repeat)
+  @include background(linear-gradient($gradient_bottom, $gradient_top) left repeat)
   color: white
   min-height: 45px
   max-height: 45px
   h1.title, h1.analysis_type
+    position: relative
+    top: -7px
     color: white
     display: inline
   
@@ -59,10 +89,11 @@ a:hover, a:focus
     display: inline
 
 .left_menu_item
+  font-size: 16px
   padding: 5px
   span.glyphicon
     margin-top: 5px
-    color: #29B1AB
+    color: $menu-background
   span.glyphicon
     margin:
       top: 5px
@@ -76,16 +107,18 @@ a:hover, a:focus
   span.extra_menu
     float: right
   a.caption:focus, a.caption:hover
-    @include background(linear-gradient(#3888B6, #29B1AB) left repeat)
+    @include background(linear-gradient($gradient_bottom, $gradient_top) left repeat)
   span.js_white_color
     color: white
 
 
 .form_actions
+  margin-top: 20px
   ul
     list-style: none
     li
       display: inline
+      margin-right: 30px
   .glyphicon
     font-size: 40px
   .glyphicon-remove
@@ -100,3 +133,72 @@ a:hover, a:focus
   .glyphicon-ok:hover
     color: white 
     background-color: green
+
+.factors_container
+  min-height: 400px
+  max-height: 400px
+  overflow-x: hidden
+  overflow: auto
+.form_title_container
+  text-align: center
+  .aligned_to_left
+    text-align: left
+
+.factor_container
+  margin-top: 10px
+
+.form_title_container
+  h2.form_title
+    font-size: 35px
+  h2.importance_title
+    position: relative
+    top: 15px
+    left: 17px
+    font-size: 16px
+  h2.grade_title
+    position: relative
+    top: 15px
+    left: 10
+    font-size: 16px
+
+.grade_container
+  width: 150px
+  position: relative
+  top: 90px
+  h3.caption
+    font-family: "Myriad Pro Regular"
+    color: $gray_color
+    font-size: 21px
+    position: relative
+    top: -45px
+  h3.grade
+    color: $gradient_bottom
+    font-size: 130px
+    text-align: center
+
+.factor_container
+  h3.grade_field
+    color: $gray_color
+    font-size: 40px
+    position: relative
+    left: 30px
+
+.align_to_factor
+  margin-left: 20px
+h3.js_slider_caption
+  margin-left: 70px
+  font-size: 16px
+  color: $gray_color
+span.ui-slider-handle.ui-state-default.ui-corner-all
+  height: 6px  
+  width: 20px
+  top: -1px
+
+.factor_grade_container
+  position: relative
+  top: -10px
+
+.links
+  .js_add_factors
+    color: $gray_color
+    display: block
