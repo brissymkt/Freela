@@ -4,6 +4,7 @@ pt-BR:
       <<: *errors
   activerecord:
     errors:
+      enough_analyses: "Já há análises suficientes para o período em análise"
       date_in_the_future: "Não pode estar no futuro."
       <<: *errors
       models:

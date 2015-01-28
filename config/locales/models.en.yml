@@ -1,6 +1,7 @@
 en:
   activerecord:
     errors:
+      enough_analyses: "There are enough analyses for referred period."
       date_in_the_future: "Cannot be in the future."
     attributes:
       user:
