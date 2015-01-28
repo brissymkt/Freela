@@ -12,6 +12,7 @@
 				.row.field_container
 					.col-md-12.col-lg-12.col-sm-12.col-xs-12
 						= f.input :year_and_month, :order => [:month, :year]
+						= f.input :type, :collection => hash_as_options_to_select(EnvironmentalAnalysis::TYPES_DESCRIPTION), :as  => :radio_buttons
 			.form_actions
 				ul
 					li

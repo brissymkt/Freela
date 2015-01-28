@@ -10,10 +10,16 @@ en:
         current_password: "Current Password"
         remember_me: "Remeber me"
       environmental_analysis:
-        year_and_month: "Month And Year"
+        year_and_month: "Month and Year"
         grade: "Grade"
         user_id: "Responsible user"
         user: "Responsible user"
+        status: "Period of Analysis"
+        types_description:
+          weekly: "Weekly"
+          monthly: "Monthly"
+          trimonthly: "Trimonthly"
+          annual: "Annual"
       factor:
         name: "Name"
         description: "Description"
