@@ -20,7 +20,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 	validates :user_id, :presence => true
 	validates :year_and_month, :presence => true
 	validates :grade, :presence => true
-	validates :type, :presence => true, :inclusion => {:in => VALID_TYPES }
+	validates :type_of_analysis, :presence => true, :inclusion => {:in => VALID_TYPES }
 	validate :year_and_month_in_the_future?
 
 	accepts_nested_attributes_for :factors, :allow_destroy => true, :reject_if => lambda{ |attributes| attributes[:name].blank?}

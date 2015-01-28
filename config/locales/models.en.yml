@@ -31,7 +31,7 @@ en:
         name: "Name"
         importance: "Importance"
         situation: "Situation"
-        description: "Descriptino"
+        description: "Description"
         grade: "Grade"
         factor_id: "Factor"
         factor: "Factor"
