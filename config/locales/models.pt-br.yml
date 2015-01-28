@@ -55,7 +55,7 @@ pt-BR:
         grade: "Nota"
         user_id: "Responsável"
         user: "Responsável"
-        type: "Período de Análise"
+        type_of_analysis: "Período de Análise"
         types_description:
           weekly: "Semanal"
           monthly: "Mensal"

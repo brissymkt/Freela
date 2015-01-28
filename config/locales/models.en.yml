@@ -14,7 +14,7 @@ en:
         grade: "Grade"
         user_id: "Responsible user"
         user: "Responsible user"
-        status: "Period of Analysis"
+        type_of_analysis: "Period of Analysis"
         types_description:
           weekly: "Weekly"
           monthly: "Monthly"
