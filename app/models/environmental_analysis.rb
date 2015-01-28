@@ -1,11 +1,26 @@
 class EnvironmentalAnalysis < ActiveRecord::Base
-	default_scope {order('id desc')}
+	
+	WEEKLY_ANALYSIS = 1
+	MONTHLY_ANALYSIS = 2
+	TRIMONTHLY_ANALYSIS = 3
+	ANNUAL_ANALYSIS = 4
+
+	TYPES_DESCRIPTION = {
+		WEEKLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.weekly'),
+		MONTHLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.monthly'),
+		TRIMONTHLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.trimonthly'),
+		ANNUAL_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.annual')
+	}
+
+	VALID_TYPES = [WEEKLY_ANALYSIS, MONTHLY_ANALYSIS, TRIMONTHLY_ANALYSIS, ANNUAL_ANALYSIS]
+
 	belongs_to :user
 	has_many :factors, :dependent => :destroy
 
 	validates :user_id, :presence => true
 	validates :year_and_month, :presence => true
 	validates :grade, :presence => true
+	validates :type, :presence => true, :inclusion => {:in => VALID_TYPES }
 	validate :year_and_month_in_the_future?
 
 	accepts_nested_attributes_for :factors, :allow_destroy => true, :reject_if => lambda{ |attributes| attributes[:name].blank?}

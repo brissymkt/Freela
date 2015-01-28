@@ -20,7 +20,7 @@ pt-BR:
             password_confirmation:
               blank: "Não pode ficar em branco."
               confirmation: "Senhas diferentes foram fornecidas."
-          analysis:
+          environmental_analysis:
             year_and_month: 
               blank: "Não pode ficar em branco."
               future: "Não pode ser no futuro."
@@ -28,6 +28,9 @@ pt-BR:
               blank: "Não pode ficar em branco."
             user_id:
               blank: "Não pode ficar em branco."
+            type:
+              blank: "Não pode ficar em branco."
+              inclusion: "Opção inválida."
           factor:
             analysis_id:
               blank: "Não pode ficar em branco."
@@ -49,6 +52,12 @@ pt-BR:
         grade: "Nota"
         user_id: "Responsável"
         user: "Responsável"
+        type: "Período de Análise"
+        types_description:
+          weekly: "Semanal"
+          monthly: "Mensal"
+          trimonthly: "Trimestral"
+          annual: "Anual"
       factor:
         name: "Nome"
         description: "Descrição"
