@@ -29,6 +29,7 @@ class User::EnvironmentalAnalysesController < UserController
 			@analysis.save
 			redirect_to locale_link_to("user_environmental_analyses"), :notice => "#{I18n.t :environmental_analysis_updated_successfully}"
 		else
+			flash.now[:error] = I18n.t('error_message_form')
 			render :edit
 		end
 	end

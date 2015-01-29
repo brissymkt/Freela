@@ -21,7 +21,7 @@ html
 						.row.error_container.message_display
 							.col-md-12.col-sm-12.col-lg-12.col-xs-12
 								- if flash[:error]
-									.alert.alert-error
+									.alert.alert-danger
 										p = flash[:error]
 								- if notice
 									.alert.alert-success

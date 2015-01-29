@@ -59,13 +59,13 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 	def validation_for_trimonthly
 		if Date.new(self.year_and_month.year, 1, 1) <= self.year_and_month and self.year_and_month <= Date.new(self.year_and_month.year, 4, 30)
 			puts "detect 1 tri"
-			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if (EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 1, 1), Date.new(self.year_and_month.year, 4, 30)) > 3 and !self.persisted?) or ( EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 1, 1), Date.new(self.year_and_month.year, 4, 30)) > 3 and self.persisted?)
+			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if (EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 1, 1), Date.new(self.year_and_month.year, 4, 30)) > 2 and !self.persisted?) or ( EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 1, 1), Date.new(self.year_and_month.year, 4, 30)) > 3 and self.persisted?)
 		elsif Date.new(self.year_and_month.year, 5, 1) <= self.year_and_month and self.year_and_month <= Date.new(self.year_and_month.year, 8, 31)
 			puts "detect 2 tri"
-			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if (EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 5, 1), Date.new(self.year_and_month.year, 8, 31)) > 3 and !self.persisted?) or ( EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 5, 1), Date.new(self.year_and_month.year, 8, 31)) > 3 and self.persisted?)
+			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if (EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 5, 1), Date.new(self.year_and_month.year, 8, 31)) > 2 and !self.persisted?) or ( EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 5, 1), Date.new(self.year_and_month.year, 8, 31)) > 3 and self.persisted?)
 		elsif Date.new(self.year_and_month.year, 9, 1) <= self.year_and_month and self.year_and_month <= Date.new(self.year_and_month.year, 12, 31)
 			puts "detect 3 tri"
-			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if (EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 9, 1), Date.new(self.year_and_month.year, 12, 31)) > 3 and !self.persisted?) or ( EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 9, 1), Date.new(self.year_and_month.year, 12, 31)) > 3 and self.persisted?)
+			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if (EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 9, 1), Date.new(self.year_and_month.year, 12, 31)) > 2 and !self.persisted?) or ( EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 9, 1), Date.new(self.year_and_month.year, 12, 31)) > 3 and self.persisted?)
 		end
 			
 	end

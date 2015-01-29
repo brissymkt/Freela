@@ -3,8 +3,6 @@
 		.row
 			.col.md-9.col-lg-9.col-sm-9.col-xs-9
 				= f.hidden_field :id
-				p
-					= f.object.name if f.object
 				= f.input_field :name, :placeholder => "#{t :name_placeholder}"
 			.col-md-1.col-lg-1.col-sm-1.col-xs-1
 				span.glyphicon.glyphicon-minus-sign
@@ -14,7 +12,7 @@
 			.col-md-1.col-lg-1.col-sm-1.col-xs-1
 				= link_to_remove_association "", f, :class => "glyphicon glyphicon-share-alt"
 			.col-md-12.col-lg-12.col-sm-12.col-sm-12
-				= f.text_field :description, :placeholder => "#{t :description_placeholder}"
+				= f.input_field :description, :placeholder => "#{t :description_placeholder}", :as => :text
 				
 	.col-md-3.col-xs-3.col-lg-3.col-sm-3
 		.importance_container

@@ -26,3 +26,4 @@ pt-BR:
   edit_environmental_analysis_link_text: "Editar"
   name_placeholder: "Nome"
   description_placeholder: "Descrição"
+  error_message_form: "Não foi possível processar seu formulário. Confira os campos abaixo e tente novamente."

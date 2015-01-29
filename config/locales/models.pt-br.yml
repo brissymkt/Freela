@@ -34,7 +34,6 @@ pt-BR:
             type:
               blank: "Não pode ficar em branco."
               inclusion: "Opção inválida."
-          factor:
             analysis_id:
               blank: "Não pode ficar em branco."
             importance:
