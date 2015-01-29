@@ -26,3 +26,4 @@ en:
   edit_environmental_analysis_link_text: "Edit"
   name_placeholder: "Name"
   description_placeholder: "Description"
+  error_message_form: "It was not possible to process your request. Check the fields below and try again."
