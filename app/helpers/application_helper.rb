@@ -14,6 +14,14 @@ module ApplicationHelper
 		end
 		return options
 	end
+
+	def print_hash_value(hash, selected_key)
+		if hash.has_key?(selected_key)
+			return hash[selected_key]
+		else
+			return '--'
+		end
+	end
 	private 
 	def determine_other_language
 		all_locales = I18n.available_locales.map { |locale| locale.to_s }

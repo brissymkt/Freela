@@ -27,10 +27,15 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 	accepts_nested_attributes_for :factors, :allow_destroy => true, :reject_if => lambda{ |attributes| attributes[:name].blank?}
 
 
-	before_save :set_year_and_date_to_beginning_of_month
+	before_save :set_year_and_date_to_beginning_of_month, :if => :needs_first_day?
 
 
 	private
+
+	def needs_first_day?
+		self.type_of_analysis == MONTHLY_ANALYSIS or self.type_of_analysis == TRIMONTHLY_ANALYSIS 
+	end
+
 	def year_and_month_in_the_future?
 		errors.add(:year_and_month, I18n.t('activerecord.errors.date_in_the_future')) if self.year_and_month.future?
 	end
@@ -41,15 +46,27 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 
 	def enough_existing_analysis?
 		if self.type_of_analysis == WEEKLY_ANALYSIS
-			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, self.year_and_month.beginning_of_week, self.year_and_month.end_of_week) > 1
+			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, self.year_and_month.beginning_of_week, self.year_and_month.end_of_week) > 0
 		elsif self.type_of_analysis == MONTHLY_ANALYSIS
-			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, self.year_and_month.beginning_of_month, self.year_and_month.end_of_month) > 1
+			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, self.year_and_month.beginning_of_month, self.year_and_month.end_of_month) > 0
 		elsif self.type_of_analysis == TRIMONTHLY_ANALYSIS
-			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, self.year_and_month.beginning_of_month, self.year_and_month.end_of_month) > 1
+			validation_for_trimonthly
 		elsif self.type_of_analysis == ANNUAL_ANALYSIS
-			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, self.year_and_month.beginning_of_year, self.year_and_month.end_of_year) > 1
+			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, self.year_and_month.beginning_of_year, self.year_and_month.end_of_year) > 0
+		end	
+	end
+
+	def validation_for_trimonthly
+		if Date.new(self.year_and_month.year, 1, 1) <= self.year_and_month and self.year_and_month <= Date.new(self.year_and_month.year, 4, 30)
+			puts "detect 1 tri"
+			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 1, 1), Date.new(self.year_and_month.year, 4, 30)) > 3
+		elsif Date.new(self.year_and_month.year, 5, 1) <= self.year_and_month and self.year_and_month <= Date.new(self.year_and_month.year, 8, 31)
+			puts "detect 2 tri"
+			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 5, 1), Date.new(self.year_and_month.year, 8, 31)) > 3
+		elsif Date.new(self.year_and_month.year, 9, 1) <= self.year_and_month and self.year_and_month <= Date.new(self.year_and_month.year, 12, 31)
+			puts "detect 3 tri"
+			errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) if EnvironmentalAnalysisCounter.analyses_for_user_in_period(self.user, Date.new(self.year_and_month.year, 9, 1), Date.new(self.year_and_month.year, 12, 31)) > 3
 		end
 			
 	end
-
 end
