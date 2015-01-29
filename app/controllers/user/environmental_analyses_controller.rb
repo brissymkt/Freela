@@ -11,7 +11,6 @@ class User::EnvironmentalAnalysesController < UserController
 	def create
 		@analysis = EnvironmentalAnalysis.new environmental_analysis_params
 		@analysis.user = current_user
-		puts @analysis.year_and_month
 		if @analysis.valid? 
 			@analysis.save
 			redirect_to locale_link_to("edit_user_environmental_analysis", {:id => @analysis.id})
@@ -26,7 +25,7 @@ class User::EnvironmentalAnalysesController < UserController
 
 	def update
 		@analysis = EnvironmentalAnalysis.find params[:id]
-		if @analysis.update_attributes environmental_analysis_params
+		if @analysis.update environmental_analysis_params
 			@analysis.save
 			redirect_to locale_link_to("user_environmental_analyses"), :notice => "#{I18n.t :environmental_analysis_updated_successfully}"
 		else

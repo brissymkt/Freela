@@ -13,6 +13,8 @@
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
 		= simple_form_for([:user, @analysis], :html => {:class => "horizontal-form"}) do |f|
 			.fields_container
+				= f.hidden_field :id
+				= @analysis.errors.messages
 				.row.field_container
 					.col-md-10.col-lg-10.col-sm-10.col-xs-10.factors_container
 						= f.simple_fields_for :factors do |factors_builder|
