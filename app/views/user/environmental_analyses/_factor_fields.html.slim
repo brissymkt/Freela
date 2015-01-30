@@ -1,5 +1,5 @@
 .nested-fields.factor_container.row
-	.col-md-7.col-xs-7.col-lg-7.col-sm-7.bordered_div
+	.col-md-7.col-xs-7.col-lg-7.col-sm-7.bordered_div class="#{f.object.persisted? ? 'with_text': 'without_text'}"
 		.row.factor_text_inputs_container
 			.col.md-9.col-lg-9.col-sm-9.col-xs-9
 				= f.hidden_field :id
@@ -7,13 +7,12 @@
 					p.factor_name_display
 						 = f.object.name
 				= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js_name_input"}
-			.col-md-1.col-lg-1.col-sm-1.col-xs-1
-				span.glyphicon.glyphicon-arrow-down.contract_button
-			.col-md-1.col-lg-1.col-sm-1.col-xs-1
-				span.more_info_button
-					| !
-			.col-md-1.col-lg-1.col-sm-1.col-xs-1
-				= link_to_remove_association "", f, :class => "glyphicon glyphicon-share-alt"
+			.col-md-3.col-lg-3.col-sm-3.col-xs-3
+				.buttons_list
+					- if f.object.persisted?
+						span.glyphicon.glyphicon-arrow-down.contract_button.my_button
+						span.glyphicon.glyphicon-edit.edit_button.my_button
+					= link_to_remove_association "", f, :class => "glyphicon glyphicon-minus-sign remove_button my_button"
 			.col-md-12.col-lg-12.col-sm-12.col-sm-12.description_container
 				- if f.object.persisted?
 					p.factor_description_display

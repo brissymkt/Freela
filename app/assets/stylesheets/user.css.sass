@@ -8,40 +8,51 @@ a:hover, a:focus
   color:black
 
 .bordered_div
-  .contract_button
-    color: $gray_color
-  .more_info_button
-    color: white
-    background-color: $gray_color
-    padding: 
-      left: 8px
-      right: 8px
-      top: 2px
-      bottom: 2px
-    border:
-      style: solid 
-      width: 1px
-      color: $gray_color
-      radius: 50px
-    &:hover
-      font-weight: bold
-      border-color: yellow
-      background-color: yellow
   border: solid 1px $gray_color 
   margin-left: 15px
+  .contract_button
+    color: $gray_color
+    &:hover
+      color: blue
+  .edit_button
+    color: $gray_color
+    &:hover
+      color: yellow
+  .remove_button
+    color: $gray_color
+    &:hover
+      color: red
   .factor_text_inputs_container
     margin-top: 20px
     margin-bottom: 20px 
-    input, textarea, p.factor_description_display
-      display: none
-  .factor_text_inputs_container.expanded
-    p.factor_description_display
-      display: block
-  .factor_text_inputs_container.edit
+  .with_text
+    .buttons_list
+      .my_button
+        display: inline
+        margin-right: 5px
+        float: left
+        clear: right
+    .factor_text_inputs_container
+      input, textarea, p.factor_description_display
+        display: none
+    .factor_text_inputs_container.expanded
+      p.factor_description_display
+        display: block
+    .factor_text_inputs_container.edit
+      input
+        display: block
+    .factor_text_inputs_container.edit.expanded
+      textarea
+        display: block
+    
+  .without_text
     input, textarea
       display: block
-
-
+    .buttons_list
+      .my_button
+        margin-right: 5px
+        float: right
+        clear: both
 
 
 
