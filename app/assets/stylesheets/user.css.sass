@@ -8,14 +8,51 @@ a:hover, a:focus
   color:black
 
 .bordered_div
+  .contract_button
+    color: $gray_color
+  .more_info_button
+    color: white
+    background-color: $gray_color
+    padding: 
+      left: 8px
+      right: 8px
+      top: 2px
+      bottom: 2px
+    border:
+      style: solid 
+      width: 1px
+      color: $gray_color
+      radius: 50px
+    &:hover
+      font-weight: bold
+      border-color: yellow
+      background-color: yellow
   border: solid 1px $gray_color 
   margin-left: 15px
+  .factor_text_inputs_container
+    margin-top: 20px
+    margin-bottom: 20px 
+    input, textarea, p.factor_description_display
+      display: none
+  .factor_text_inputs_container.expanded
+    p.factor_description_display
+      display: block
+  .factor_text_inputs_container.edit
+    input, textarea
+      display: block
+
+
+
+
+
 .js_slider
   position: relative
-  top: 13px
+  top: 33px
   left: 35px
   @include background(linear-gradient(to right, #FF0000, #FFFF00,#00FF00) no-repeat)
   height: 6px
+
+
 .analysis_title_header
   h3
     position: relative
@@ -64,7 +101,7 @@ a:hover, a:focus
 .importance_caption
   text-align: center
   position: relative
-  top: 7px
+  top: 27px
 .form_title_container
   color: $gradient_bottom
 .body_container
