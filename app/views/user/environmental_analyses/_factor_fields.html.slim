@@ -1,23 +1,26 @@
 .nested-fields.factor_container.row
-	.col-md-7.col-xs-7.col-lg-7.col-sm-7.bordered_div class="#{f.object.persisted? ? 'with_text': 'without_text'}"
-		.row.factor_text_inputs_container
-			.col.md-9.col-lg-9.col-sm-9.col-xs-9
-				= f.hidden_field :id
-				- if f.object.persisted?
-					p.factor_name_display
-						 = f.object.name
-				= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js_name_input"}
-			.col-md-3.col-lg-3.col-sm-3.col-xs-3
-				.buttons_list
+	.col-md-7.col-xs-7.col-lg-7.col-sm-7.bordered_div 
+		.row class="#{f.object.persisted? ? 'with_text': 'without_text'}"
+			.factor_text_inputs_container 
+				.col.md-9.col-lg-9.col-sm-9.col-xs-9
+					= f.hidden_field :id
 					- if f.object.persisted?
-						span.glyphicon.glyphicon-arrow-down.contract_button.my_button
-						span.glyphicon.glyphicon-edit.edit_button.my_button
-					= link_to_remove_association "", f, :class => "glyphicon glyphicon-minus-sign remove_button my_button"
-			.col-md-12.col-lg-12.col-sm-12.col-sm-12.description_container
-				- if f.object.persisted?
-					p.factor_description_display
-						= f.object.description
-				= f.input :description, :placeholder => "#{t :description_placeholder}", :as => :text, :label => false, :input_html => {:class => "js_description_input"}
+						p.factor_name_display
+							 = f.object.name
+					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js_name_input"}
+				.col-md-3.col-lg-3.col-sm-3.col-xs-3
+					.buttons_list
+						- if f.object.persisted?
+							span.glyphicon.glyphicon-arrow-down.contract_button.my_button
+							span.glyphicon.glyphicon-edit.edit_button.my_button
+						= link_to_remove_association "", f, :class => "glyphicon glyphicon-minus-sign remove_button my_button"
+				.col-md-12.col-lg-12.col-sm-12.col-sm-12.description_container
+					- if f.object.persisted?
+						p.factor_description_display
+							b
+								= "#{t :description_placeholder}: "
+							= f.object.description
+					= f.input :description, :placeholder => "#{t :description_placeholder}", :as => :text, :label => false, :input_html => {:class => "js_description_input"}
 				
 	.col-md-3.col-xs-3.col-lg-3.col-sm-3
 		.importance_container
@@ -28,6 +31,6 @@
 	.col-md-1.col-xs-1.col-lg-1.col-sm-1.align_to_factor
 		.factor_grade_container
 			h3.text-center.grade_field
-				| 9.9 
+				= number_with_precision(f.object.grade, :precision => 1) 
 	.clearfix
 	
