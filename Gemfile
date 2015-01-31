@@ -19,7 +19,6 @@ gem 'slim-rails'
 gem 'devise'
 gem 'factory_girl'
 gem 'responders', '~> 2.0'
-gem 'route_translator'
 gem 'bourbon'
 gem 'cocoon'
 

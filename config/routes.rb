@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-	localized do
-		devise_for :users
+	devise_for :users
+	scope "(:locale)", locale: /pt-BR|en/ do
 		namespace :user do
 			resources :environmental_analyses do
 				resources :factors, :except => [:show]
@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 				end
 			end
 		end
-		root :to => "public#home"
 	end
+	root :to => "public#home"
 end

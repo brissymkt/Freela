@@ -3,7 +3,7 @@
 		= "#{t :hello}"
 	- if current_user
 		p 
-			= link_to "#{t :logout_text_message}", locale_link_to("destroy_user_session"), :method => :delete
+			= link_to "#{t :logout_text_message}", destroy_user_session_path, :method => :delete
 	- else
 		p
-			= link_to "#{t :login_text}", locale_link_to("new_user_session")
+			= link_to "#{t :login_text}", new_user_session_path

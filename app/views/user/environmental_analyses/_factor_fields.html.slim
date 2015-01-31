@@ -5,7 +5,7 @@
 				.col.md-9.col-lg-9.col-sm-9.col-xs-9
 					= f.hidden_field :id
 					- if f.object.persisted?
-						= link_to "#{f.object.name}", locale_link_to("edit_user_environmental_analysis_factor", {:id => f.object.id, :environmental_analysis_id => f.object.environmental_analysis_id}), :class => "factor_name_display"
+						= link_to "#{f.object.name}", edit_user_environmental_analysis_factor_path(f.object.id, f.object.environmental_analysis_id), :class => "factor_name_display"
 					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js_name_input"}
 				.col-md-3.col-lg-3.col-sm-3.col-xs-3
 					.buttons_list

@@ -1,6 +1,6 @@
 #left_menu
 	ul
-		= link_to locale_link_to("new_user_environmental_analysis") do
+		= link_to new_user_environmental_analysis_path do
 			li.left_menu_item
 				.icon_container
 					span.glyphicon.glyphicon-file
@@ -8,7 +8,7 @@
 					span.caption
 						= "#{t :menu_new_text}" 
 		
-		= link_to locale_link_to("user_environmental_analyses") do
+		= link_to user_environmental_analyses_path do
 			li.left_menu_item
 				.icon_container
 					span.glyphicon.glyphicon-time
@@ -22,7 +22,7 @@
 						a
 							li Item
 		
-		= link_to locale_link_to("chart_user_environmental_analysis", {:id => 1}) do
+		= link_to chart_user_environmental_analysis_path(1) do
 			li.left_menu_item
 				.icon_container
 					span.glyphicon.glyphicon-stats
@@ -30,7 +30,7 @@
 					span.caption
 					= "#{t :menu_chart_text}" 
 		
-		= link_to locale_link_to("destroy_user_session"), :method => :delete do
+		= link_to destroy_user_session_path, :method => :delete do
 			li.left_menu_item
 				.icon_container
 					span.glyphicon.glyphicon-off

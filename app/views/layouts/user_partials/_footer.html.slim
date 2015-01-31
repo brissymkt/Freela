@@ -1,2 +1,5 @@
 p
-	= link_to "#{t :change_language_message}", change_language
+	-	if params[:locale] == "en"
+		= link_to "#{t :change_language_message}", url_for(:locale => "pt-BR")
+	- else
+		= link_to "#{t :change_language_message}", url_for(:locale => "en")

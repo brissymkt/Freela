@@ -6,17 +6,23 @@ class ApplicationController < ActionController::Base
 
   #Devise extra parameters
   before_action :configure_permitted_parameters, if: :devise_controller?
-
-  before_action :check_locale
+  before_action :set_locale
 
   def after_sign_in_path_for(resource)
-    locale_link_to("user_environmental_analyses")
+    user_environmental_analyses_path
+  end
+
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
   private
-  def check_locale
-    I18n.default_locale = params[:locale].to_sym if I18n.default_locale != params[:locale].to_sym
-  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
+
 end
