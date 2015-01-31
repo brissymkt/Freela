@@ -11,7 +11,7 @@ en:
         current_password: "Current Password"
         remember_me: "Remeber me"
       environmental_analysis:
-        year_and_month: "Month and Year"
+        year_and_month: "Date"
         grade: "Grade"
         user_id: "Responsible user"
         user: "Responsible user"

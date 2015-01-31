@@ -51,7 +51,7 @@ pt-BR:
         current_password: "Senha Atual"
         remember_me: "Mantenha-me conectado"
       environmental_analysis:
-        year_and_month: "Mês e Ano"
+        year_and_month: "Data"
         grade: "Nota"
         user_id: "Responsável"
         user: "Responsável"
