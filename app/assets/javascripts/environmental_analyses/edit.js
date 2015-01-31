@@ -18,7 +18,7 @@ $(document).ready(function(){
 		$(insertedElement).find('.js_slider').slider({ 
 			value: $(this).parents('.importance_container').find('.js_importance_input').val(),
 			min: 0,
-			max: 20,
+			max: 10,
 			step: 1,
 			slide: function(event, ui) {
 				$(this).parents('.importance_container').find('.js_importance_input').val(ui.value);

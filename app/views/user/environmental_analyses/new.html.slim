@@ -13,12 +13,4 @@
 					.col-md-12.col-lg-12.col-sm-12.col-xs-12
 						= f.input :year_and_month, :order => [:day, :month, :year]
 						= f.input :type_of_analysis, :collection => hash_as_options_to_select(EnvironmentalAnalysis::TYPES_DESCRIPTION), :as  => :radio_buttons
-			.form_actions
-				ul
-					li
-						= link_to locale_link_to("user_environmental_analyses") do  
-							span.glyphicon.glyphicon-remove 
-					li
-						= f.submit "#{t :submit_text}", :class => "hidden"
-						a href="javascript:void(0)" 
-							span.glyphicon.glyphicon-ok.js_submit_button
+			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => user_environmental_analyses_path}

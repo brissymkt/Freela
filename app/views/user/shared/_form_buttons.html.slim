@@ -1,0 +1,11 @@
+.form_actions
+	ul
+		li.button_submit.form_button
+			= f.submit "#{t :submit_text}", :class => "hidden"
+			a href="javascript:void(0)" 
+				= image_tag('Salvar.png', :class => 'js_normal')
+				= image_tag('Salvar_s.png', :class => 'js_selected')
+		li.button_cancel.form_button
+			= link_to return_path do  
+				= image_tag('Descartar.png', :class => 'js_normal')
+				= image_tag('Descartar_s.png', :class => 'js_selected')

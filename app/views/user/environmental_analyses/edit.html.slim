@@ -5,7 +5,7 @@
 	= l @analysis.year_and_month
 
 = content_for :custom_javascripts
-	= javascript_tag 'environmental_analysis/edit.js', 'data-turbolinks-track' => true 
+	= javascript_include_tag 'environmental_analyses/edit', 'data-turbolinks-track' => true 
 
 .row.form_header
 	.col-md-10.col-lg-10.col-sm-10.col-xs-10
@@ -28,12 +28,4 @@
 								= @analysis.grade
 							h3.caption
 								= "#{t :environmental_grade_caption}"
-			.form_actions
-				ul
-					li
-						= f.submit "#{t :submit_text}", :class => "hidden"
-						a href="javascript:void(0)" 
-							span.glyphicon.glyphicon-ok.js_submit_button
-					li
-						= link_to user_environmental_analyses_path do  
-							span.glyphicon.glyphicon-remove 
+			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => user_environmental_analyses_path}
