@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('.js_submit_button').click(function() {
+	$('.button_submit').click(function() {
 		$(this).parents("form").submit();
 	});
 
@@ -31,4 +31,10 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.js_normal').mouseover(function(){
+		$(this).parents('.form_button').addClass('selected');
+	});
+	$('.js_selected').mouseout(function(){
+		$(this).parents('.form_button').removeClass('selected');
+	});
 });
