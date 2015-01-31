@@ -4,6 +4,8 @@
 = content_for :analysis_title_header
 	= l @analysis.year_and_month
 
+= content_for :custom_javascripts
+	= javascript_tag 'environmental_analysis/edit.js', 'data-turbolinks-track' => true 
 
 .row.form_header
 	.col-md-10.col-lg-10.col-sm-10.col-xs-10
