@@ -141,7 +141,8 @@ a:hover, a:focus
     display: inline
 
 .left_menu_item
-  font-size: 16px
+  .icon_container
+    width: 35px
   padding: 5px
   .icon
     margin-top: 5px
@@ -160,7 +161,7 @@ a:hover, a:focus
     float: right
   a.caption:focus, a.caption:hover
     @include background(linear-gradient($gradient_bottom, $gradient_top) left repeat)
-  .icon.js_white_color
+  .icon.js_white_color, .caption.js_white_color
     color: white
 
 

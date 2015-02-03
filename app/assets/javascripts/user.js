@@ -12,13 +12,13 @@ $(document).ready(function() {
 	});
 
 	$('.factors_container').on('click', '.contract_button', function() {
-		if ($(this).hasClass('glyphicon-arrow-down')) {
-			$(this).removeClass('glyphicon-arrow-down');
-			$(this).addClass('glyphicon-arrow-up');
+		if ($(this).hasClass('fa-chevron-down')) {
+			$(this).removeClass('fa-chevron-down');
+			$(this).addClass('fa-chevron-up');
 			$(this).parents('.factor_text_inputs_container').addClass('expanded');
 		} else {
-			$(this).removeClass('glyphicon-arrow-up');
-			$(this).addClass('glyphicon-arrow-down');
+			$(this).removeClass('fa-chevron-up');
+			$(this).addClass('fa-chevron-down');
 			$(this).parents('.factor_text_inputs_container').removeClass('expanded');
 		}
 	});
