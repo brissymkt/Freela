@@ -3,7 +3,7 @@
 		= link_to new_user_environmental_analysis_path do
 			li.left_menu_item
 				.icon_container
-					span.glyphicon.glyphicon-file
+					span.fa.fa-file-o.icon
 				.caption_container	
 					span.caption
 						= "#{t :menu_new_text}" 
@@ -11,7 +11,7 @@
 		= link_to user_environmental_analyses_path do
 			li.left_menu_item
 				.icon_container
-					span.glyphicon.glyphicon-time
+					span.fa.fa-clock-o.icon
 				.caption_container
 					span.caption
 						= "#{t :menu_history_text}"
@@ -25,7 +25,7 @@
 		= link_to chart_user_environmental_analysis_path(1) do
 			li.left_menu_item
 				.icon_container
-					span.glyphicon.glyphicon-stats
+					span.fa.fa-line-chart.icon
 				.caption_container
 					span.caption
 					= "#{t :menu_chart_text}" 
@@ -33,7 +33,7 @@
 		= link_to destroy_user_session_path, :method => :delete do
 			li.left_menu_item
 				.icon_container
-					span.glyphicon.glyphicon-off
+					span.fa.fa-power-off.icon
 				.caption_container
 					span.caption
 					= "#{t :logout_text_message}" 

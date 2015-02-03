@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-	devise_for :users
+	
 	scope "(:locale)", locale: /pt-BR|en/ do
+		devise_for :users	
 		namespace :user do
 			resources :environmental_analyses do
-				resources :factors, :except => [:show]
+				resources :factors, :only => [:edit, :create]
 				member do
 					get "chart"
 				end
 			end
 		end
-	end
 	root :to => "public#home"
+	end
+	
 end

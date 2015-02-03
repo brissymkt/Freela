@@ -38,8 +38,6 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.0)
     bcrypt (3.1.9)
-    bootstrap-sass (3.3.1.0)
-      sass (~> 3.2)
     bourbon (4.1.0)
       sass (~> 3.3)
       thor
@@ -78,6 +76,8 @@ GEM
     execjs (2.2.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
+    font-awesome-sass (4.3.0)
+      sass (~> 3.2)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -206,7 +206,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
   bourbon
   byebug
   capybara
@@ -214,6 +213,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   factory_girl
+  font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
@@ -221,7 +221,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   responders (~> 2.0)
   rspec
-  sass-rails (~> 5.0)
+  sass-rails
   sdoc (~> 0.4.0)
   simple_form
   slim-rails

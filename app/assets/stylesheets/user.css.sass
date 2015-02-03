@@ -6,7 +6,6 @@ a
 a:hover, a:focus
   text-decoration: none
   color:black
-
 .bordered_div
   border: solid 1px $gray_color 
   margin-left: 15px
@@ -110,7 +109,7 @@ a:hover, a:focus
   text-align: center
   font-size: 30px
   border: solid 1px $gray_color 
-.glyphicon
+.icon
   font-size: 20px
 .importance_caption
   text-align: center
@@ -144,10 +143,10 @@ a:hover, a:focus
 .left_menu_item
   font-size: 16px
   padding: 5px
-  span.glyphicon
+  .icon
     margin-top: 5px
     color: $menu-background
-  span.glyphicon
+  .icon
     margin:
       top: 5px
       left: 10px
@@ -161,7 +160,7 @@ a:hover, a:focus
     float: right
   a.caption:focus, a.caption:hover
     @include background(linear-gradient($gradient_bottom, $gradient_top) left repeat)
-  span.js_white_color
+  .icon.js_white_color
     color: white
 
 

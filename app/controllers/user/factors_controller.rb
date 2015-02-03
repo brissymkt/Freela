@@ -1,25 +1,12 @@
 class User::FactorsController < UserController
-	def index
-
-	end
-
-	def new
-
-	end
-
-	def create
-
-	end
 
 	def edit
-
+		@environmental_analysis = current_user.environmental_analyses.find(params[:environmental_analysis_id])
+		@factor = @environmental_analysis.factors.find(params[:id])
 	end
 
 	def update
 
 	end
 
-	def delete
-
-	end
 end
