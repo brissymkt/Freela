@@ -2,17 +2,19 @@
 	.col-md-7.col-xs-7.col-lg-7.col-sm-7.bordered_div 
 		.row class="#{f.object.persisted? ? 'with_text': 'without_text'}"
 			.factor_text_inputs_container 
-				.col.md-9.col-lg-9.col-sm-9.col-xs-9
+				.col-md-8.col-lg-8.col-sm-8.col-xs-8 class="#{f.object.persisted? ? "thin_box" : "only_inputs_box"}"
 					= f.hidden_field :id
 					- if f.object.persisted?
 						= link_to "#{f.object.name}", edit_user_environmental_analysis_factor_path(f.object.environmental_analysis_id, f.object.id), :class => "factor_name_display"
 					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js_name_input"}
-				.col-md-3.col-lg-3.col-sm-3.col-xs-3
+				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right_offset
 					.buttons_list
 						- if f.object.persisted?
-							span.fa.fa-chevron-down.contract_button.my_button
 							span.fa.fa-edit.edit_button.my_button
 						= link_to_remove_association "", f, :class => "fa fa-remove remove_button my_button"
+				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right_offset
+					- if f.object.persisted?
+						span.fa.fa-chevron-down.contract_button.my_button
 				.col-md-12.col-lg-12.col-sm-12.col-sm-12.description_container
 					- if f.object.persisted?
 						p.factor_description_display
@@ -21,13 +23,13 @@
 							= f.object.description
 					= f.input :description, :placeholder => "#{t :description_placeholder}", :label => false, :as => :string, :input_html => {:class => "js_description_input"}
 				
-	.col-md-3.col-xs-3.col-lg-3.col-sm-3
+	.col-md-3.col-xs-3.col-lg-3.col-sm-3.left_offset
 		.importance_container
 			= f.hidden_field :importance, :class => "js_importance_input"
 			.js_slider
 			.importance_caption
 				h3.js_slider_caption
-	.col-md-1.col-xs-1.col-lg-1.col-sm-1.align_to_factor
+	.col-md-1.col-xs-1.col-lg-1.col-sm-1.align_to_factor.left_offset
 		.factor_grade_container
 			h3.text-center.grade_field
 				= number_with_precision(f.object.grade, :precision => 1) 

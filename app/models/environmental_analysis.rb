@@ -7,10 +7,10 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 	ANNUAL_ANALYSIS = 4
 
 	TYPES_DESCRIPTION = {
-		WEEKLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.weekly'),
-		MONTHLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.monthly'),
+		ANNUAL_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.annual'),
 		TRIMONTHLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.trimonthly'),
-		ANNUAL_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.annual')
+		MONTHLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.monthly'),
+		WEEKLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.weekly')
 	}
 
 	VALID_TYPES = [WEEKLY_ANALYSIS, MONTHLY_ANALYSIS, TRIMONTHLY_ANALYSIS, ANNUAL_ANALYSIS]
