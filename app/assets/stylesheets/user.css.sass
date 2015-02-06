@@ -5,7 +5,15 @@ a
   color: black
 a:hover, a:focus
   text-decoration: none
-  color:black
+  color: black
+.form_header
+  a
+    color: $gradient_bottom
+    &:hover
+      text-decoration: none
+      color: black
+  .fa
+    font-size: 30px
 .bordered_div
   .thin_box
     margin-bottom: -10px
@@ -60,7 +68,7 @@ a:hover, a:focus
 
 
 
-.js_slider
+.js_slider, .js_importance_slider, .js_situation_slider
   position: relative
   top: 15px
   left: 35px
@@ -120,7 +128,7 @@ a:hover, a:focus
   border: solid 1px $gray_color 
 .icon
   font-size: 20px
-.importance_caption
+.importance_caption, .situation_caption
   text-align: center
   position: relative
   top: 5px

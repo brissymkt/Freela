@@ -1,0 +1,13 @@
+.row.form_title_container
+	.col-md-1.col-lg-1.col-sm-1.col-xs-1
+		h2
+			= link_to "", edit_user_environmental_analysis_path(environmental_analysis.id), :class => "fa fa-arrow-left"
+	.col-md-5.col-lg-5.col-sm-5.col-xs-5
+		h2.form_title.aligned_to_left
+			= factor.name
+	.col-md-3.col-lg-3.col-sm-3.col-xs-3
+		h2.importance_title
+			= "#{t :environmental_factor_importance_title}"
+	.col-md-3.col-lg-3.col-sm-3.col-xs-3
+		h2.grade_title
+			= "#{t :environmental_factor_situation_title}"

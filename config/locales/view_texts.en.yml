@@ -27,3 +27,6 @@ en:
   name_placeholder: "Name"
   description_placeholder: "Description"
   error_message_form: "It was not possible to process your request. Check the fields below and try again."
+  environmental_factor_title: "Environmental Factor"
+  environmental_factor_importance_title: "importance"
+  environmental_factor_situation_title: "situation"

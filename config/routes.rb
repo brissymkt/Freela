@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 		devise_for :users	
 		namespace :user do
 			resources :environmental_analyses do
-				resources :factors, :only => [:edit, :create]
+				resources :factors, :only => [:edit, :update]
 				member do
 					get "chart"
 				end
