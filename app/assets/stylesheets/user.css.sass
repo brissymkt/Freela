@@ -14,6 +14,18 @@ a:hover, a:focus
       color: black
   .fa
     font-size: 30px
+.contract_button
+  color: $gray_color
+  &:hover
+    color: blue
+.edit_button
+  color: $gray_color
+  &:hover
+    color: yellow
+.remove_button
+  color: $gray_color
+  &:hover
+    color: red
 .bordered_div
   .thin_box
     margin-bottom: -10px
@@ -22,18 +34,7 @@ a:hover, a:focus
   font-size: 20px
   input
     font-size: 20px
-  .contract_button
-    color: $gray_color
-    &:hover
-      color: blue
-  .edit_button
-    color: $gray_color
-    &:hover
-      color: yellow
-  .remove_button
-    color: $gray_color
-    &:hover
-      color: red
+  
   .factor_text_inputs_container
     margin-top: 20px
     margin-bottom: 20px 
@@ -71,9 +72,10 @@ a:hover, a:focus
 .js_slider, .js_importance_slider, .js_situation_slider
   position: relative
   top: 15px
-  left: 35px
   @include background(linear-gradient(to right, #FF0000, #FFFF00,#00FF00) no-repeat)
   height: 6px
+.js_slider
+  left: 35px
 
 .right_offset
   position: relative 
@@ -259,6 +261,9 @@ h3.js_slider_caption
   margin-left: 70px
   font-size: 16px
   color: $gray_color
+.sub_factor_container
+  h3.js_slider_caption
+    margin-left: 0px
 span.ui-slider-handle.ui-state-default.ui-corner-all
   height: 6px  
   width: 20px
@@ -272,3 +277,21 @@ span.ui-slider-handle.ui-state-default.ui-corner-all
   .js_add_factors
     color: $gray_color
     display: block
+  .js_add_sub_factors
+    position: relative
+    top: 0px
+    padding: 10px
+    color: $gray_color
+    display: block
+
+.sub_factor_texts_container
+  input
+    font-size: 20px
+  font-size: 20px
+  border: solid 1px $gray_color
+  margin-left: 15px
+  width: 463px
+.sub_factor_text_inputs_container
+  margin:
+    top: 20px
+    bottom: 20px
