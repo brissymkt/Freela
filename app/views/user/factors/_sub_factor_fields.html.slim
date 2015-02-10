@@ -5,7 +5,7 @@
 				.col-md-8.col-lg-8.col-sm-8.col-xs-8 class="#{f.object.persisted? ? "thin_box" : "only_inputs_box"}"
 					= f.hidden_field :id
 					- if f.object.persisted?
-						= link_to "#{f.object.name}", edit_user_environmental_analysis_factor_path(f.object.environmental_analysis_id, f.object.id), :class => "factor_name_display"
+						p ="#{f.object.name}"
 					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js_name_input"}
 				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right_offset
 					.buttons_list

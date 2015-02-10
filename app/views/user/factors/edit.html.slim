@@ -1,9 +1,6 @@
 = content_for :analysis_title
 	= "#{t :environmental_factor_title}"
 
-= content_for :custom_javascripts
-	= javascript_include_tag 'environmental_analyses/factors/edit', 'data-turbolinks-track' => true 
-
 .row.form_header
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
 		= render :partial => "form_header", :locals => {:environmental_analysis => @environmental_analysis, :factor => @factor}

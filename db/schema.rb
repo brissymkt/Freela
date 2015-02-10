@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150128232439) do
 
   create_table "environmental_analyses", force: :cascade do |t|
     t.integer  "user_id",                                               null: false
-    t.date     "year_and_month",                 default: '2015-01-27'
+    t.date     "year_and_month",                 default: '2015-02-09'
     t.decimal  "grade",            precision: 5, default: 0
     t.datetime "created_at",                                            null: false
     t.datetime "updated_at",                                            null: false
