@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 	scope "(:locale)", locale: /pt-BR|en/ do
 		devise_for :users	
 		namespace :user do
-			resources :environmental_analyses do
+			resources :environmental_analyses, :except => [:show, :destroy] do
 				resources :factors, :only => [:edit, :update]
-				member do
+				collection do
 					get "chart"
 				end
 			end

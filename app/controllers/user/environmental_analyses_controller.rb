@@ -35,14 +35,6 @@ class User::EnvironmentalAnalysesController < UserController
 		end
 	end
 
-	def show
-
-	end
-
-	def delete
-
-	end
-
 	def chart
 
 	end
