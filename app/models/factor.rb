@@ -10,10 +10,12 @@ class Factor < ActiveRecord::Base
 
 	def update_grade
 		sum = 0.0
+		importance = 0.0
 		self.sub_factors.each do |sub_factor|
-			sum += sub_factor.grade
+			sum += sub_factor.grade * sub_factor.importance
+			importance += sub_factor.importance
 		end
-		self.grade = sum
+		self.grade = sum.to_f / importance
 		self.save
 	end
 end

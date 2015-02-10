@@ -12,7 +12,5 @@ class SubFactor < ActiveRecord::Base
 
 	def calculate_grade
 		self.grade = Float((self.importance * self.situation) / 10.0)
-		puts "CALCULATION: #{Float((self.importance * self.situation) / 10.0)}"
-		puts  "SUBFACTOR GRADE: #{self.grade}"
 	end
 end
