@@ -32,6 +32,21 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 		self.type_of_analysis == type
 	end
 
+	def update_grade
+		importances = 0.0
+		sum = 0.0
+		self.factors.each do |factor|
+			sum += factor.grade * factor.importance
+			importances += factor.importance
+		end
+		puts "SUM: #{sum}"
+		puts "Importances: #{importances}"
+		grade = sum.to_f / importances
+		self.grade = grade
+		puts "#{self.grade}"
+		self.save
+	end
+
 	private
 
 

@@ -7,4 +7,13 @@ class Factor < ActiveRecord::Base
 	validates :importance, :presence => true, :inclusion => {:in => (1..10).each.map {|allowed_value| allowed_value}}
 	validates :environmental_analysis, :presence => true
 	validates :grade, :presence => true
+
+	def update_grade
+		sum = 0.0
+		self.sub_factors.each do |sub_factor|
+			sum += sub_factor.grade
+		end
+		self.grade = sum
+		self.save
+	end
 end

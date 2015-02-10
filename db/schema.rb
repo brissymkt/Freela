@@ -17,33 +17,33 @@ ActiveRecord::Schema.define(version: 20150128232439) do
   enable_extension "plpgsql"
 
   create_table "environmental_analyses", force: :cascade do |t|
-    t.integer  "user_id",                                               null: false
-    t.date     "year_and_month",                 default: '2015-02-09'
-    t.decimal  "grade",            precision: 5, default: 0
-    t.datetime "created_at",                                            null: false
-    t.datetime "updated_at",                                            null: false
-    t.integer  "type_of_analysis",               default: 2
+    t.integer  "user_id",                                                         null: false
+    t.date     "year_and_month",                           default: '2015-02-09'
+    t.decimal  "grade",            precision: 3, scale: 1, default: 0.0
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
+    t.integer  "type_of_analysis",                         default: 2
   end
 
   create_table "factors", force: :cascade do |t|
-    t.integer  "environmental_analysis_id",                           null: false
-    t.string   "name",                                                null: false
+    t.integer  "environmental_analysis_id",                                       null: false
+    t.string   "name",                                                            null: false
     t.text     "description"
-    t.integer  "importance",                              default: 5, null: false
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
-    t.decimal  "grade",                     precision: 5, default: 1
+    t.integer  "importance",                                        default: 5,   null: false
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
+    t.decimal  "grade",                     precision: 3, scale: 1, default: 1.0
   end
 
   create_table "sub_factors", force: :cascade do |t|
-    t.integer  "factor_id",                 null: false
-    t.string   "name",                      null: false
+    t.integer  "factor_id",                                         null: false
+    t.string   "name",                                              null: false
     t.text     "description"
-    t.integer  "importance",  default: 1,   null: false
-    t.integer  "situation",   default: 1,   null: false
-    t.decimal  "grade",       default: 1.0, null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "importance",                          default: 1,   null: false
+    t.integer  "situation",                           default: 1,   null: false
+    t.decimal  "grade",       precision: 3, scale: 1, default: 1.0, null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
   end
 
   create_table "users", force: :cascade do |t|
