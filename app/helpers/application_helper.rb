@@ -4,12 +4,8 @@ module ApplicationHelper
 		url_for(:only_path => false, :locale => determine_other_language)
 	end
 
-	def hash_as_options_to_select(hash)
-		options = []
-		hash.each_pair do |value, caption|
-			options << [caption, value]
-		end
-		return options
+	def environmental_types_translated()
+		EnvironmentalAnalysis::VALID_TYPES.map {|value| [I18n.t('activerecord.attributes.environmental_analysis.type_of_analysis_translation.'+value), value]}
 	end
 
 	def print_hash_value(hash, selected_key)

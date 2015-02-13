@@ -16,7 +16,7 @@ en:
         user_id: "Responsible user"
         user: "Responsible user"
         type_of_analysis: "Period of Analysis"
-        types_description:
+        type_of_analysis_translation:
           weekly: "Weekly"
           monthly: "Monthly"
           trimonthly: "Trimonthly"

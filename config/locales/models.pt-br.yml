@@ -56,7 +56,7 @@ pt-BR:
         user_id: "Responsável"
         user: "Responsável"
         type_of_analysis: "Período de Análise"
-        types_description:
+        type_of_analysis_translation:
           weekly: "Semanal"
           monthly: "Mensal"
           trimonthly: "Trimestral"

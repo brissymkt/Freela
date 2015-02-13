@@ -1,19 +1,7 @@
 
 class EnvironmentalAnalysis < ActiveRecord::Base
-	
-	WEEKLY_ANALYSIS = 1
-	MONTHLY_ANALYSIS = 2
-	TRIMONTHLY_ANALYSIS = 3
-	ANNUAL_ANALYSIS = 4
 
-	TYPES_DESCRIPTION = {
-		ANNUAL_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.annual'),
-		TRIMONTHLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.trimonthly'),
-		MONTHLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.monthly'),
-		WEEKLY_ANALYSIS => I18n.t('activerecord.attributes.environmental_analysis.types_description.weekly')
-	}
-
-	VALID_TYPES = [WEEKLY_ANALYSIS, MONTHLY_ANALYSIS, TRIMONTHLY_ANALYSIS, ANNUAL_ANALYSIS]
+	VALID_TYPES = ['weekly', 'monthly', 'trimonthly', 'annual']
 
 	belongs_to :user
 	has_many :factors, :dependent => :destroy
@@ -39,12 +27,12 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 			sum += factor.grade * factor.importance
 			importances += factor.importance
 		end
-		puts "SUM: #{sum}"
-		puts "Importances: #{importances}"
-		grade = sum.to_f / importances
-		self.grade = grade
-		puts "#{self.grade}"
+		self.grade = sum.to_f / importances
 		self.save
+	end
+
+	def type_to_human
+		I18n.t("activerecord.attributes.environmental_analysis.type_of_analysis_translation."+self.type_of_analysis)
 	end
 
 	private

@@ -3,13 +3,13 @@
 class EnvironmentalAnalysisValidator
 	def self.can_create_analysis?(environmental_analysis)
 		existing_analyses = 1.0/0
-		if environmental_analysis.type_of_analysis?(EnvironmentalAnalysis::WEEKLY_ANALYSIS)
+		if environmental_analysis.type_of_analysis? 'weekly' 
 			existing_analyses = self.analysis_in_period(environmental_analysis, environmental_analysis.year_and_month.beginning_of_week, environmental_analysis.year_and_month.end_of_week)
-		elsif environmental_analysis.type_of_analysis?(EnvironmentalAnalysis::MONTHLY_ANALYSIS)
+		elsif environmental_analysis.type_of_analysis? 'monthly'
 			existing_analyses = self.analysis_in_period(environmental_analysis, environmental_analysis.year_and_month.beginning_of_month, environmental_analysis.year_and_month.end_of_month)
-		elsif environmental_analysis.type_of_analysis?(EnvironmentalAnalysis::ANNUAL_ANALYSIS)
+		elsif environmental_analysis.type_of_analysis? 'annual'
 			existing_analyses = self.analysis_in_period(environmental_analysis, environmental_analysis.year_and_month.beginning_of_year, environmental_analysis.year_and_month.end_of_year)
-		elsif environmental_analysis.type_of_analysis?(EnvironmentalAnalysis::TRIMONTHLY_ANALYSIS)
+		elsif environmental_analysis.type_of_analysis? 'trimonthly'
 			existing_analyses = self.count_analysis_in_trimester(environmental_analysis)
 		end
 		puts "Existing analyses: #{existing_analyses}"
