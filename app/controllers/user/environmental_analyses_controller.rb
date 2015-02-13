@@ -37,7 +37,7 @@ class User::EnvironmentalAnalysesController < UserController
 		@analysis = EnvironmentalAnalysis.find params[:id]
 		if @analysis.update environmental_analysis_params
 			@analysis.update_grade
-			redirect_to user_environmental_analyses_path, :notice => "#{I18n.t :environmental_analysis_updated_successfully}"
+			redirect_to :back, :notice => "#{I18n.t :environmental_analysis_updated_successfully}"
 		else
 			flash.now[:error] = I18n.t('error_message_form')
 			render :edit

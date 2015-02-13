@@ -15,4 +15,4 @@
 								= render :partial => "sub_factor_fields", :locals => {:f => sub_factors_builder}
 						.links
 							= link_to_add_association "#{t :add_factors_text}", f, :sub_factors, :class => "js_add_sub_factors tall_button"
-			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => user_environmental_analyses_path}
+			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => url_for()}

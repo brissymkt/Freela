@@ -28,4 +28,4 @@
 								= @analysis.grade
 							h3.caption
 								= "#{t :environmental_grade_caption}"
-			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => user_environmental_analyses_path}
+			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => url_for()}
