@@ -5,7 +5,6 @@
 		table.table.table-striped
 			thead
 				tr
-					th Id
 					th = "#{I18n.t('activerecord.attributes.environmental_analysis.year_and_month')}"
 					th = "#{I18n.t('activerecord.attributes.environmental_analysis.type_of_analysis')}"
 					th = "#{I18n.t('activerecord.attributes.environmental_analysis.grade')}"
@@ -13,9 +12,8 @@
 			tbody
 				- @analyses.each do | analysis |
 					tr id="#{analysis.id}"
-						td = analysis.id
-						td = l analysis.year_and_month
+						td = link_to "#{l analysis.year_and_month}", edit_user_environmental_analysis_path(analysis.id)
 						td = print_hash_value(EnvironmentalAnalysis::TYPES_DESCRIPTION, analysis.type_of_analysis)
 						td = analysis.grade
 						td 
-							= link_to "#{t :edit_environmental_analysis_link_text}", edit_user_environmental_analysis_path(analysis.id)
+							= link_to "#{t :destroy_environmental_analysis_link_text}", user_environmental_analysis_path(analysis.id), :method => :delete, 'data-confirm' => "#{t :exclusion_message}" 

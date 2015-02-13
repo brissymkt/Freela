@@ -24,6 +24,15 @@ class User::EnvironmentalAnalysesController < UserController
 		@analysis = EnvironmentalAnalysis.find params[:id]
 	end
 
+	def destroy
+		@analysis = current_user.environmental_analyses.find params[:id]
+		if @analysis.delete
+			redirect_to user_environmental_analyses_path, :notice => "#{I18n.t :environmental_analysis_exclusion_success}"
+		else
+			render :index
+		end
+	end
+
 	def update
 		@analysis = EnvironmentalAnalysis.find params[:id]
 		if @analysis.update environmental_analysis_params
