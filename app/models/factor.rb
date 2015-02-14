@@ -15,7 +15,7 @@ class Factor < ActiveRecord::Base
 			sum += sub_factor.grade * sub_factor.importance
 			importance += sub_factor.importance
 		end
-		self.grade = sum.to_f / importance
+		self.grade = importance > 0 ? sum.to_f / importance : 0.0
 		self.save
 	end
 end

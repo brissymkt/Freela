@@ -27,7 +27,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 			sum += factor.grade * factor.importance
 			importances += factor.importance
 		end
-		self.grade = sum.to_f / importances
+		self.grade = importances > 0 ? sum.to_f / importances : 0.0
 		self.save
 	end
 
