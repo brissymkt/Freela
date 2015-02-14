@@ -21,7 +21,8 @@ pt-BR:
             password_confirmation:
               blank: "Não pode ficar em branco."
               confirmation: "Senhas diferentes foram fornecidas."
-          environmental_analysis:
+        environmental_analysis:
+          attributes:
             year_and_month: 
               blank: "Não pode ficar em branco."
               future: "Não pode ser no futuro."
@@ -29,6 +30,8 @@ pt-BR:
               blank: "Não pode ficar em branco."
             user_id:
               blank: "Não pode ficar em branco."
+            type_of_analysis:
+              inclusion: "Período de análise inválido."
         factor:
           attributes:
             type:
