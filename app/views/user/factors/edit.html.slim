@@ -13,6 +13,6 @@
 					.col-md-12.col-lg-12.col-sm-12.col-xs-12.sub_factors_container
 						= f.simple_fields_for :sub_factors do |sub_factors_builder|
 								= render :partial => "sub_factor_fields", :locals => {:f => sub_factors_builder}
-						.links
+						.links.othsys_insert_hoverable
 							= link_to_add_association "#{t :add_factors_text}", f, :sub_factors, :class => "js_add_sub_factors tall_button"
 			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => url_for()}
