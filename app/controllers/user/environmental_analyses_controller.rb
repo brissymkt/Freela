@@ -21,7 +21,7 @@ class User::EnvironmentalAnalysesController < UserController
 	end
 
 	def edit
-		@analysis = EnvironmentalAnalysis.find params[:id]
+		@analysis = current_user.environmental_analyses.find params[:id]
 	end
 
 	def destroy
@@ -34,7 +34,7 @@ class User::EnvironmentalAnalysesController < UserController
 	end
 
 	def update
-		@analysis = EnvironmentalAnalysis.find params[:id]
+		@analysis = current_user.environmental_analyses.find params[:id]
 		if @analysis.update environmental_analysis_params
 			@analysis.update_grade
 			redirect_to :back, :notice => "#{I18n.t :environmental_analysis_updated_successfully}"
@@ -45,7 +45,7 @@ class User::EnvironmentalAnalysesController < UserController
 	end
 
 	def chart
-
+		@analyses = current_user.environmental_analyses.all
 	end
 	private
 

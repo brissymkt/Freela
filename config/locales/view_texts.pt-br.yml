@@ -34,3 +34,4 @@ pt-BR:
   environmental_factor_updated_successfully: "Fator ambiental atualizado com sucesso."
   exclusion_message: "Tem certeza de que deseja excluir esta análise ambiental?"
   environmental_analysis_exclusion_success: "Análise Ambiental removida com sucesso."
+  chart_title: "Gráfico"
