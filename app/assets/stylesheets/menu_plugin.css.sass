@@ -1,38 +1,38 @@
-#left_menu .caption_container, #left_menu .icon_container
+#left-menu .caption-container, #left-menu .icon-container
     display: inline-block
 
-#left_menu .icon_container
+#left-menu .icon-container
     position: relative
     top: 3px
-#left_menu .caption.extra_menu
+#left-menu .caption.extra-menu
     position: relative
     top: -5px
     float: right
     display: block
-#left_menu
+#left-menu
     margin-top: 1px
     margin-left: -15px
-#left_menu
+#left-menu
     ul
         border-right: 1px solid $gray_color
-#left_menu
+#left-menu
     ul
-        li.left_menu_item
+        li.left-menu-item
             border-bottom: 1px solid $gray_color
             padding-bottom: 7px
-        li.left_menu_item.with_submenu
+        li.left-menu-item.with-submenu
             padding-bottom: 4px
-#left_menu .left_menu_item .nav li a
+#left-menu .left-menu-item .nav li a
     padding: 0px 0px
 /* We remove the margin, padding, and list style of UL and LI components */
-#left_menu ul, #left_menu ul li
+#left-menu ul, #left-menu ul li
     margin: 0
     padding: 0
     list-style: none
 
 
 /* We apply background color and border bottom white and width to 99% */
-#left_menu ul li
+#left-menu ul li
     background-color: white
     border-bottom: solid 1px  $gray_color
     width: 95%
@@ -40,19 +40,19 @@
 
 
 /* We apply the background hover color when user hover the mouse over of the li component */
-#left_menu ul li:hover
+#left-menu ul li:hover
     @include background(linear-gradient(#3888B6, #29B1AB) left repeat)
     color: white
     position: relative
 
 
 /* We apply the link style */
-#left_menu ul li a
+#left-menu ul li a
     color: black
     display: inline-block
     text-decoration: none
 
-#left_menu ul li a:hover
+#left-menu ul li a:hover
     color: white
     display: inline-block
     text-decoration: none
@@ -60,36 +60,36 @@
 
 /**** SECOND LEVEL MENU ****/
 /* We make the position to absolute for flyout menu and hidden the ul until the user hover the parent li item */
-#left_menu ul li ul
+#left-menu ul li ul
     position: absolute
     display: none
     z-index: 1
     border-right: 1px solid $gray_color
 
-#left_menu ul li ul li
+#left-menu ul li ul li
     border-bottom: 1px solid $gray_color
 
 
 /* When user has hovered the li item, we show the ul list by applying display: block, note:  150px is the individual menu width.  */
-#left_menu ul li:hover ul
+#left-menu ul li:hover ul
     left: 100%
     top: 0px
     display: block
 
 
 /* we apply different background color to 2nd level menu items*/
-#left_menu ul li ul li
+#left-menu ul li ul li
     background-color: white
     width: 120px
-    height: 39px
+    height: 41px
     padding: 10px
 
 /* We change the background color for the level 2 submenu when hovering the menu */
-#left_menu ul li:hover ul li:hover
+#left-menu ul li:hover ul li:hover
     @include background(linear-gradient(#3888B6, #29B1AB) left repeat)
 
 /* We style the color of level 2 links */
-#left_menu ul li ul li a
+#left-menu ul li ul li a
     color: #454444
     display: inline-block
     width: 120px
@@ -97,31 +97,31 @@
 
 /**** THIRD LEVEL MENU ****/
 /* We need to hide the 3rd menu, when hovering the first level menu */
-#left_menu ul li:hover ul li ul
+#left-menu ul li:hover ul li ul
     position: absolute
     display: none
 
 
 /* We show the third level menu only when they hover the second level menu parent */
-#left_menu ul li:hover ul li:hover ul
+#left-menu ul li:hover ul li:hover ul
     display: block
     left: 150px
     top: 0
 
 
 /* We change the background color for the level 3 submenu*/
-#left_menu ul li:hover ul li:hover ul li
+#left-menu ul li:hover ul li:hover ul li
     background: #86d3fa
 
 
 /* We change the background color for the level 3 submenu when hovering the menu */
 
-#left_menu ul li:hover ul li:hover ul li:hover
+#left-menu ul li:hover ul li:hover ul li:hover
     background: #358ebc
 
 
 /* We change the level 3 link color */
-#left_menu ul li:hover ul li:hover ul li a
+#left-menu ul li:hover ul li:hover ul li a
     color: #ffffff
 
 

@@ -20,7 +20,7 @@ class User::FactorsController < UserController
 	private
 
 	def factor_params
-		params.require(:factor).permit(:id, :sub_factors_attributes => [:id, :name, :importance, :situation, :_destroy])
+		params.require(:factor).permit(:id, :sub_factors_attributes => [:id, :name, :description, :importance, :situation, :_destroy])
 	end
 
 end

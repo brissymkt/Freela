@@ -1,0 +1,26 @@
+#left-menu
+  .left-menu-item
+    padding: 3px
+    .icon-container
+      width: 35px
+    .icon-container, .caption-container
+      display: inline-block
+    .icon
+      margin:
+        top: 5px
+        left: 10px
+      font-size: 20px
+      color: $menu-background
+    span.caption, a.caption
+      margin:
+        left: 10px
+        top: 5px
+      font-size: 14px
+    span.extra-menu
+      position: relative
+      top: -6px
+      float: right
+    a.caption:focus, a.caption:hover
+      @include background(linear-gradient($gradient_bottom, $gradient_top) left repeat)
+    .icon.js-white-color, .caption.js-white-color
+      color: white

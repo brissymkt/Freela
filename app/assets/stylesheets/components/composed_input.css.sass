@@ -1,0 +1,66 @@
+.othsys-input-hoverable
+  margin-bottom: 20px
+  &:hover
+    font-family: "Myriad Pro Regular"
+    .bordered-div
+      border: 3px solid $gradient_top
+    .grade-field, .js-slider-caption
+      color: $gradient_top
+  .bordered-div.two-sliders
+    width: 48%
+    margin-right: 19px
+  .bordered-div
+    border: solid 1px $gray_color 
+    position: relative
+    left: 15px
+    font-size: 20px
+    input
+      font-size: 20px
+    .remove-button
+      color: $gray_color
+      &:hover
+        color: red
+    .with-text
+      .text-inputs-container
+        margin-top: 20px
+        margin-bottom: 20px
+        input, p.factor-description-display
+          display: none
+        .thin-box
+          margin-bottom: -10px
+        .buttons-list
+          margin-top: 4px
+        .my-button
+          display: inline
+          margin-right: 5px
+          float: left
+          clear: right
+        .edit-button
+          color: $gray_color
+          &:hover
+            color: $gradient_bottom
+        .contract-button
+          color: $gray_color
+          &:hover
+            color: $gradient_bottom
+      .text-inputs-container.expanded
+        p.factor-description-display
+          display: block  
+      .text-inputs-container.edit
+        input.js-name-input
+          display: block
+      .text-inputs-container.edit.expanded
+        input.js-description-input
+          display: block
+
+    .without-text
+      padding-top: 20px
+
+      input
+        display: block
+      .buttons-list
+        .my-button
+          margin-right: 5px
+          float: right
+          clear: both
+

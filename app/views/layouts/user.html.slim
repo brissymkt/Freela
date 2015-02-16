@@ -6,24 +6,24 @@ html
 	  = stylesheet_link_tag    'user_init', media: 'all', 'data-turbolinks-track' => true 
 	  = javascript_include_tag 'application', 'data-turbolinks-track' => true 
 	  = csrf_meta_tags 
-	body
-		.container.container_full_size
-			.row.header_container
+	body class="#{params[:controller].gsub(/_|\//, "-")} #{params[:action]}-action"
+		.container.container-full-size
+			.row.header-container
 				.col-md-12.col-sm-12.col-lg-12.col-xs-12
-					.row.row_header
+					.row.row-header
 						= render :partial => "layouts/user_partials/header"
 			
-			.row.body_container
+			.row.body-container
 				.col-md-2.col-sm-12.col-lg-2.col-xs-12
 					= render :partial => "layouts/user_partials/menu"
 				.col-md-10.col-sm-12.col-lg-10.col-xs-12
 					
 					= yield
 
-			.row.footer_container
+			.row.footer-container
 				.col-md-10.col-lg-10.col-sm-12.col-xs-12.col-md-offset-2.col-lg-offset-2
 					- if flash[:error] or notice
-						.row.error_container.message_display
+						.row.error-container.message-display
 							.col-md-12.col-sm-12.col-lg-12.col-xs-12
 								- if flash[:error]
 									.alert.alert-danger

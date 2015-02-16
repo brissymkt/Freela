@@ -1,21 +1,21 @@
-#left_menu
+#left-menu
 	ul
 		= link_to new_user_environmental_analysis_path do
-			li.left_menu_item
-				.icon_container
+			li.left-menu-item
+				.icon-container
 					span.fa.fa-file-o.icon
-				.caption_container	
+				.caption-container	
 					span.caption
 						= "#{t :menu_new_text}" 
 		
 		= link_to user_environmental_analyses_path do
-			li.left_menu_item.with_submenu
-				.icon_container
+			li.left-menu-item.with-submenu
+				.icon-container
 					span.fa.fa-clock-o.icon
-				.caption_container
+				.caption-container
 					span.caption
 						= "#{t :menu_history_text}"
-					span.caption.extra_menu
+					span.caption.extra-menu
 						| >
 				ul.nav
 					-5.times 
@@ -24,17 +24,17 @@
 		
 
 		= link_to chart_user_environmental_analyses_path do
-			li.left_menu_item
-				.icon_container
+			li.left-menu-item
+				.icon-container
 					span.fa.fa-bar-chart.icon
-				.caption_container
+				.caption-container
 					span.caption
-					= "#{t :menu_chart_text}" 
+						= "#{t :menu_chart_text}" 
 		
 		= link_to destroy_user_session_path, :method => :delete do
-			li.left_menu_item
-				.icon_container
+			li.left-menu-item
+				.icon-container
 					span.fa.fa-power-off.icon
-				.caption_container
+				.caption-container
 					span.caption
-					= "#{t :logout_text_message}" 
+						= "#{t :logout_text_message}" 

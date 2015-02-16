@@ -1,18 +1,18 @@
 = content_for :analysis_title
 	= "#{t :environmental_analysis_title}"
 
-.row.form_header
+.row.form-header
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
 		= render :partial => "form_header", :locals => {:environmental_analysis => @environmental_analysis, :factor => @factor}
-.row.form_container
+.row.form-container
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
 		= simple_form_for([:user, @environmental_analysis, @factor], :html => {:class => "horizontal-form"}) do |f|
-			.fields_container
+			.fields-container
 				= f.hidden_field :id
-				.row.field_container
-					.col-md-12.col-lg-12.col-sm-12.col-xs-12.sub_factors_container
+				.row.field-container
+					.col-md-12.col-lg-12.col-sm-12.col-xs-12.sub-factors-container
 						= f.simple_fields_for :sub_factors do |sub_factors_builder|
 								= render :partial => "sub_factor_fields", :locals => {:f => sub_factors_builder}
-						.links.othsys_insert_hoverable
-							= link_to_add_association "#{t :add_factors_text}", f, :sub_factors, :class => "js_add_sub_factors tall_button"
+						.links.othsys-insert-hoverable
+							= link_to_add_association "#{t :add_factors_text}", f, :sub_factors
 			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => url_for()}

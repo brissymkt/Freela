@@ -1,39 +1,39 @@
-.nested-fields.sub_factor_container.row.othsys_input_hoverable
-	.col-md-6.col-xs-6.col-lg-6.col-sm-6.sub_factor_texts_container.bordered_div
-		.row class="#{f.object.persisted? ? 'with_text': 'without_text'}"
-			.sub_factor_text_inputs_container 
-				.col-md-8.col-lg-8.col-sm-8.col-xs-8 class="#{f.object.persisted? ? "thin_box" : "only_inputs_box"}"
+.nested-fields.sub-factor-container.row.othsys-input-hoverable
+	.col-md-6.col-xs-6.col-lg-6.col-sm-6.bordered-div
+		.row class="#{f.object.persisted? ? 'with-text': 'without-text'}"
+			.text-inputs-container 
+				.col-md-8.col-lg-8.col-sm-8.col-xs-8 class="#{f.object.persisted? ? "thin-box" : "only-inputs-box"}"
 					= f.hidden_field :id
 					- if f.object.persisted?
 						p ="#{f.object.name}"
-					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js_name_input"}
-				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right_offset
-					.buttons_list
+					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js-name-input"}
+				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right-offset
+					.buttons-list
 						- if f.object.persisted?
-							span.fa.fa-edit.edit_button.my_button
-						= link_to_remove_association "", f, :class => "fa fa-remove remove_button my_button"
-				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right_offset
+							span.fa.fa-edit.edit-button.my-button
+						= link_to_remove_association "", f, :class => "fa fa-remove remove-button my-button"
+				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right-offset
 					- if f.object.persisted?
-						span.fa.fa-chevron-down.contract_button.my_button
-				.col-md-12.col-lg-12.col-sm-12.col-sm-12.description_container
+						span.fa.fa-chevron-down.contract-button.my-button
+				.col-md-12.col-lg-12.col-sm-12.col-sm-12.description-container
 					- if f.object.persisted?
-						p.factor_description_display
+						p.factor-description-display
 							b
 								= "#{t :description_placeholder}: "
 							= f.object.description
-					= f.input :description, :placeholder => "#{t :description_placeholder}", :label => false, :as => :string, :input_html => {:class => "js_description_input"}
+					= f.input :description, :placeholder => "#{t :description_placeholder}", :label => false, :as => :string, :input_html => {:class => "js-description-input"}
 				
-	.col-md-3.col-xs-3.col-lg-3.col-sm-3
-		.importance_container
-			= f.hidden_field :importance, :class => "js_importance_input"
-			.js_importance_slider
-			.importance_caption
-				h3.js_slider_caption
-	.col-md-3.col-xs-3.col-lg-3.col-sm-3
-		.situation_container
-			= f.hidden_field :situation, :class => "js_situation_input"
-			.js_situation_slider
-			.situation_caption
-				h3.js_slider_caption
+	.col-md-3.col-xs-3.col-lg-3.col-sm-3.slider-container
+		.importance-container
+			= f.hidden_field :importance, :class => "js-importance-input"
+			.js-importance-slider
+			.importance-caption.slider-caption
+				h3.js-slider-caption
+	.col-md-3.col-xs-3.col-lg-3.col-sm-3.slider-container
+		.situation-container
+			= f.hidden_field :situation, :class => "js-situation-input"
+			.js-situation-slider
+			.situation-caption.slider-caption
+				h3.js-slider-caption
 	.clearfix
 	
