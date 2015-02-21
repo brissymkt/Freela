@@ -5,7 +5,7 @@ en:
   menu_chart_text: "Chart"
   actions_text: "Actions"
   login_message: "Sign in"
-  change_language_message: "View in Portuguese"
+  change_language_message: "Ver em Português"
   logout_text_message: "Logout"
   recover_password_title: "Recover my password"
   sign_up_title: "Sign up"
@@ -35,3 +35,5 @@ en:
   exclusion_message: "Are you sure that you want to delete this environmental analysis?"
   environmental_analysis_exclusion_success: "Environmental Analysis removed successfully"
   chart_title: "Chart"
+  back_caption: 'Back'
+  remove_factor_dialog: " Are you sure that you want to delete this factor and all related subfactors?"

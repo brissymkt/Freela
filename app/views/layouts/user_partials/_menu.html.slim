@@ -38,3 +38,8 @@
 				.caption-container
 					span.caption
 						= "#{t :logout_text_message}" 
+p.change-language
+	-	if params[:locale] == "en"
+		= link_to "#{t :change_language_message}", url_for(:locale => "pt-BR")
+	- else
+		= link_to "#{t :change_language_message}", url_for(:locale => "en")

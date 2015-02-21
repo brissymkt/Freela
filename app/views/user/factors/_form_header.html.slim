@@ -1,8 +1,10 @@
 .row.form-title-container
-	.col-md-6.col-lg-6.col-sm-6.col-xs-6
+	.col-md-1.col-lg-1.col-sm-1.col-xs-1
 		.factor-name-container
-			h2.arrow
-				= link_to "", edit_user_environmental_analysis_path(environmental_analysis.id), :class => "fa fa-arrow-left"
+			abbr title='#{t :back_caption}'
+				h2.arrow
+					= link_to "", edit_user_environmental_analysis_path(environmental_analysis.id), :class => "fa fa-arrow-left"
+	.col-md-5.col-lg-5.col-sm-5.col-xs-5
 			h2.form-title.aligned-to-left
 				= factor.name
 	.col-md-3.col-lg-3.col-sm-3.col-xs-3

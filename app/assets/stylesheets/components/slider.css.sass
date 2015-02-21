@@ -1,10 +1,14 @@
 .slider-container
-  .js-slider, .js-importance-slider, .js-situation-slider
+  .js-slider, .js-importance-slider, .js-situation-slider, .js-sub-factor-importance-slider
     position: relative
     top: 30px
-    @include background(linear-gradient(to right, #FF0000, #FFFF00,#00FF00) no-repeat)
     height: 6px
+    left: 35px
+  .js-importance-slider, .js-sub-factor-importance-slider
+    @include background(linear-gradient(to right, lighten($gradient_top, 80%), $gradient_top) no-repeat)
+  .js-situation-slider
     left: 10px
+    @include background(linear-gradient(to right, #FF0000, #FFFF00,#00FF00) no-repeat)
   .slider-caption
     text-align: center
   h3.js-slider-caption
@@ -12,8 +16,8 @@
     color: $gray_color
     position: relative
     top: 20px
-    left: 5px
+    left: 30px
   span.ui-slider-handle.ui-state-default.ui-corner-all
-    height: 6px  
-    width: 20px
-    top: -1px
+    height: 20px  
+    width: 10px
+    top: -8px

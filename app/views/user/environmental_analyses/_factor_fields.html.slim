@@ -2,19 +2,19 @@
 	.col-md-7.col-xs-7.col-lg-7.col-sm-7.bordered-div 
 		.row class="#{f.object.persisted? ? 'with-text': 'without-text'}"
 			.text-inputs-container 
-				.col-md-8.col-lg-8.col-sm-8.col-xs-8 class="#{f.object.persisted? ? "thin-box" : "only-inputs-box"}"
+				.col-md-7.col-lg-8.col-sm-7.col-xs-7 class="#{f.object.persisted? ? "thin-box" : "only-inputs-box"}"
 					= f.hidden_field :id
 					- if f.object.persisted?
-						= link_to "#{f.object.name}", edit_user_environmental_analysis_factor_path(f.object.environmental_analysis_id, f.object.id), :class => "factor-name-display"
+						= link_to "#{f.object.name}", edit_user_environmental_analysis_factor_path(f.object.environmental_analysis_id, f.object.id), :class => "factor-name-display js-link-to-factor"
 					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js-name-input"}
-				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right-offset
+				.col-md-3.col-lg-2.col-sm-3.col-xs-3.right-offset
 					.buttons-list
 						- if f.object.persisted?
-							span.fa.fa-edit.edit-button.my-button
-						= link_to_remove_association "", f, :class => "fa fa-remove remove-button my-button"
+							a.fa.fa-edit.edit-button.my-button href='javascript:void(0);'
+						= link_to_remove_association "", f, :class => "fa fa-remove remove-button my-button", 'data-confirm' => "#{t :remove_factor_dialog}"
 				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right-offset
 					- if f.object.persisted?
-						span.fa.fa-chevron-down.contract-button.my-button
+						a.fa.fa-chevron-down.contract-button.my-button href='javascript:void(0);'
 				.col-md-12.col-lg-12.col-sm-12.col-sm-12.description-container
 					- if f.object.persisted?
 						p.factor-description-display
@@ -26,7 +26,7 @@
 	.col-md-3.col-xs-3.col-lg-3.col-sm-3.slider-container
 		.importance-container
 			= f.hidden_field :importance, :class => "js-importance-input"
-			.js-slider
+			.js-slider.js-importance-slider
 			.importance-caption.slider-caption
 				h3.js-slider-caption
 	.col-md-2.col-xs-2.col-lg-2.col-sm-2

@@ -44,6 +44,11 @@ pt-BR:
             name: 
               too_short: "Nome muito curto. Deve ter %{count} caracteres no mínimo."
               blank: "Não pode ficar em branco."
+        sub_factor:
+          attributes:
+            name:
+              blank: "Não pode ficar em branco."
+              too_short: "Nome muito curto. Deve ter %{count} caracteres no mínimo."
     models:
       user: "Usuário"
     attributes:

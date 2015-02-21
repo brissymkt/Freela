@@ -13,6 +13,11 @@ $(document).ready(function(){
 
 	updateSliders();
 
+	$('.factors-container').on('click', '.row.with-text', function(){
+		console.log('link to factors page');
+	});
+
+
 	//Function to add sliders. If slider exists, it will be updated. Otherwise, a slider will be greated
 	$('.factors-container').on('cocoon:after-insert', function(e, insertedElement){
 		$(insertedElement).find('.js-slider').slider({ 

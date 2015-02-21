@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 20150213232327) do
 
   create_table "environmental_analyses", force: :cascade do |t|
     t.integer  "user_id",                                                         null: false
-    t.date     "year_and_month",                           default: '2015-02-09'
+    t.date     "year_and_month",                           default: '2015-02-21'
     t.decimal  "grade",            precision: 3, scale: 1, default: 0.0
     t.datetime "created_at",                                                      null: false
     t.datetime "updated_at",                                                      null: false
-    t.string   "type_of_analysis",                         default: "2"
+    t.string   "type_of_analysis",                         default: "0"
   end
 
   create_table "factors", force: :cascade do |t|
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 20150213232327) do
     t.integer  "factor_id",                                         null: false
     t.string   "name",                                              null: false
     t.text     "description"
-    t.integer  "importance",                          default: 1,   null: false
-    t.integer  "situation",                           default: 1,   null: false
+    t.integer  "importance",                          default: 5,   null: false
+    t.integer  "situation",                           default: 5,   null: false
     t.decimal  "grade",       precision: 3, scale: 1, default: 1.0, null: false
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false

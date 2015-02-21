@@ -1,6 +1,8 @@
 = content_for :analysis_title
 	= "#{t :environmental_analysis_title}"
 
+= content_for :analysis_title_header
+	= l @environmental_analysis.year_and_month
 .row.form-header
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
 		= render :partial => "form_header", :locals => {:environmental_analysis => @environmental_analysis, :factor => @factor}

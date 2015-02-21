@@ -7,12 +7,14 @@ html
 	  = javascript_include_tag 'application', 'data-turbolinks-track' => true 
 	  = csrf_meta_tags 
 	body class="#{params[:controller].gsub(/_|\//, "-")} #{params[:action]}-action"
+		
+		.header-container
+			.container
+				.row
+					.col-md-12.col-sm-12.col-lg-12.col-xs-12
+						.row
+							= render :partial => "layouts/user_partials/header"
 		.container.container-full-size
-			.row.header-container
-				.col-md-12.col-sm-12.col-lg-12.col-xs-12
-					.row.row-header
-						= render :partial => "layouts/user_partials/header"
-			
 			.row.body-container
 				.col-md-2.col-sm-12.col-lg-2.col-xs-12
 					= render :partial => "layouts/user_partials/menu"
@@ -21,16 +23,6 @@ html
 					= yield
 
 			.row.footer-container
-				.col-md-10.col-lg-10.col-sm-12.col-xs-12.col-md-offset-2.col-lg-offset-2
-					- if flash[:error] or notice
-						.row.error-container.message-display
-							.col-md-12.col-sm-12.col-lg-12.col-xs-12
-								- if flash[:error]
-									.alert.alert-danger
-										p = flash[:error]
-								- if notice
-									.alert.alert-success
-										p = notice
 				.col-md-12.col-lg-12.col-sm-12.col-xs-12
 					= render :partial => "layouts/user_partials/footer"
 					= yield :custom_javascripts
