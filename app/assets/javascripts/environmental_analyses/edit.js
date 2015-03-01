@@ -21,7 +21,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$('.factors-container input').change(function() {
+	$('.factors-container input').keyup(function() {
 		$(this).parents('.othsys-input-hoverable').find('.placebo-button').addClass('js-input-touched');
 	});
 
@@ -30,14 +30,18 @@ $(document).ready(function(){
 		$(this).removeClass('js-input-touched');
 		$(this).parents('.text-inputs-container').removeClass('edit');
 		$(this).parents('.text-inputs-container').find('.factor-name-display').html(newName);
+		if ($(this).parents('.text-inputs-container').find('.js-description-input').val() != '') {
+			$(this).parents('.text-inputs-container').find('.factor-description').html($(this).parents('.text-inputs-container').find('.js-description-input').val());
+		}
 	});
 
 	$('.factors-container').on('click', '.placebo-button', function() {
 		var temporaryName = $(this).parents('.text-inputs-container').find('.js-name-input').val();
 		$(this).addClass('submitted');
-		$(this).parents('.text-inputs-container').find('input').addClass('hidden');
+		$(this).parents('.text-inputs-container').find('input, .edit-button').addClass('hidden');
 		$(this).parents('.text-inputs-container').find('.only-inputs-box').addClass('compacted-box');
 		$(this).parents('.text-inputs-container').find('.factor-name-display').html(temporaryName);
+
 	});
 	//Function to add sliders. If slider exists, it will be updated. Otherwise, a slider will be greated
 	$('.factors-container').on('cocoon:after-insert', function(e, insertedElement){

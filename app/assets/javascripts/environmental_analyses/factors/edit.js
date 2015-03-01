@@ -90,16 +90,18 @@ $(document).ready(function(){
 
 	$('.sub-factors-container .placebo-button').click(function() {
 		var newName = $(this).parents('.text-inputs-container').find('.js-name-input').val();
-		console.log(newName);
 		$(this).removeClass('js-input-touched');
 		$(this).parents('.text-inputs-container').removeClass('edit');
 		$(this).parents('.text-inputs-container').find('.sub-factor-name-display').html(newName);
+		if ($(this).parents('.text-inputs-container').find('.js-description-input').val() != '') {
+			$(this).parents('.text-inputs-container').find('.sub-factor-description').html($(this).parents('.text-inputs-container').find('.js-description-input').val());
+		}
 	});
 
 	$('.sub-factors-container').on('click', '.placebo-button', function() {
 		var temporaryName = $(this).parents('.text-inputs-container').find('.js-name-input').val();
 		$(this).addClass('submitted');
-		$(this).parents('.text-inputs-container').find('input').addClass('hidden');
+		$(this).parents('.text-inputs-container').find('input, .edit-button').addClass('hidden');
 		$(this).parents('.text-inputs-container').find('.only-inputs-box').addClass('compacted-box');
 		$(this).parents('.text-inputs-container').find('.sub-factor-name-display').html(temporaryName);
 	});
