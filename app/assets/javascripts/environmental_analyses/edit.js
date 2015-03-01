@@ -14,7 +14,7 @@ $(document).ready(function(){
 	updateSliders();
 
 	$('.factors-container').on('click', '.row.with-text', function(){
-		console.log('link to factors page');
+		window.location.href = $(this).find('.js-link-to-factor').attr('href');
 	});
 
 
@@ -52,6 +52,7 @@ $(document).ready(function(){
 			$(this).addClass('fa-chevron-down');
 			$(this).parents('.text-inputs-container').removeClass('expanded');
 		}
+		return false;
 	});
 
 	$('.factors-container').on('click', '.edit-button', function() {
@@ -60,5 +61,6 @@ $(document).ready(function(){
 		} else {
 			$(this).parents('.text-inputs-container').addClass('edit');
 		}
+		return false;
 	});
 });
