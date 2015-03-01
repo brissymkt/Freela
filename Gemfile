@@ -20,6 +20,7 @@ gem 'factory_girl'
 gem 'responders', '~> 2.0'
 gem 'bourbon'
 gem 'cocoon'
+gem 'codus'
 
 group :development, :test do
 	gem 'capybara'
