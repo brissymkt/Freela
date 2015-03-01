@@ -12,6 +12,7 @@
 				.fields_container
 					.row.field_container
 						.col-md-12.col-lg-12.col-sm-12.col-xs-12
-							= f.input :year_and_month, :order => [:day, :month, :year]
+							= f.input :year_and_month, :as => :string, :input_html => {'data-field' => 'date'}
+							.js-datepicker data-title="#{I18n.t(:calendar_title)}" data-clear-text="#{I18n.t(:clear_button_text)}" data-pick-text="#{I18n.t(:pick_button_text)}"
 							= f.input :type_of_analysis, :collection => environmental_types_translated, :as  => :radio_buttons
 				= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => user_environmental_analyses_path}

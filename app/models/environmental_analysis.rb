@@ -41,7 +41,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 
 
 	def year_and_month_in_the_future?
-		errors.add(:year_and_month, I18n.t('activerecord.errors.date_in_the_future')) if self.year_and_month.future?
+		errors.add(:year_and_month, I18n.t('activerecord.errors.date_in_the_future')) if self.year_and_month and self.year_and_month.future?
 	end
 
 	def set_year_and_date_to_beginning_of_month

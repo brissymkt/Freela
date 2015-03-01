@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20150213232327) do
   enable_extension "plpgsql"
 
   create_table "environmental_analyses", force: :cascade do |t|
-    t.integer  "user_id",                                                         null: false
-    t.date     "year_and_month",                           default: '2015-02-21'
+    t.integer  "user_id",                                                null: false
+    t.date     "year_and_month"
     t.decimal  "grade",            precision: 3, scale: 1, default: 0.0
-    t.datetime "created_at",                                                      null: false
-    t.datetime "updated_at",                                                      null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
     t.string   "type_of_analysis",                         default: "0"
   end
 

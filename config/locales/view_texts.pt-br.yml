@@ -42,3 +42,6 @@ pt-BR:
   changes_alert_stay: "Ficar na página"
   alert_yes: "Sim"
   alert_no: "Não"
+  calendar_title: "Escolha uma data"
+  clear_button_text: "Cancelar"
+  pick_button_text: "Escolher"

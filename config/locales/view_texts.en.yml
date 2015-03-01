@@ -42,3 +42,6 @@ en:
   changes_alert_stay: "Stay in this page"
   alert_yes: "Yes"
   alert_no: "No"
+  calendar_title: "Pick a date"
+  clear_button_text: "Cancel"
+  pick_button_text: "Pick"
