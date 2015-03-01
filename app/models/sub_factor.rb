@@ -1,4 +1,5 @@
 class SubFactor < ActiveRecord::Base
+	default_scope {order('id ASC')}
 	belongs_to :factor
 	validates :factor_id, :presence => true
 	validates :name, :presence => true, :length => {:minimum => 3}

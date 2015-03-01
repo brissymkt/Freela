@@ -1,4 +1,5 @@
 class Factor < ActiveRecord::Base
+	default_scope {order('id ASC')}
 	belongs_to :environmental_analysis
 	has_many :sub_factors
 	accepts_nested_attributes_for :sub_factors, :allow_destroy => true, :reject_if => lambda{ |attributes| attributes[:name].blank?}
