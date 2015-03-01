@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	// Create slider input to existing factors
-	$('js-sub-factor-importance-slider').slider({
+	$('.js-sub-factor-importance-slider').slider({
 		value: $(this).parents('.importance-container').find('.js-importance-input').val(),
 		min: 0,
 		max: 10,
@@ -26,7 +26,7 @@ $(document).ready(function(){
 
 	//Function to add sliders. If slider exists, it will be updated. Otherwise, a slider will be greated
 	$('.sub-factors-container').on('cocoon:after-insert', function(e, insertedElement){
-		$(insertedElement).find('.js-sub-factor-importance-slider').slider({ 
+		$(insertedElement).find('.js-importance-slider').slider({ 
 			value: $(this).parents('.importance-container').find('.js-importance-input').val(),
 			min: 0,
 			max: 10,
