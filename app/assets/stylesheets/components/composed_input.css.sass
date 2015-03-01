@@ -3,23 +3,35 @@
   &:hover
     font-family: "Myriad Pro Regular"
     .bordered-div
-      border: 3px solid $gradient_top
+      border: 3px solid $gradient-top
     .grade-field, .js-slider-caption
-      color: $gradient_top
+      color: $gradient-top
   .bordered-div.two-sliders
     width: 48%
     margin-right: 19px
   .bordered-div
-    border: solid 1px $gray_color 
+    border: solid 1px $gray-color 
     position: relative
     left: 15px
     font-size: 20px
+    .buttons-list
+      padding-left: 0px
+      margin-top: 4px
+      list-style-type: none
+      li
+        display: inline
     input
       font-size: 20px
     .remove-button
-      color: $gray_color
+      color: $gray-color
       &:hover
         color: red
+    .placebo-button.submitted
+      display: none
+    .placebo-button
+      color: $gray-color
+      &:hover
+        color: $green-color
     .with-text
       .text-inputs-container
         margin-top: 20px
@@ -28,21 +40,23 @@
           display: none
         .thin-box
           margin-bottom: -10px
-        .buttons-list
-          margin-top: 4px
         .my-button
           display: inline
           margin-right: 5px
           float: left
           clear: right
         .edit-button
-          color: $gray_color
+          color: $gray-color
           &:hover
-            color: $gradient_bottom
+            color: $gradient-bottom
         .contract-button
-          color: $gray_color
+          color: $gray-color
           &:hover
-            color: $gradient_bottom
+            color: $gradient-bottom
+        .placebo-button
+          display: none
+        .placebo-button.js-input-touched
+          display: inline-block
       .text-inputs-container.expanded
         p.factor-description-display
           display: block  
@@ -55,12 +69,14 @@
 
     .without-text
       padding-top: 20px
-
+      .only-inputs-box.compacted-box
+        margin-bottom: -10px
       input
         display: block
       .buttons-list
+        li
+          display: inline
+        
         .my-button
           margin-right: 5px
-          float: right
-          clear: both
-
+          float: left
