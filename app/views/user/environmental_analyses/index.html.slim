@@ -16,4 +16,4 @@
 						td = analysis.type_to_human
 						td = analysis.grade
 						td 
-							= link_to "#{t :destroy_environmental_analysis_link_text}", user_environmental_analysis_path(analysis.id), :method => :delete, 'data-confirm' => "#{t :exclusion_message}", :class => 'exclusion-button'
+							= link_to "#{t :destroy_environmental_analysis_link_text}", delete_user_environmental_analysis_path(analysis.id), 'data-message' => "#{t :exclusion_message}", :class => 'js-exclusion-button'

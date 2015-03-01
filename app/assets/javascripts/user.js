@@ -18,4 +18,14 @@ $(document).ready(function() {
 	$('.js-selected').mouseout(function(){
 		$(this).parents('.form-button').removeClass('selected');
 	});
+
+	$('.js-exclusion-button').click(function(element) {
+		url = element.target.href;
+		bootbox.confirm($(this).attr('data-message'), function(result) {
+			if (result) {
+				window.location.href = url;
+			}
+		});
+		return false;
+	});
 });
