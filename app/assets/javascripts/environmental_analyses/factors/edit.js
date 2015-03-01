@@ -26,7 +26,7 @@ $(document).ready(function(){
 
 	//Function to add sliders. If slider exists, it will be updated. Otherwise, a slider will be greated
 	$('.sub-factors-container').on('cocoon:after-insert', function(e, insertedElement){
-		$(insertedElement).find('.js-importance-slider').slider({ 
+		$(insertedElement).find('.js-sub-factor-importance-slider').slider({ 
 			value: $(this).parents('.importance-container').find('.js-importance-input').val(),
 			min: 0,
 			max: 10,
@@ -82,5 +82,25 @@ $(document).ready(function(){
 		} else {
 			$(this).parents('.text-inputs-container').addClass('edit');
 		}
+	});
+
+	$('.sub-factors-container input').keyup(function() {
+		$(this).parents('.othsys-input-hoverable').find('.placebo-button').addClass('js-input-touched');
+	});
+
+	$('.sub-factors-container .placebo-button').click(function() {
+		var newName = $(this).parents('.text-inputs-container').find('.js-name-input').val();
+		console.log(newName);
+		$(this).removeClass('js-input-touched');
+		$(this).parents('.text-inputs-container').removeClass('edit');
+		$(this).parents('.text-inputs-container').find('.sub-factor-name-display').html(newName);
+	});
+
+	$('.sub-factors-container').on('click', '.placebo-button', function() {
+		var temporaryName = $(this).parents('.text-inputs-container').find('.js-name-input').val();
+		$(this).addClass('submitted');
+		$(this).parents('.text-inputs-container').find('input').addClass('hidden');
+		$(this).parents('.text-inputs-container').find('.only-inputs-box').addClass('compacted-box');
+		$(this).parents('.text-inputs-container').find('.sub-factor-name-display').html(temporaryName);
 	});
 });

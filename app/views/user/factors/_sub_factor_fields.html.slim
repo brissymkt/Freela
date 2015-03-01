@@ -4,14 +4,17 @@
 			.text-inputs-container 
 				.col-md-7.col-lg-8.col-sm-8.col-xs-8 class="#{f.object.persisted? ? "thin-box" : "only-inputs-box"}"
 					= f.hidden_field :id
-					- if f.object.persisted?
-						p ="#{f.object.name}"
+					p.sub-factor-name-display ="#{f.object ? f.object.name : ''}"
 					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js-name-input"}
 				.col-md-3.col-lg-2.col-sm-2.col-xs-2.right-offset
-					.buttons-list
+					ul.buttons-list
 						- if f.object.persisted?
-							a.fa.fa-edit.edit-button.my-button href='javascript:void(0);'
-						= link_to_remove_association "", f, :class => "fa fa-remove remove-button my-button"
+							li
+								a.fa.fa-edit.edit-button.my-button href='javascript:void(0);'
+						li
+							a.fa.fa-check-square-o.my-button.placebo-button href="javascript:void(0)"
+						li
+							= link_to_remove_association "", f, :class => "fa fa-remove remove-button my-button"
 				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right-offset
 					- if f.object.persisted?
 						a.fa.fa-chevron-down.contract-button.my-button href='javascript:void(0);'
