@@ -27,3 +27,11 @@ html
 					= render :partial => "layouts/user_partials/footer"
 					= yield :custom_javascripts
 					= load_yojs(:app_name => 'OthsysUser')
+					- if flash[:error] or notice
+						.alerts-container
+							- if flash[:error]
+								.othsys-error-message
+									= flash[:error]
+							- if notice
+								.othsys-success-message
+									= notice

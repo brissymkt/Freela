@@ -9,11 +9,3 @@
 			= link_to return_path do  
 				= image_tag('Descartar.png', :class => 'js-normal')
 				= image_tag('Descartar_s.png', :class => 'js-selected')
-		- if flash[:error] or notice
-			li
-				- if flash[:error]
-					.alert.alert-danger
-						p = flash[:error]
-				- if notice
-					.alert.alert-success
-						p = notice

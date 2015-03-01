@@ -27,7 +27,7 @@ pt-BR:
   destroy_environmental_analysis_link_text: "Excluir"
   name_placeholder: "Nome"
   description_placeholder: "Descrição"
-  error_message_form: "Não foi possível processar seu formulário. Confira os campos acima e tente novamente. "
+  error_message_form: "Não foi possível processar seu formulário. Confira os campos fornecidos e tente novamente. "
   environmental_factor_title: "Fator Ambiental"
   environmental_factor_situation_title: "situação"
   environmental_factor_importance_title: "importância"

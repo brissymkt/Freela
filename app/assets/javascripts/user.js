@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	toastr.options.timeOut = 10000;
+	toastr.options.progressBar = true;
 	$('.button-submit').click(function() {
 		$(this).parents("form").submit();
 	});
@@ -40,33 +42,10 @@ $(document).ready(function() {
 		});
 		return false;
 	});
-	alertForChanges = false;
-
-	$('.can-alert-changes').change(function(){
-		alertForChanges = true;
+	$('.othsys-error-message').each(function() {
+		toastr.error($(this).html());
 	});
-
-	$('.changes-observer').click(function(element){
-		if (alertForChanges) {
-			url = element.target.href;
-			bootbox.confirm({
-				title: $('title').html(),
-				message: $(this).attr('data-message'),
-				buttons: {
-					cancel: {
-						label: $(this).attr('data-option-no')
-					},
-					confirm: {
-						label: $(this).attr('data-option-yes')
-					}
-				},
-				callback: function(result) {
-					if (result) {
-						window.location.href = url;
-					}
-				}
-			});
-			return false;
-		}
+	$('.othsys-success-message').each(function() {
+		toastr.success($(this).html());
 	});
 });
