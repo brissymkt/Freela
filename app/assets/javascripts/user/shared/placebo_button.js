@@ -12,10 +12,12 @@ yojs.define('OthsysUser.user.placeboButton', function(containerName){
 
 	$('.'+containerName+'-container').on('click', '.placebo-button', function() {
 		var temporaryName = $(this).parents('.text-inputs-container').find('.js-name-input').val();
-		$(this).addClass('submitted');
-		$(this).parents('.text-inputs-container').find('input, .edit-button').addClass('hidden');
-		$(this).parents('.text-inputs-container').find('.only-inputs-box').addClass('compacted-box');
-		$(this).parents('.text-inputs-container').find('.name-display').html(temporaryName);
+		if (temporaryName != ''){
+			$(this).addClass('submitted');
+			$(this).parents('.text-inputs-container').find('input, .edit-button').addClass('hidden');
+			$(this).parents('.text-inputs-container').find('.only-inputs-box').addClass('compacted-box');
+			$(this).parents('.text-inputs-container').find('.name-display').html(temporaryName);
+		}
 		return false;
 	});
 	
