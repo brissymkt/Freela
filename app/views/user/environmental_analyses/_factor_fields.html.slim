@@ -8,7 +8,7 @@
 						= link_to "#{f.object.name}", edit_user_environmental_analysis_factor_path(f.object.environmental_analysis_id, f.object.id), :class => "name-display js-link-to-factor"
 					- else
 						a.name-display href="javascript:void(0);"
-					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js-name-input"}
+					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js-name-input can-alert-changes"}
 				.col-md-4.col-lg-3.col-sm-4.col-xs-4.right-offset
 					ul.buttons-list
 						- if f.object.persisted?
@@ -27,7 +27,7 @@
 							b
 								= "#{t :description_placeholder}: "
 							span.description-display = f.object.description
-					= f.input :description, :placeholder => "#{t :description_placeholder}", :label => false, :as => :string, :input_html => {:class => "js-description-input"}
+					= f.input :description, :placeholder => "#{t :description_placeholder}", :label => false, :as => :string, :input_html => {:class => "js-description-input can-alert-changes"}
 				
 	.col-md-3.col-xs-3.col-lg-3.col-sm-3.slider-container
 		.importance-container

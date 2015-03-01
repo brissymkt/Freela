@@ -5,7 +5,7 @@
 				.col-md-6.col-lg-7.col-sm-7.col-xs-7 class="#{f.object.persisted? ? "thin-box" : "only-inputs-box"}"
 					= f.hidden_field :id
 					p.name-display ="#{f.object ? f.object.name : ''}"
-					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js-name-input"}
+					= f.input :name, :placeholder => "#{t :name_placeholder}", :label => false, :input_html => {:class => "js-name-input can-alert-changes"}
 				.col-md-4.col-lg-3.col-sm-3.col-xs-3.right-offset
 					ul.buttons-list
 						- if f.object.persisted?
@@ -24,7 +24,7 @@
 							b
 								= "#{t :description_placeholder}: "
 							span.description-display = f.object.description
-					= f.input :description, :placeholder => "#{t :description_placeholder}", :label => false, :as => :string, :input_html => {:class => "js-description-input"}
+					= f.input :description, :placeholder => "#{t :description_placeholder}", :label => false, :as => :string, :input_html => {:class => "js-description-input can-alert-changes"}
 				
 	.col-md-2.col-xs-2.col-lg-2.col-sm-2.slider-container
 		.importance-container

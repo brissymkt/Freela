@@ -1,6 +1,6 @@
 #left-menu
 	ul
-		= link_to new_user_environmental_analysis_path do
+		= link_to new_user_environmental_analysis_path , :class => 'changes-observer', 'data-message' => "#{I18n.t(:changes_alert)}", 'data-option-yes'=> "#{I18n.t(:changes_alert_discard)}", 'data-option-no'=> "#{I18n.t(:changes_alert_stay)}"do
 			li.left-menu-item
 				.icon-container
 					span.fa.fa-file-o.icon
@@ -8,7 +8,7 @@
 					span.caption
 						= "#{t :menu_new_text}" 
 		
-		= link_to user_environmental_analyses_path do
+		= link_to user_environmental_analyses_path , :class => 'changes-observer', 'data-message' => "#{I18n.t(:changes_alert)}", 'data-option-yes'=> "#{I18n.t(:changes_alert_discard)}", 'data-option-no'=> "#{I18n.t(:changes_alert_stay)}"do
 			li.left-menu-item.with-submenu
 				.icon-container
 					span.fa.fa-clock-o.icon
@@ -23,7 +23,7 @@
 							li Item
 		
 
-		= link_to chart_user_environmental_analyses_path do
+		= link_to chart_user_environmental_analyses_path , :class => 'changes-observer', 'data-message' => "#{I18n.t(:changes_alert)}", 'data-option-yes'=> "#{I18n.t(:changes_alert_discard)}", 'data-option-no'=> "#{I18n.t(:changes_alert_stay)}"do
 			li.left-menu-item
 				.icon-container
 					span.fa.fa-bar-chart.icon

@@ -37,3 +37,8 @@ pt-BR:
   environmental_analysis_exclusion_success: "Análise Ambiental removida com sucesso."
   chart_title: "Gráfico"
   back_caption: "Voltar"
+  changes_alert: "Informações que estão gravadas no banco de dados foram alteradas. Se você prosseguir essas mudanças serão descartadas. Deseja prosseguir mesmo assim?"
+  changes_alert_discard: "Descartar mudanças"
+  changes_alert_stay: "Ficar na página"
+  alert_yes: "Sim"
+  alert_no: "Não"

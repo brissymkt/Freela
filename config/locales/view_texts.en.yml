@@ -36,4 +36,9 @@ en:
   environmental_analysis_exclusion_success: "Environmental Analysis removed successfully"
   chart_title: "Chart"
   back_caption: 'Back'
-  remove_factor_dialog: " Are you sure that you want to delete this factor and all related subfactors?"
+  remove_factor_dialog: "Are you sure that you want to delete this factor and all related subfactors?"
+  changes_alert: "There have been some changes in information that is stored in the database. If you decide to proceed these changes will be lost. Would you like to proceed anyway?"
+  changes_alert_discard: "Discard changes"
+  changes_alert_stay: "Stay in this page"
+  alert_yes: "Yes"
+  alert_no: "No"
