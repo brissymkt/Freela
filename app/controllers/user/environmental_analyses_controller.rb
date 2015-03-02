@@ -35,7 +35,7 @@ class User::EnvironmentalAnalysesController < UserController
 	end
 
 	def update
-		@analysis = current_user.environmental_analyses.find params[:id]
+		@analysis = current_user.environmental_analyses.includes(:financial_situation_past_year).find params[:id]
 		if @analysis.update environmental_analysis_params
 			@analysis.update_grade
 			redirect_to edit_user_environmental_analysis_path(params[:id]), :notice => "#{I18n.t :environmental_analysis_updated_successfully}"
@@ -51,6 +51,6 @@ class User::EnvironmentalAnalysesController < UserController
 	private
 
 	def environmental_analysis_params
-		params.require(:environmental_analysis).permit(:year_and_month, :type_of_analysis, :factors_attributes => [:id, :name, :description, :importance, :_destroy], :financial_situation_past_year_attributes => [:worst_income, :total_income, :best_income])
+		params.require(:environmental_analysis).permit(:id, :year_and_month, :type_of_analysis, :factors_attributes => [:id, :name, :description, :importance, :_destroy], :financial_situation_past_year_attributes => [:worst_income, :total_income, :best_income])
 	end
 end

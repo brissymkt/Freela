@@ -1,6 +1,6 @@
 #coding: utf-8
 
-class EnvironmentalAnalysisValidator
+class EnvironmentalAnalysis::Validator
 	def self.can_create_analysis?(environmental_analysis)
 		existing_analyses = 1.0/0
 		if environmental_analysis.type_of_analysis? 'weekly' 
@@ -31,7 +31,7 @@ class EnvironmentalAnalysisValidator
 	end
 
 	def self.analysis_in_period(environmental_analysis, start_date, end_date)
-		return EnvironmentalAnalysisCounter.analyses_for_user_in_period(environmental_analysis.user, start_date, end_date)
+		return EnvironmentalAnalysis::Counter.analyses_for_user_in_period(environmental_analysis.user, start_date, end_date)
 	end
 
 

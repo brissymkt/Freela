@@ -6,6 +6,7 @@ en:
       worst_income_greater_than_total: "Worst monthly income cannot be greater than annual income"
       worst_income_greater_than_best: "Worst monthly income cannot be greater than best monthly income"
       best_income_greater_than_total: "Best monthly income cannot be greater than annual income"
+      invalid_total_income: "Total income in previous 12 months should be equal or greater than the sum of best and worst incomes."
     attributes:
       user:
         email: "E-mail"

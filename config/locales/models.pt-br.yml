@@ -9,6 +9,7 @@ pt-BR:
       worst_income_greater_than_total: "Pior faturamento mensal não pode ser maior do que faturamento anual."
       worst_income_greater_than_best: "Pior faturamento mensal não pode ser maior do que maior faturamento mensal."
       best_income_greater_than_total: "Melhor faturamento mensal não pode ser maior do que faturamento anual."
+      invalid_total_income: "Faturamento total nos últimos 12 meses deve ser maior ou igual à soma do pior e do melhor faturamento."
       <<: *errors
       models:
         user:

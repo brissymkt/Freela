@@ -21,7 +21,9 @@ class FinancialSituationPastYear < ActiveRecord::Base
 		if self.best_income > self.total_income
 			errors.add(:best_income, I18n.t('activerecord.errors.best_income_greater_than_total')) 
 		end
-
+		if self.total_income < self.best_income + self.worst_income
+			errors.add(:total_income, I18n.t('activerecord.errors.invalid_total_income'))
+		end
 	end
 
 	def fix_incomes

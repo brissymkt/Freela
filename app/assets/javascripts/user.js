@@ -48,5 +48,5 @@ $(document).ready(function() {
 	$('.othsys-success-message').each(function() {
 		toastr.success($(this).html());
 	});
-
+	
 });

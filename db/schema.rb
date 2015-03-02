@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150301234834) do
   create_table "environmental_analyses", force: :cascade do |t|
     t.integer  "user_id",                                                null: false
     t.date     "year_and_month"
-    t.decimal  "grade",            precision: 3, scale: 1, default: 0.0
+    t.decimal  "grade",            precision: 7, scale: 1, default: 0.0
     t.datetime "created_at",                                             null: false
     t.datetime "updated_at",                                             null: false
     t.string   "type_of_analysis",                         default: "0"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150301234834) do
     t.integer  "importance",                                        default: 5,   null: false
     t.datetime "created_at",                                                      null: false
     t.datetime "updated_at",                                                      null: false
-    t.decimal  "grade",                     precision: 3, scale: 1, default: 1.0
+    t.decimal  "grade",                     precision: 3, scale: 1, default: 0.0
   end
 
   create_table "financial_situation_past_years", force: :cascade do |t|
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150301234834) do
     t.text     "description"
     t.integer  "importance",                          default: 5,   null: false
     t.integer  "situation",                           default: 5,   null: false
-    t.decimal  "grade",       precision: 3, scale: 1, default: 1.0, null: false
+    t.decimal  "grade",       precision: 3, scale: 1, default: 0.0, null: false
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
   end

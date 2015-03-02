@@ -29,7 +29,8 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 			sum += factor.grade * factor.importance
 			importances += factor.importance
 		end
-		self.grade = importances > 0 ? sum.to_f / importances : 0.0
+		grade = importances > 0 ? sum.to_f / importances : 0.0
+		self.grade = EnvironmentalAnalysis::Calculator.calculate_grade(grade, self.financial_situation_past_year) if grade != 0
 		self.save
 	end
 
@@ -50,7 +51,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 	end
 
 	def enough_existing_analysis?
-		errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) unless EnvironmentalAnalysisValidator.can_create_analysis?(self)
+		errors.add(:type_of_analysis, I18n.t('activerecord.errors.enough_analyses')) unless EnvironmentalAnalysis::Validator.can_create_analysis?(self)
 	end
 
 		
