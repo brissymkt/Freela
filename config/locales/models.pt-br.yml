@@ -32,6 +32,17 @@ pt-BR:
               blank: "Não pode ficar em branco."
             type_of_analysis:
               inclusion: "Período de análise inválido."
+        financial_situation_past_year:
+          attributes:
+            worst_income: 
+              blank: 'Nao pode ficar em branco.'
+              greater_than_or_equal_to: 'Deve ser maior ou igual a %{count}'
+            total_income: 
+              blank: 'Nao pode ficar em branco.'
+              greater_than_or_equal_to: 'Deve ser maior ou igual a %{count}'
+            best_income: 
+              blank: 'Nao pode ficar em branco.'
+              greater_than_or_equal_to: 'Deve ser maior ou igual a %{count}'
         factor:
           attributes:
             type:
@@ -69,6 +80,10 @@ pt-BR:
           monthly: "Mensal"
           trimonthly: "Trimestral"
           annual: "Anual"
+      financial_situation_past_year:
+        worst_income: "Pior faturamento do ano passado"
+        total_income: "Faturamento total do ano passado"
+        best_income: "Melhor faturamento do ano passado"
       factor:
         name: "Nome"
         description: "Descrição"

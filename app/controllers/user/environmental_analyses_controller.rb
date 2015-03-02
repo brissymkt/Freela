@@ -11,7 +11,6 @@ class User::EnvironmentalAnalysesController < UserController
 
 	def create
 		@analysis = EnvironmentalAnalysis.new environmental_analysis_params
-		puts  "#{@analysis.financial_situation_past_year}"
 		@analysis.user = current_user
 		if @analysis.valid? 
 			@analysis.save
