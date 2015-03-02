@@ -3,6 +3,9 @@ en:
     errors:
       enough_analyses: "There are enough analyses for referred period."
       date_in_the_future: "Cannot be in the future."
+      worst_income_greater_than_total: "Worst monthly income cannot be greater than annual income"
+      worst_income_greater_than_best: "Worst monthly income cannot be greater than best monthly income"
+      best_income_greater_than_total: "Best monthly income cannot be greater than annual income"
     attributes:
       user:
         email: "E-mail"

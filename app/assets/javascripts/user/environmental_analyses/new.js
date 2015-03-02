@@ -12,10 +12,8 @@ yojs.define('OthsysUser.user.environmental_analyses.new', function() {
 		yojs.call('OthsysUser.user.enCurrencyInput');
 	}
 	$('form').submit(function() {
-		console.log('before submit form');
 		$('.currency-input').each(function(){
 			$(this).val($(this).unmask());
-			console.log($(this).val());
 		});
 
 	});
