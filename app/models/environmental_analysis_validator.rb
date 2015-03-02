@@ -12,7 +12,6 @@ class EnvironmentalAnalysisValidator
 		elsif environmental_analysis.type_of_analysis? 'trimonthly'
 			existing_analyses = self.count_analysis_in_trimester(environmental_analysis)
 		end
-		puts "Existing analyses: #{existing_analyses}"
 		return existing_analyses == 0
 	end
 

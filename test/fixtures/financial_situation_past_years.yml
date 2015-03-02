@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  worst_income: 9.99
+  best_income: 9.99
+  total_income: 9.99
+  environmental_analysis_id: 1
+
+two:
+  worst_income: 9.99
+  best_income: 9.99
+  total_income: 9.99
+  environmental_analysis_id: 1

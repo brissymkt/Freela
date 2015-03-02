@@ -6,10 +6,12 @@ class User::EnvironmentalAnalysesController < UserController
 
 	def new
 		@analysis = EnvironmentalAnalysis.new
+		@analysis.financial_situation_past_year = FinancialSituationPastYear.new
 	end
 
 	def create
 		@analysis = EnvironmentalAnalysis.new environmental_analysis_params
+		puts  "#{@analysis.financial_situation_past_year}"
 		@analysis.user = current_user
 		if @analysis.valid? 
 			@analysis.save
@@ -50,6 +52,6 @@ class User::EnvironmentalAnalysesController < UserController
 	private
 
 	def environmental_analysis_params
-		params.require(:environmental_analysis).permit(:year_and_month, :type_of_analysis, :factors_attributes => [:id, :name, :description, :importance, :_destroy])
+		params.require(:environmental_analysis).permit(:year_and_month, :type_of_analysis, :factors_attributes => [:id, :name, :description, :importance, :_destroy], :financial_situation_past_year_attributes => [:worst_income, :total_income, :best_income])
 	end
 end

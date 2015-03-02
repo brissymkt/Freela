@@ -5,6 +5,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 	VALID_TYPES = ['weekly', 'monthly', 'trimonthly', 'annual']
 
 	belongs_to :user
+	has_one :financial_situation_past_year
 	has_many :factors, :dependent => :destroy
 
 	validates :user_id, :presence => true
@@ -15,7 +16,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 	validate :enough_existing_analysis?, :unless => :persisted?
 
 	accepts_nested_attributes_for :factors, :allow_destroy => true, :reject_if => lambda{ |attributes| attributes[:name].blank?}
-
+	accepts_nested_attributes_for :financial_situation_past_year
 
 	def type_of_analysis?(type)
 		self.type_of_analysis == type

@@ -15,4 +15,8 @@
 							= f.input :year_and_month, :as => :string, :input_html => {'data-field' => 'date'}
 							.js-datepicker data-title="#{I18n.t(:calendar_title)}" data-clear-text="#{I18n.t(:clear_button_text)}" data-pick-text="#{I18n.t(:pick_button_text)}"
 							= f.input :type_of_analysis, :collection => environmental_types_translated, :as  => :radio_buttons
+							= f.simple_fields_for :financial_situation_past_year do |fs|
+								= fs.input :worst_income
+								= fs.input :total_income
+								= fs.input :best_income
 				= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => user_environmental_analyses_path}
