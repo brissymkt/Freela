@@ -24,6 +24,10 @@ en:
           monthly: "Monthly"
           trimonthly: "Trimonthly"
           annual: "Annual"
+      financial_situation_past_year:
+        worst_income: "Worst monthly income in previous 12 months"
+        total_income: "Total income in previous 12 months"
+        best_income: "Best monthly income in previous 12 months"
       factor:
         name: "Name"
         description: "Description"

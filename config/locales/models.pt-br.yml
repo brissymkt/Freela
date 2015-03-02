@@ -84,9 +84,9 @@ pt-BR:
           trimonthly: "Trimestral"
           annual: "Anual"
       financial_situation_past_year:
-        worst_income: "Pior faturamento do ano passado"
-        total_income: "Faturamento total do ano passado"
-        best_income: "Melhor faturamento do ano passado"
+        worst_income: "Pior faturamento mensal nos 12 meses anteriores"
+        total_income: "Faturamento total nos 12 meses anteriores"
+        best_income: "Melhor faturamento mensal nos 12 meses anteriores"
       factor:
         name: "Nome"
         description: "Descrição"
