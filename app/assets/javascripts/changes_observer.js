@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	$('.changes-observer').click(function(element){
 		if (alertForChanges) {
-			url = element.find('a').href;
+			url = $(this).attr('href');
 			bootbox.confirm({
 				title: $('title').html(),
 				message: $(this).attr('data-message'),
