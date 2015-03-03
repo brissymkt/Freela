@@ -13,7 +13,7 @@ en:
         password: "Password"
         password_confirmation: "Password Confirmation"
         current_password: "Current Password"
-        remember_me: "Remeber me"
+        remember_me: "Remember me"
       environmental_analysis:
         year_and_month: "Date"
         grade: "Grade"
