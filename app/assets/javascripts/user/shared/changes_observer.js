@@ -1,4 +1,4 @@
-$(document).ready(function(){
+yojs.define('OthsysUser.user.changesObserver',function(){
 	alertForChanges = false;
 
 	$('.can-alert-changes').change(function(){

@@ -13,10 +13,10 @@ class Factor < ActiveRecord::Base
 		sum = 0.0
 		importance = 0.0
 		self.sub_factors.each do |sub_factor|
-			sum += sub_factor.grade * sub_factor.importance
+			sum += sub_factor.situation * sub_factor.importance
 			importance += sub_factor.importance
 		end
-		self.grade = importance > 0 ? sum.to_f / importance : 0.0
+		self.grade = importance > 0 ? (sum.to_f / importance) : 0.0
 		self.save
 	end
 end

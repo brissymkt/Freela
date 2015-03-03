@@ -1,4 +1,4 @@
-$(document).ready(function() {
+yojs.define('OthsysUser.user', function() {
 	toastr.options.timeOut = 10000;
 	toastr.options.progressBar = true;
 	$('.button-submit').click(function() {
