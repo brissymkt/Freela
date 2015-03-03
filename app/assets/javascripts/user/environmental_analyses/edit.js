@@ -10,7 +10,7 @@ yojs.define('OthsysUser.user.environmental_analyses.edit', function() {
 	yojs.call('OthsysUser.user.placeboButton', 'factors');
 
 
-	$('.factors-container').on('click', '.row.with-text', function(){
+	$('.factors-container').on('click', '.row.with-text', function(element){
 		if (!$(element.target).hasClass('my-button') && !$(element.target).hasClass('can-alert-changes')) {
 			window.location.href = $(this).find('.js-link-to-factor').attr('href');
 		}

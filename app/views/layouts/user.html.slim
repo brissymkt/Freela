@@ -17,7 +17,7 @@ html
 		.container.container-full-size
 			.row.body-container
 				.col-md-2.col-sm-12.col-lg-2.col-xs-12
-					= render :partial => "layouts/user_partials/menu"
+					= render :partial => "layouts/user_partials/menu", :locals => {:recent_analysis => @recent_analysis}
 				.col-md-10.col-sm-12.col-lg-10.col-xs-12
 					
 					= yield
