@@ -5,7 +5,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 	VALID_TYPES = ['weekly', 'monthly', 'trimonthly', 'annual']
 
 	belongs_to :user
-	has_one :financial_situation_past_year
+	has_one :financial_situation_past_year, :dependent => :destroy
 	has_many :factors, :dependent => :destroy
 
 	validates :user_id, :presence => true
