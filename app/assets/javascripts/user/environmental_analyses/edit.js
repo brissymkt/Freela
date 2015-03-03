@@ -11,7 +11,9 @@ yojs.define('OthsysUser.user.environmental_analyses.edit', function() {
 
 
 	$('.factors-container').on('click', '.row.with-text', function(){
-		window.location.href = $(this).find('.js-link-to-factor').attr('href');
+		if (!$(element.target).hasClass('my-button') && !$(element.target).hasClass('can-alert-changes')) {
+			window.location.href = $(this).find('.js-link-to-factor').attr('href');
+		}
 	});
 
 	$('.factors-container input, .factors-container .placebo-button').click(function() {
