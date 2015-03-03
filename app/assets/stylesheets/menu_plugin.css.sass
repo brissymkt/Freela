@@ -21,7 +21,9 @@
             border-bottom: 1px solid $gray_color
             padding-bottom: 7px
         li.left-menu-item.with-submenu
-            padding-bottom: 4px
+            padding:
+                bottom: 3px
+                top: 2px
 #left-menu .left-menu-item .nav li a
     padding: 0px 0px
 /* We remove the margin, padding, and list style of UL and LI components */
@@ -57,19 +59,19 @@
     display: inline-block
     text-decoration: none
 
-
 /**** SECOND LEVEL MENU ****/
 /* We make the position to absolute for flyout menu and hidden the ul until the user hover the parent li item */
 #left-menu ul li ul
     position: absolute
     display: none
     z-index: 1
-    border-right: 1px solid $gray_color
+    border-right: 1px solid $gray-color
 
 #left-menu ul li ul li
-    border-bottom: 1px solid $gray_color
+    border-bottom: 1px solid $gray-color
 
-
+#left-menu  ul  li ul a:nth-child(2) li
+    border-top: 1px solid $gray-color
 /* When user has hovered the li item, we show the ul list by applying display: block, note:  150px is the individual menu width.  */
 #left-menu ul li:hover ul
     left: 100%
@@ -81,7 +83,7 @@
 #left-menu ul li ul li
     background-color: white
     width: 120px
-    height: 41px
+    height: 40px
     padding: 10px
 
 /* We change the background color for the level 2 submenu when hovering the menu */
