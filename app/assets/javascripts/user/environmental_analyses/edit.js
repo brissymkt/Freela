@@ -11,7 +11,7 @@ yojs.define('OthsysUser.user.environmental_analyses.edit', function() {
 
 
 	$('.factors-container').on('click', '.row.with-text', function(element){
-		if (!$(element.target).hasClass('my-button') && !$(element.target).hasClass('can-alert-changes')) {
+		if (!$(element.target).hasClass('my-button') && !$(element.target).hasClass('can-alert-changes') && !$(element.target).hasClass('hidden-delete-button')) {
 			window.location.href = $(this).find('.js-link-to-factor').attr('href');
 		}
 	});
@@ -20,6 +20,25 @@ yojs.define('OthsysUser.user.environmental_analyses.edit', function() {
 		return false;
 	});
 
+	$('.js-remove-button').click(function(event) {
+		bootbox.confirm({
+			title: $('title').html(),
+			message: $(this).attr('data-message'),
+			buttons: {
+				cancel: {
+					label: $(this).attr('data-option-no')
+				},
+				confirm: {
+					label: $(this).attr('data-option-yes')
+				}
+			},
+			callback: function(hasToBeDeleted) {
+				if (hasToBeDeleted) {
+					$(event.target).siblings('.hidden-delete-button').click();
+				}
+			}
+		});
+	});
 
 	//Function to add sliders. If slider exists, it will be updated. Otherwise, a slider will be greated
 	$('.factors-container').on('cocoon:after-insert', function(e, insertedElement){

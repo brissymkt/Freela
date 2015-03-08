@@ -17,7 +17,8 @@
 						li
 							a.fa.fa-check-square-o.my-button.placebo-button
 						li
-							= link_to_remove_association "", f, :class => "fa fa-remove remove-button my-button", 'data-confirm' => "#{t :remove_factor_dialog}"
+							span.fa.fa-remove.js-remove-button.remove-button.my-button data-message="#{t :remove_factor_dialog}" data-yes="#{t :alert_yes}" data-no="#{t :alert_no}"
+							= link_to_remove_association "", f, :class => "hidden-delete-button"
 				.col-md-2.col-lg-2.col-sm-2.col-xs-2.right-offset
 					- if f.object.persisted?
 						a.fa.fa-chevron-down.contract-button.my-button href='javascript:void(0);'
