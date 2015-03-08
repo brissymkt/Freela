@@ -5,11 +5,15 @@ class FinancialSituationPastYear < ActiveRecord::Base
 	validates :total_income, :presence => true, :numericality => {:greater_than_or_equal_to => 0}
 	validates :best_income, :presence => true, :numericality => {:greater_than_or_equal_to => 0}
 
-	validate :inconsistent_values?
+	validate :inconsistent_values?, :if => :has_all_values?
 
 	before_save :fix_incomes
 
 	private
+
+	def has_all_values?
+		return (not (self.worst_income.nil?) and (self.best_income.nil?) and (self.total_income.nil?))
+	end
 
 	def inconsistent_values?
 		if self.worst_income > self.total_income  

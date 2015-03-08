@@ -2,15 +2,15 @@
 	= "#{t :new_environmental_analysis_title}"
 
 - if @analysis
-	.row.form_title_container
-		.col-md-12.col-lg-12.col-sm-12.col-xs-12
-			h2.form_title
+	.row.form-header
+		.col-md-12.col-lg-12.col-sm-12.col-xs-12.form-title-container
+			h2.form-title
 				= "#{t :form_new_environmental_analysis_title}"
 	.row.form_container
 		.col-md-12.col-lg-12.col-sm-12.col-xs-12
 			= simple_form_for([:user, @analysis], :html => {:class => "horizontal-form"}) do |f|
 				.fields_container
-					.row.field_container
+					.row.field-container
 						.col-md-12.col-lg-12.col-sm-12.col-xs-12
 							= f.input :year_and_month, :as => :string, :input_html => {'data-field' => 'date'}
 							.js-datepicker data-title="#{I18n.t(:calendar_title)}" data-clear-text="#{I18n.t(:clear_button_text)}" data-pick-text="#{I18n.t(:pick_button_text)}"

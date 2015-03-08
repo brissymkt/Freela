@@ -40,13 +40,13 @@ pt-BR:
         financial_situation_past_year:
           attributes:
             worst_income: 
-              blank: 'Nao pode ficar em branco.'
+              blank: 'Não pode ficar em branco.'
               greater_than_or_equal_to: 'Deve ser maior ou igual a %{count}'
             total_income: 
-              blank: 'Nao pode ficar em branco.'
+              blank: 'Não pode ficar em branco.'
               greater_than_or_equal_to: 'Deve ser maior ou igual a %{count}'
             best_income: 
-              blank: 'Nao pode ficar em branco.'
+              blank: 'Não pode ficar em branco.'
               greater_than_or_equal_to: 'Deve ser maior ou igual a %{count}'
         factor:
           attributes:
