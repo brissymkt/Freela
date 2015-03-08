@@ -1,5 +1,5 @@
 yojs.define('OthsysUser.user.environmental_analyses.edit', function() {
-	yojs.call('OthsysUser.user.changesObserver');
+	yojs.call('OthsysUser.user.changesObserver', 'factors-container');
 	// Create slider input to existing factors
 	yojs.call('OthsysUser.user.sliderSetup', 'importance', 'importance');
 

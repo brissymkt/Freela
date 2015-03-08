@@ -1,7 +1,7 @@
-yojs.define('OthsysUser.user.changesObserver',function(){
+yojs.define('OthsysUser.user.changesObserver',function(containerName){
 	alertForChanges = false;
 
-	$('.can-alert-changes').change(function(){
+	$('.'+containerName).on('keyup', '.can-alert-changes', function(){
 		alertForChanges = true;
 	});
 
