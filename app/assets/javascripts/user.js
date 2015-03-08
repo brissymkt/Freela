@@ -21,27 +21,7 @@ yojs.define('OthsysUser.user', function() {
 		$(this).parents('.form-button').removeClass('selected');
 	});
 
-	$('.js-exclusion-button').click(function(element) {
-		url = element.target.href;
-		bootbox.confirm({
-			title: $('title').html(),
-			message: $(this).attr('data-message'),
-			buttons: {
-				cancel: {
-					label: $(this).attr('data-no')
-				},
-				confirm: {
-					label: $(this).attr('data-yes')
-				}
-			},
-			callback: function(result) {
-				if (result) {
-					window.location.href = url;
-				}
-			}
-		});
-		return false;
-	});
+	
 	$('.othsys-error-message').each(function() {
 		toastr.error($(this).html());
 	});
