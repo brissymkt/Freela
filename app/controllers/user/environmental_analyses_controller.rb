@@ -27,7 +27,7 @@ class User::EnvironmentalAnalysesController < UserController
 
 	def delete
 		@analysis = current_user.environmental_analyses.find params[:id]
-		if @analysis.delete
+		if @analysis.destroy
 			redirect_to user_environmental_analyses_path, :notice => "#{I18n.t :environmental_analysis_exclusion_success}"
 		else
 			render :index

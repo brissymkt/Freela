@@ -1,2 +1,15 @@
 = content_for :analysis_title
 	= "#{t :environmental_analysis_title} - #{t :chart_title}"
+
+.js-market-environment-chart
+.js-market-environment-chart-data
+	p.title 
+		= "#{t :market_environment_chart_caption}"
+	p.suffix
+		| %
+	p.data-name
+		| %
+	ul.data-series
+		- @analyses.each do |analysis|
+			li.data
+				= analysis.grade

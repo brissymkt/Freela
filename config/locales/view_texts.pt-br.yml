@@ -47,3 +47,6 @@ pt-BR:
   pick_button_text: "Escolher"
   view_environmental_analyses_index_text: "Ver todas análises"
   empty_analyses_table: 'Não há análises registradas. Pode ser uma boa hora para começar a analisar seu ambiente mercadológico.'
+  market_environment_chart_caption: 'Evolução do ambiente mercadológico ao longo do tempo'
+  factors_chart_caption: "Evolução da nota dos fatores ao longo do tempo"
+  market_environment_label: 'Ambiente mercadológico'
