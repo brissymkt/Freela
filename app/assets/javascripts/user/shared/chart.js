@@ -1,3 +1,4 @@
+
 yojs.define('OthsysUser.user.chart', function(chartSelector, attributes) {
 	$(chartSelector).highcharts({
 		chart: {
@@ -11,8 +12,19 @@ yojs.define('OthsysUser.user.chart', function(chartSelector, attributes) {
 		},
 		yAxis: {
 			title: {
-				text: attributes.dataName
-			}
+				text: ''
+			},
+			labels: {
+				format: '{value} %'
+			},
+			plotLines: [{
+				id: 'reference',
+				color: '#000000',
+				dashStyle: 'ShortDash',
+				width: 2,
+				value: 0,
+				zIndex: 0
+    	}],
 		},
 		tooltip: {
 			valueSuffix: attributes.suffix

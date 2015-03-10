@@ -48,5 +48,5 @@ en:
   view_environmental_analyses_index_text: "View all analyses"
   empty_analyses_table: 'There are no analyses registered. It could be a good time to start analyzing your market environment.'
   market_environment_chart_caption: "Environmental Market's evolution over time"
-  factors_chart_caption: "Factor's evolution over time"
+  factors_chart_caption: "Environmental Factor"
   market_environment_label: 'Market environment'
