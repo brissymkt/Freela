@@ -4,6 +4,13 @@
 .js-market-environment-chart
 
 .js-market-environment-chart-data
+	.start-date
+		p.day
+			= @chart_data[:start_date].strftime("%d")
+		p.month
+			= @chart_data[:start_date].strftime("%m")
+		p.year
+			= @chart_data[:start_date].strftime("%Y")
 	p.title 
 		= "#{t :market_environment_chart_caption}"
 	p.series-name
@@ -13,6 +20,6 @@
 	p.data-name
 		| %
 	ul.data-series
-		- @analyses.each do |analysis|
+		- @chart_data[:analyses].each do |grade|
 			li.data
-				= analysis.grade
+				= grade

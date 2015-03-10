@@ -26,6 +26,10 @@ yojs.define('OthsysUser.user.chart', function(chartSelector, attributes) {
 				zIndex: 0
     	}],
 		},
+		xAxis: {
+			type: 'datetime',
+			minRange: 7 * 24 * 3600 * 1000
+		},
 		tooltip: {
 			valueSuffix: attributes.suffix
 		},

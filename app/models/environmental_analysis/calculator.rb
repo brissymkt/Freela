@@ -1,5 +1,3 @@
-#coding: utf-8
-
 class EnvironmentalAnalysis::Calculator
 
 	def self.calculate_grade(analysis_grade, financial_situation)

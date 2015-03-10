@@ -46,8 +46,9 @@ class User::EnvironmentalAnalysesController < UserController
 	end
 
 	def chart
-		@analyses = current_user.environmental_analyses.all
+		@chart_data = EnvironmentalAnalysis::DataForChartService.call(current_user)
 	end
+	
 	private
 
 	def environmental_analysis_params

@@ -1,4 +1,3 @@
-#coding: utf-8
 
 class EnvironmentalAnalysis::Validator
 	def self.can_create_analysis?(environmental_analysis)
