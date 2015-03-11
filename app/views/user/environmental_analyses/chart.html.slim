@@ -4,6 +4,8 @@
 .js-market-environment-chart
 
 .js-market-environment-chart-data
+	.environmental-chart-subtitle
+		= "#{t :environmental_chart_subtitle}"
 	.start-date
 		p.day
 			= @chart_data[:start_date].strftime("%d")

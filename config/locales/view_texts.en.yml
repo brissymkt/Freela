@@ -50,3 +50,4 @@ en:
   market_environment_chart_caption: "Environmental Market's evolution over time"
   factors_chart_caption: "Environmental Factor"
   market_environment_label: 'Market environment'
+  environmental_chart_subtitle: 'Click and drag in the plot area to zoom in.'
