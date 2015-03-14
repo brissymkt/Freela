@@ -28,7 +28,8 @@ a:hover, a:focus
   .body-container
     position: relative
     top: -16px
-
+hr
+  border-color: $gray-color
 p.change-language
   position: relative
   top: 15px
@@ -45,7 +46,14 @@ span.help-block
   font-size: 20px
 
 .modal-footer
-  .btn.btn-primary
+  .btn.btn-default
+    color: white
     background-color: $gradient-top
     &:hover
       background-color: $gradient-bottom
+  .btn.btn-primary
+    background-color: white
+    color: black
+    &:hover
+      background-color: #E0E0E0
+    border-color: $gradient-bottom

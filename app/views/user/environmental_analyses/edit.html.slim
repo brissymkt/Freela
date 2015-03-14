@@ -23,7 +23,9 @@
 					.col-md-2.col-lg-2.col-xs-2.col-sm-2
 						.grade-container
 							h3.grade
-								= "#{@analysis.grade > 0 ? '+' : ''}#{number_with_precision(@analysis.grade, :precision => 0)} %"
+								span.signal= "#{@analysis.grade > 0 ? '+' : '–'}"
+								= "#{number_with_precision(@analysis.grade.abs, :precision => 0)}%"
 							h3.caption
 								= "#{t :environmental_grade_caption}"
+			hr
 			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => url_for()}

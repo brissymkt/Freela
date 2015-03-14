@@ -31,6 +31,7 @@ pt-BR:
   environmental_factor_title: "Fator Ambiental"
   environmental_factor_situation_title: "situação"
   environmental_factor_importance_title: "importância"
+  environmental_factor_caption: "Fator Ambiental"
   environmental_factor_updated_successfully: "Fator ambiental atualizado com sucesso."
   exclusion_message: "Tem certeza de que deseja excluir esta análise ambiental?"
   remove_factor_dialog: "Tem certeza de que deseja excluir este fator e todos subfatores relacionados a ele?"
@@ -42,12 +43,19 @@ pt-BR:
   changes_alert_stay: "Ficar na página"
   alert_yes: "Sim"
   alert_no: "Não"
+  edit_help: "Editar"
+  remove_help: "Apagar"
+  placebo_help: "Confirmar"
+  contract_help: "Expandir"
   calendar_title: "Escolha uma data"
   clear_button_text: "Cancelar"
   pick_button_text: "Escolher"
-  view_environmental_analyses_index_text: "Ver todas análises"
+  view_environmental_analyses_index_text: "Ver todas as análises"
   empty_analyses_table: 'Não há análises registradas. Pode ser uma boa hora para começar a analisar seu ambiente mercadológico.'
   market_environment_chart_caption: 'Evolução do ambiente mercadológico ao longo do tempo'
   factors_chart_caption: "Evolução da nota dos fatores ao longo do tempo"
   market_environment_label: 'Ambiente mercadológico'
   environmental_chart_subtitle: 'Clique e arraste o mouse no gráfico para ampliar a escala.'
+  new_help: "Cria uma nova análise"
+  history_help: 'Mostra todas as análises criadas'
+  chart_help: 'Visualiza as análises ao longo do tempo'

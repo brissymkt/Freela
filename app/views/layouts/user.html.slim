@@ -9,12 +9,12 @@ html
 	body class="#{params[:controller].gsub(/_|\//, "-")} #{params[:action]}-action" data-locale="#{params[:locale]}" data-confirm-exit="#{t :changes_alert}"
 		
 		.header-container
-			.container
+			.container-fluid
 				.row
 					.col-md-12.col-sm-12.col-lg-12.col-xs-12
 						.row
 							= render :partial => "layouts/user_partials/header"
-		.container.container-full-size
+		.container-fluid.container-full-size
 			.row.body-container
 				.col-md-2.col-sm-12.col-lg-2.col-xs-12
 					= render :partial => "layouts/user_partials/menu", :locals => {:recent_analysis => @recent_analysis}

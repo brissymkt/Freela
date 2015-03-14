@@ -3,7 +3,7 @@
 		.factor-name-container
 			abbr title='#{t :back_caption}' 
 				h2.arrow
-					= link_to "", edit_user_environmental_analysis_path(environmental_analysis.id), :class => "fa fa-arrow-left changes-observer", 'data-message' => "#{I18n.t(:changes_alert)}", 'data-option-yes'=> "#{I18n.t(:changes_alert_discard)}", 'data-option-no'=> "#{I18n.t(:changes_alert_stay)}"
+					= link_to "", edit_user_environmental_analysis_path(environmental_analysis.id, :needs_to_be_updated => params[:needs_to_be_updated]), :class => "fa fa-arrow-left changes-observer", 'data-message' => "#{I18n.t(:changes_alert)}", 'data-option-yes'=> "#{I18n.t(:changes_alert_discard)}", 'data-option-no'=> "#{I18n.t(:changes_alert_stay)}"
 	.col-md-5.col-lg-5.col-sm-5.col-xs-5
 			h2.form-title.aligned-to-left
 				= factor.name

@@ -27,20 +27,5 @@ yojs.define('OthsysUser.user.changesObserver',function(containerName){
 			});
 			return false;
 		}
-	});
-	function goodbye(e) {
-    if (alertForChanges) {
-    	if(!e) e = window.event;
-	    //e.cancelBubble is supported by IE - this will kill the bubbling process.
-	    e.cancelBubble = true;
-	    e.returnValue = $('body').attr('data-confirm-exit'); //This is displayed on the dialog
-
-	    //e.stopPropagation works in Firefox.
-	    if (e.stopPropagation) {
-	        e.stopPropagation();
-	        e.preventDefault();
-	    }
-	  }
-	}
-	window.onbeforeunload=goodbye; 
+	}); 
 });

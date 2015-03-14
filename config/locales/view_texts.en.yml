@@ -31,6 +31,7 @@ en:
   environmental_factor_title: "Environmental Factor"
   environmental_factor_importance_title: "importance"
   environmental_factor_situation_title: "situation"
+  environmental_factor_caption: "Environmental Factor"
   environmental_factor_updated_successfully: "Environmental Factor updated successfully"
   exclusion_message: "Are you sure that you want to delete this environmental analysis?"
   environmental_analysis_exclusion_success: "Environmental Analysis removed successfully"
@@ -45,9 +46,16 @@ en:
   calendar_title: "Pick a date"
   clear_button_text: "Cancel"
   pick_button_text: "Pick"
+  edit_help: "Edit"
+  remove_help: "Remove"
+  placebo_help: "Confirm"
+  contract: "Expand/Contract"
   view_environmental_analyses_index_text: "View all analyses"
   empty_analyses_table: 'There are no analyses registered. It could be a good time to start analyzing your market environment.'
   market_environment_chart_caption: "Environmental Market's evolution over time"
   factors_chart_caption: "Environmental Factor"
   market_environment_label: 'Market environment'
   environmental_chart_subtitle: 'Click and drag in the plot area to zoom in.'
+  new_help: "Create a new analysis"
+  history_help: 'Show all created analyses'
+  chart_help: 'Visualize analyses through a timeline'

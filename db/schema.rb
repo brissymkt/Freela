@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150301234834) do
   create_table "factors", force: :cascade do |t|
     t.integer  "environmental_analysis_id",                                       null: false
     t.string   "name",                                                            null: false
-    t.text     "description"
+    t.text     "description",                                       default: ""
     t.integer  "importance",                                        default: 5,   null: false
     t.datetime "created_at",                                                      null: false
     t.datetime "updated_at",                                                      null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150301234834) do
   create_table "sub_factors", force: :cascade do |t|
     t.integer  "factor_id",                                         null: false
     t.string   "name",                                              null: false
-    t.text     "description"
+    t.text     "description",                         default: ""
     t.integer  "importance",                          default: 5,   null: false
     t.integer  "situation",                           default: 5,   null: false
     t.decimal  "grade",       precision: 3, scale: 1, default: 0.0, null: false

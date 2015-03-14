@@ -14,6 +14,8 @@
     position: relative
     left: 15px
     font-size: 20px
+    .description-container
+      font-size: 16px
     .buttons-list
       padding-left: 0px
       margin-top: 4px
@@ -36,7 +38,7 @@
       .text-inputs-container
         margin-top: 20px
         margin-bottom: 20px
-        input, p.factor-description-display, p.sub-factor-description-display
+        input, textarea, p.factor-description-display, p.sub-factor-description-display, p.description-display
           display: none
         .thin-box
           margin-bottom: -10px
@@ -50,6 +52,7 @@
           &:hover
             color: $gradient-bottom
         .contract-button
+          margin-left: 15px
           color: $gray-color
           &:hover
             color: $gradient-bottom
@@ -58,20 +61,24 @@
         .placebo-button.js-input-touched
           display: inline-block
       .text-inputs-container.expanded
-        p.factor-description-display, p.sub-factor-description-display
+        p.factor-description-display, p.sub-factor-description-display, p.description-display
           display: block  
       .text-inputs-container.edit
         input.js-name-input
           display: block
+        p.description-display
+          display: none
       .text-inputs-container.edit.expanded
-        input.js-description-input
+        p.description-display
+          display: none
+        textarea.js-description-input
           display: block
 
     .without-text
       padding-top: 20px
       .only-inputs-box.compacted-box
         margin-bottom: -10px
-      input
+      input, textarea
         display: block
       .buttons-list
         li
