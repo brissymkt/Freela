@@ -46,7 +46,7 @@ yojs.define('OthsysUser.user.chart', function(chartSelector, attributes) {
 				width: 2,
 				value: 0,
 				zIndex: 0
-    	}],
+    	}]
 		},
 		xAxis: {
 			type: 'datetime',
