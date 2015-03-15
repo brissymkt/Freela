@@ -60,3 +60,5 @@ en:
   new_help: "Create a new analysis"
   history_help: 'Show all created analyses'
   chart_help: 'Visualize analyses through a timeline'
+  environmental_grade_updated: "Environmental grade updated successfully."
+  update_environmental_grade_caption: "Update factor"

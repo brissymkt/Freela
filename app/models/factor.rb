@@ -9,7 +9,7 @@ class Factor < ActiveRecord::Base
 	validates :environmental_analysis, :presence => true
 	validates :grade, :presence => true
 
-	def update_grade
+	def update_grade!
 		sum = 0.0
 		importance = 0.0
 		self.sub_factors.each do |sub_factor|

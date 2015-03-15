@@ -17,4 +17,5 @@
 								= render :partial => "sub_factor_fields", :locals => {:f => sub_factors_builder}
 						.links.othsys-insert-hoverable
 							= link_to_add_association "#{t :add_factors_text}", f, :sub_factors
+			hr
 			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => url_for()}

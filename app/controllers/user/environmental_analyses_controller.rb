@@ -37,7 +37,7 @@ class User::EnvironmentalAnalysesController < UserController
 	def update
 		@analysis = current_user.environmental_analyses.includes(:financial_situation_past_year).find params[:id]
 		if @analysis.update environmental_analysis_params
-			@analysis.update_grade
+			@analysis.update_grade!
 			redirect_to edit_user_environmental_analysis_path(params[:id]), :notice => "#{I18n.t :environmental_analysis_updated_successfully}"
 		else
 			flash.now[:error] = I18n.t('error_message_form')
@@ -49,6 +49,13 @@ class User::EnvironmentalAnalysesController < UserController
 		@chart_data = EnvironmentalAnalysis::DataForChartService.call(current_user)
 	end
 	
+	def update_environmental_grade
+		@analysis = current_user.environmental_analyses.find params[:id]
+		@analysis.update_grade!
+		@analysis.deactivate_update_flag!
+		redirect_to edit_user_environmental_analysis_path(params[:id]), :notice => "#{I18n.t :environmental_grade_updated}"
+	end
+
 	private
 
 	def environmental_analysis_params

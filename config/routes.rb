@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 			resources :environmental_analyses, :except => [:show, :destory] do
 				member do 
 					get :delete
+					patch :update_environmental_grade
 				end
 				resources :factors, :only => [:edit, :update]
 				collection do

@@ -22,7 +22,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 		self.type_of_analysis == type
 	end
 
-	def update_grade
+	def update_grade!
 		importances = 0.0
 		sum = 0.0
 		self.factors.each do |factor|
@@ -36,6 +36,16 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 
 	def type_to_human
 		I18n.t("activerecord.attributes.environmental_analysis.type_of_analysis_translation."+self.type_of_analysis)
+	end
+
+	def activate_update_flag!
+		self.needs_to_be_updated = true
+		self.save
+	end
+
+	def deactivate_update_flag!
+		self.needs_to_be_updated = false
+		self.save
 	end
 
 	private

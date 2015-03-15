@@ -59,3 +59,5 @@ pt-BR:
   new_help: "Cria uma nova análise"
   history_help: 'Mostra todas as análises criadas'
   chart_help: 'Visualiza as análises ao longo do tempo'
+  environmental_grade_updated: "Fator ambiental atualizado com sucesso."
+  update_environmental_grade_caption: "Atualizar fator"
