@@ -20,7 +20,7 @@ yojs.define('OthsysUser.user.environmental_analyses.chart', function() {
 			name: $('.js-market-environment-chart-data .series-name').html().trim(),
 			pointInterval: 7 * 24 * 3600 * 1000,
 			pointStart: new Date(year, month - 1, day).getTime(),
-			negativeColor: '#FF0000'
+			negativeColor: '#8C8C8C'
 		});
 		yojs.call('OthsysUser.user.chart', '.js-market-environment-chart', chartOptions);
 	}

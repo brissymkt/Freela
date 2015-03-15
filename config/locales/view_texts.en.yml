@@ -49,6 +49,7 @@ en:
   edit_help: "Edit"
   remove_help: "Remove"
   placebo_help: "Confirm"
+  contract_help: "Contract"
   contract: "Expand/Contract"
   view_environmental_analyses_index_text: "View all analyses"
   empty_analyses_table: 'There are no analyses registered. It could be a good time to start analyzing your market environment.'
