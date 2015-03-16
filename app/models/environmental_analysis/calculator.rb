@@ -2,9 +2,6 @@ class EnvironmentalAnalysis::Calculator
 
 	def self.calculate_grade(analysis_grade, financial_situation)
 		analysis_landscape = self.set_indexes(financial_situation)
-		analysis_landscape.each_pair do |key, value|
-			puts "#{key} #{value}"
-		end
 		growing_percentage = self.calculate_growing_percentage(analysis_grade, analysis_landscape)
 		return ((growing_percentage * 100) - 100)
 	end
@@ -22,7 +19,6 @@ class EnvironmentalAnalysis::Calculator
  	end
 
  	def self.calculate_growing_percentage(grade, analysis_landscape)
- 		puts grade
 		if grade < 5 
 			grade_in_percentage = (grade*(1 - analysis_landscape[:lower_bound])/(5.0)) + analysis_landscape[:lower_bound]
 		elsif grade == 5
@@ -30,7 +26,6 @@ class EnvironmentalAnalysis::Calculator
 		else
 			grade_in_percentage = ((grade - 5)*(analysis_landscape[:upper_bound] - 1)/(5.0)) + 1
 		end
-		puts grade_in_percentage
 		return grade_in_percentage
  	end
 end
