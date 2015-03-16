@@ -32,6 +32,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 		grade = importances > 0 ? sum.to_f / importances : 0.0
 		self.grade = EnvironmentalAnalysis::Calculator.calculate_grade(grade, self.financial_situation_past_year) if grade != 0
 		self.save
+		deactivate_update_flag!
 	end
 
 	def type_to_human
