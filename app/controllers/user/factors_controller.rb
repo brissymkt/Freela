@@ -11,7 +11,7 @@ class User::FactorsController < UserController
 		if @factor.update factor_params
 			@factor.update_grade!
 			@environmental_analysis.activate_update_flag!
-			redirect_to edit_user_environmental_analysis_factor_path(params[:environmental_analysis_id], params[:id]), :notice => "#{I18n.t('environmental_factor_updated_successfully')}", :needs_to_update_analysis => true
+			redirect_to edit_user_environmental_analysis_path(params[:environmental_analysis_id]), :notice => "#{I18n.t('environmental_factor_updated_successfully')}", :needs_to_update_analysis => true
 		else
 			flash.now[:error] = I18n.t('error_message_form')
 			render :edit

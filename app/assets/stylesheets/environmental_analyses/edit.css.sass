@@ -5,21 +5,29 @@
   .grade-container
     position: relative
     top: 140px
-    h3.caption
+    h3.caption, h3.caption-outdated
       text-align: center
       font-family: "Myriad Pro Regular"
-      color: $gray_color
+      color: $gray-color
       font-size: 21px
       position: relative
       top: -35px
+    h3.caption-outdated
+      color: lighten(red, 20%)
+      span.caption
+        position: relative
+        top: 20px
     h3.grade
       span.signal
         font-size: 27px
         position: relative
         top: -11px
-      color: $gradient_bottom
+      color: $gradient-top
       font-size: 57px
       padding-bottom: 20px
       text-align: center
 
+  .grade-container.move-top
+    position: relative
+    top: 82px
   

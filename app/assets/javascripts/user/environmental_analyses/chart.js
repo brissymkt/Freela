@@ -9,7 +9,6 @@ yojs.define('OthsysUser.user.environmental_analyses.chart', function() {
 		month = parseInt($('.js-market-environment-chart-data .start-date .month').html().trim());
 		year = parseInt($('.js-market-environment-chart-data .start-date .year').html().trim());
 		chartOptions.suffix = $('.js-market-environment-chart-data .suffix').html().trim();
-		chartOptions.title = $('.js-market-environment-chart-data .title').html().trim();
 		chartOptions.content = [];
 		var data = [];
 		$('.js-market-environment-chart-data .data').each(function() {

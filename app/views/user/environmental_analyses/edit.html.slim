@@ -21,15 +21,19 @@
 						.links.othsys-insert-hoverable
 							= link_to_add_association "#{t :add_factors_text}", f, :factors
 					.col-md-2.col-lg-2.col-xs-2.col-sm-2
-						.grade-container
+						.grade-container class="#{@analysis.needs_to_be_updated ? 'move-top': ''}"
 							h3.grade
 								span.signal= "#{@analysis.grade >= 0 ? '+' : '–'}"
 								= "#{number_with_precision(@analysis.grade.abs, :precision => 0)}%"
-							h3.caption
-								= "#{t :environmental_grade_caption}"
 							- if @analysis.needs_to_be_updated
-								= link_to update_environmental_grade_user_environmental_analysis_path(@analysis.id), :method => :patch do
-									.btn.btn-primary.fa.fa-refresh
-										= "#{t :update_environmental_grade_caption}"
-			hr
+								h3.caption-outdated
+									= link_to update_environmental_grade_user_environmental_analysis_path(@analysis.id), :method => :patch do
+										.fa.fa-refresh.my-button.refresh-button
+									span.caption
+										= "#{t :update_environmental_analysis_warning}"
+							- else
+								h3.caption
+									= "#{t :environmental_grade_caption}"
+							- if @analysis.needs_to_be_updated
+								
 			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => url_for()}

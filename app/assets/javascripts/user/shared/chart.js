@@ -36,21 +36,25 @@ yojs.define('OthsysUser.user.chart', function(chartSelector, attributes) {
 			title: {
 				text: ''
 			},
+      gridLineWidth: 0,
+      lineColor: '#8C8C8C',
+      lineWidth: 1,
 			labels: {
 				format: '{value} %'
 			},
 			plotLines: [{
 				id: 'reference',
-				color: '#000000',
-				dashStyle: 'ShortDash',
-				width: 2,
+				color: '#29B1AB',
+				width: 3,
 				value: 0,
 				zIndex: 0
     	}]
 		},
 		xAxis: {
 			type: 'datetime',
-			minRange: 7 * 24 * 3600 * 1000
+			minRange: 7 * 24 * 3600 * 1000,
+			lineColor: '#8C8C8C',
+      lineWidth: 1
 		},
 		tooltip: {
 			valueSuffix: attributes.suffix

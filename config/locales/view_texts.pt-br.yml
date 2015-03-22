@@ -61,3 +61,6 @@ pt-BR:
   chart_help: 'Visualiza as análises ao longo do tempo'
   environmental_grade_updated: "Fator ambiental atualizado com sucesso."
   update_environmental_grade_caption: "Atualizar fator"
+  range_text: "Volatilidade"
+  range_separator: "a"
+  update_environmental_analysis_warning: "Fator desatualizado"

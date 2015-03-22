@@ -6,9 +6,16 @@ class EnvironmentalAnalysis::Calculator
 		return ((growing_percentage * 100) - 100)
 	end
 
+	def self.get_indexes(financial_situation_past_year)
+		indexes = {}
+		indexes[:neutral_factor] = 1.0
+		average_income = financial_situation_past_year.total_income / 12.0
+		indexes[:lower_bound] = (financial_situation_past_year.worst_income.to_f / average_income * 100) - 100
+		indexes[:upper_bound] = (financial_situation_past_year.best_income.to_f / average_income * 100) - 100
+		return indexes
+ 	end
 
 	private
-
 	def self.set_indexes(financial_situation_past_year)
 		indexes = {}
 		indexes[:neutral_factor] = 1.0
@@ -17,6 +24,8 @@ class EnvironmentalAnalysis::Calculator
 		indexes[:upper_bound] = financial_situation_past_year.best_income.to_f / average_income
 		return indexes
  	end
+
+ 	
 
  	def self.calculate_growing_percentage(grade, analysis_landscape)
 		if grade < 5 
