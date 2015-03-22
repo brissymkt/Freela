@@ -12,6 +12,7 @@ yojs.define('OthsysUser.user.sliderSetup', function(sliderName, variableName) {
 });
 yojs.define('OthsysUser.user.updateSliders', function(sliderName, variableName) {
 	$('.js-'+sliderName+'-slider').each(function(){
+		alertForChanges = true;
 		$(this).slider('option', 'value', $(this).parents('.'+variableName+'-container').find('.js-'+variableName+'-input').val());
 		$(this).parents('.'+variableName+'-container').find('.js-slider-caption').html($(this).slider('value'));
 	});
