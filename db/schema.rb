@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330224529) do
+ActiveRecord::Schema.define(version: 20150330230814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,27 @@ ActiveRecord::Schema.define(version: 20150330224529) do
     t.datetime "updated_at",                                                  null: false
     t.string   "type_of_analysis",                            default: "0"
     t.boolean  "needs_to_be_updated",                         default: false
+  end
+
+  create_table "environmental_analysis_factors", force: :cascade do |t|
+    t.integer  "environmental_analysis_id",                                       null: false
+    t.integer  "factor_id",                                                       null: false
+    t.text     "description",                                       default: ""
+    t.decimal  "grade",                     precision: 3, scale: 1, default: 0.0
+    t.integer  "importance",                                        default: 5,   null: false
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
+  end
+
+  create_table "factor_sub_factors", force: :cascade do |t|
+    t.integer  "factor_id",                              null: false
+    t.integer  "sub_factor_id",                          null: false
+    t.text     "description",               default: ""
+    t.integer  "situation",                 default: 5,  null: false
+    t.integer  "importance",                default: 5,  null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.integer  "environmental_analysis_id",              null: false
   end
 
   create_table "factors", force: :cascade do |t|

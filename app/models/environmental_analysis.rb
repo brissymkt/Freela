@@ -6,7 +6,8 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 
 	belongs_to :user
 	has_one :financial_situation_past_year, :dependent => :destroy
-	has_many :factors, :dependent => :destroy
+	has_many :factors, :through => :environmental_analysis_factors, :dependent => :destroy
+	has_many :environmental_analysis_factors
 
 	validates :user_id, :presence => true
 	validates :year_and_month, :presence => true
@@ -15,7 +16,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 	validate :year_and_month_in_the_future?
 	validate :enough_existing_analysis?, :unless => :persisted?
 
-	accepts_nested_attributes_for :factors, :allow_destroy => true, :reject_if => lambda{ |attributes| attributes[:name].blank?}
+	accepts_nested_attributes_for :environmental_analysis_factors, :allow_destroy => true, :reject_if => lambda{ |attributes| attributes[:name].blank?}
 	accepts_nested_attributes_for :financial_situation_past_year
 
 	def type_of_analysis?(type)
@@ -25,7 +26,7 @@ class EnvironmentalAnalysis < ActiveRecord::Base
 	def update_grade!
 		importances = 0.0
 		sum = 0.0
-		self.factors.each do |factor|
+		self.environmental_analysis_factors.each do |factor|
 			sum += factor.grade * factor.importance
 			importances += factor.importance
 		end

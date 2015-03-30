@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  environmental_analysis_id: 1
+  factor_id: 1
+  description: MyText
+  grade: 9.99
+  importance: 1
+
+two:
+  environmental_analysis_id: 1
+  factor_id: 1
+  description: MyText
+  grade: 9.99
+  importance: 1
