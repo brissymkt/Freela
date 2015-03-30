@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150315201421) do
+ActiveRecord::Schema.define(version: 20150330224529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,13 +27,9 @@ ActiveRecord::Schema.define(version: 20150315201421) do
   end
 
   create_table "factors", force: :cascade do |t|
-    t.integer  "environmental_analysis_id",                                       null: false
-    t.string   "name",                                                            null: false
-    t.text     "description",                                       default: ""
-    t.integer  "importance",                                        default: 5,   null: false
-    t.datetime "created_at",                                                      null: false
-    t.datetime "updated_at",                                                      null: false
-    t.decimal  "grade",                     precision: 3, scale: 1, default: 0.0
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "financial_situation_past_years", force: :cascade do |t|
@@ -46,14 +42,9 @@ ActiveRecord::Schema.define(version: 20150315201421) do
   end
 
   create_table "sub_factors", force: :cascade do |t|
-    t.integer  "factor_id",                                         null: false
-    t.string   "name",                                              null: false
-    t.text     "description",                         default: ""
-    t.integer  "importance",                          default: 5,   null: false
-    t.integer  "situation",                           default: 5,   null: false
-    t.decimal  "grade",       precision: 3, scale: 1, default: 0.0, null: false
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
