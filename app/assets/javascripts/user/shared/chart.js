@@ -63,6 +63,7 @@ yojs.define('OthsysUser.user.chart', function(chartSelector, attributes) {
 	});
 });
 
+
 yojs.define('OthsysUser.user.chart-ptBR', function() {
 	if ($('body').attr('data-locale') == 'pt-BR') {
 		Highcharts.setOptions({
@@ -70,7 +71,7 @@ yojs.define('OthsysUser.user.chart-ptBR', function() {
 	      loading: 'Aguarde...',
 	      months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
 	      weekdays: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
-	      shortMonths: ['Jan', 'Feb', 'Mar', 'Abr', 'Maio', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+	      shortMonths: ['Jan', 'Fev', 'Mar', 'Abr', 'Maio', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
 	      exportButtonTitle: "Exportar",
 	      printButtonTitle: "Imprimir",
 	      rangeSelectorFrom: "De",

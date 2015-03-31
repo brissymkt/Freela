@@ -12,13 +12,10 @@ h1.chart-title
 			= @chart_data[:start_date].strftime("%m")
 		p.year
 			= @chart_data[:start_date].strftime("%Y")
-
-.js-market-environment-chart-data
 	.environmental-chart-subtitle
 		= "#{t :environmental_chart_subtitle}"
-	
-	p.title 
-		= "#{t :market_environment_chart_caption}"
+
+.js-market-environment-chart-data
 	p.series-name
 		= "#{t :market_environment_label}"
 	p.suffix
@@ -36,7 +33,11 @@ h1.factors-title
 
 
 .js-market-environment-factors-data
-	p.title
-
-	.series-data
-		= @chart_data[:factors].to_json
+	.factors-data
+		- @chart_data[:factors].each do |series|
+			.factor-timeline
+				.name
+					= series[:name]
+				.data-series
+					- series[:data].each do |grade|
+						.grade = grade
