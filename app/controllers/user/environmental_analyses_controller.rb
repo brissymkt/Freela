@@ -23,6 +23,14 @@ class User::EnvironmentalAnalysesController < UserController
 
 	def edit
 		@analysis = current_user.environmental_analyses.find params[:id]
+		if @analysis.environmental_analysis_factors.empty?
+			base_analysis = EnvironmentalAnalysis.where('year_and_month < ? ', @analysis.year_and_month).first
+			unless base_analysis.nil?
+				base_analysis.environmental_analysis_factors.each do |ea_factor|
+					@analysis.factors << ea_factor.factor.dup
+				end
+			end
+		end
 	end
 
 	def delete
