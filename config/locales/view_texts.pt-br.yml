@@ -64,3 +64,4 @@ pt-BR:
   range_text: "Volatilidade"
   range_separator: "a"
   update_environmental_analysis_warning: "Fator desatualizado"
+  environmental_factors_chart_title: "Evolução dos fatores ao longo do tempo"

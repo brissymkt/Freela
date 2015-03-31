@@ -65,3 +65,4 @@ en:
   range_text: "Range"
   range_separator: "to"
   update_environmental_analysis_warning: "Outdated factor"
+  environmental_factors_chart_title: "Factors' value over time"

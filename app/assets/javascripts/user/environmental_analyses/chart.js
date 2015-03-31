@@ -5,9 +5,9 @@ yojs.define('OthsysUser.user.environmental_analyses.chart', function() {
 	if ($('.js-market-environment-chart-data').length > 0){
 		var chartOptions = {};
 		var day, month, year;
-		day = parseInt($('.js-market-environment-chart-data .start-date .day').html().trim());
-		month = parseInt($('.js-market-environment-chart-data .start-date .month').html().trim());
-		year = parseInt($('.js-market-environment-chart-data .start-date .year').html().trim());
+		day = parseInt($('.js-common-data .start-date .day').html().trim());
+		month = parseInt($('.js-common-data .start-date .month').html().trim());
+		year = parseInt($('.js-common-data .start-date .year').html().trim());
 		chartOptions.suffix = $('.js-market-environment-chart-data .suffix').html().trim();
 		chartOptions.content = [];
 		var data = [];
