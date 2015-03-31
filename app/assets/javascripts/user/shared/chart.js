@@ -64,6 +64,8 @@ yojs.define('OthsysUser.user.chart', function(chartSelector, attributes) {
 });
 
 
+
+
 yojs.define('OthsysUser.user.chart-ptBR', function() {
 	if ($('body').attr('data-locale') == 'pt-BR') {
 		Highcharts.setOptions({
