@@ -14,6 +14,13 @@ class EnvironmentalAnalysisFactor < ActiveRecord::Base
 	validates :grade, :presence => true
 	before_save :set_factor, :unless => Proc.new {|association| association.factor.blank?}
 
+	def name 
+		self.factor.try(:name)
+	end
+
+	def name=(name)
+		self.factor = Factor.find_or_create_by({:name => name})
+	end
 
 	def update_grade!
 		sum = 0.0
@@ -29,9 +36,11 @@ class EnvironmentalAnalysisFactor < ActiveRecord::Base
 	private
 
 	def set_factor
+		puts "TRYING TO SET FACTOR"
 		name = self.factor.name.strip.capitalize.split.join(' ')
 		factor = Factor.find_or_create_by({:name => name})
 		self.factor = factor
+		puts self.valid?
 	end
 
 end

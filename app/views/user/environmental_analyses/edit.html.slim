@@ -16,10 +16,10 @@
 				= f.hidden_field :id
 				.row.field-container
 					.col-md-10.col-lg-10.col-sm-10.col-xs-10.factors-container
-						= f.simple_fields_for :factors do |factors_builder|
-								= render :partial => "factor_fields", :locals => {:f => factors_builder}
+						= f.simple_fields_for :environmental_analysis_factors do |factors_builder|
+								= render :partial => "environmental_analysis_factor_fields", :locals => {:f => factors_builder}
 						.links.othsys-insert-hoverable
-							= link_to_add_association "#{t :add_factors_text}", f, :factors
+							= link_to_add_association "#{t :add_factors_text}", f, :environmental_analysis_factors
 					.col-md-2.col-lg-2.col-xs-2.col-sm-2
 						.grade-container class="#{@analysis.needs_to_be_updated ? 'move-top': ''}"
 							h3.grade

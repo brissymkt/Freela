@@ -1,6 +1,6 @@
 
 class EnvironmentalAnalysis < ActiveRecord::Base
-		default_scope {order('year_and_month DESC')}
+	default_scope {order('year_and_month DESC')}
 
 	VALID_TYPES = ['weekly', 'monthly', 'trimonthly', 'annual']
 

@@ -59,6 +59,6 @@ class User::EnvironmentalAnalysesController < UserController
 	private
 
 	def environmental_analysis_params
-		params.require(:environmental_analysis).permit(:id, :year_and_month, :type_of_analysis, :factors_attributes => [:id, :name, :description, :importance, :_destroy], :financial_situation_past_year_attributes => [:worst_income, :total_income, :best_income])
+		params.require(:environmental_analysis).permit(:id, :year_and_month, :type_of_analysis, :environmental_analysis_factors_attributes => [:id, :description, :importance, :_destroy, :name], :financial_situation_past_year_attributes => [:worst_income, :total_income, :best_income])
 	end
 end
