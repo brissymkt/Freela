@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 					get :delete
 					patch :update_environmental_grade
 				end
-				resources :factors, :only => [:edit, :update]
+				resources :environmental_analysis_factors, :only => [:edit, :update]
 				collection do
 					get :chart
 				end

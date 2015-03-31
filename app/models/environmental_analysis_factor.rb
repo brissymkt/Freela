@@ -6,13 +6,12 @@ class EnvironmentalAnalysisFactor < ActiveRecord::Base
 
 	has_many :factor_sub_factors
 
-	accepts_nested_attributes_for :factor, :reject_if => lambda{ |attributes| attributes[:name].blank?}
+	accepts_nested_attributes_for :factor_sub_factors, :reject_if => lambda{ |attributes| attributes[:name].blank?}
 
 	validates :environmental_analysis_id, :presence => true
 	validates :importance, :presence => true, :inclusion => {:in => (0..10).each.map {|allowed_value| allowed_value}}
 	validates :environmental_analysis, :presence => true
 	validates :grade, :presence => true
-	before_save :set_factor, :unless => Proc.new {|association| association.factor.blank?}
 
 	def name 
 		self.factor.try(:name)
@@ -33,14 +32,5 @@ class EnvironmentalAnalysisFactor < ActiveRecord::Base
 		self.save
 	end
 
-	private
-
-	def set_factor
-		puts "TRYING TO SET FACTOR"
-		name = self.factor.name.strip.capitalize.split.join(' ')
-		factor = Factor.find_or_create_by({:name => name})
-		self.factor = factor
-		puts self.valid?
-	end
 
 end

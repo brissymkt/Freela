@@ -1,4 +1,4 @@
-yojs.define('OthsysUser.user.factors.edit', function(){
+yojs.define('OthsysUser.user.environmental_analysis_factors.edit', function(){
 	yojs.call('OthsysUser.user.changesObserver', 'sub-factors-container');
 	// Create slider input to existing factors
 	yojs.call('OthsysUser.user.sliderSetup', 'sub-factor-importance', 'importance');

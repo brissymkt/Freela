@@ -13,8 +13,8 @@
 				= f.hidden_field :id
 				.row.field-container
 					.col-md-12.col-lg-12.col-sm-12.col-xs-12.sub-factors-container
-						= f.simple_fields_for :sub_factors do |sub_factors_builder|
-								= render :partial => "sub_factor_fields", :locals => {:f => sub_factors_builder}
+						= f.simple_fields_for :factor_sub_factors do |factor_sub_factors_builder|
+							= render :partial => "factor_sub_factor_fields", :locals => {:f => factor_sub_factors_builder}
 						.links.othsys-insert-hoverable
-							= link_to_add_association "#{t :add_factors_text}", f, :sub_factors
+							= link_to_add_association "#{t :add_factors_text}", f, :factor_sub_factors
 			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => url_for()}

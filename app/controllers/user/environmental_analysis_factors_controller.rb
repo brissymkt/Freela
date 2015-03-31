@@ -1,13 +1,13 @@
-class User::FactorsController < UserController
+class User::EnvironmentalAnalysisFactorsController < UserController
 
 	def edit
 		@environmental_analysis = current_user.environmental_analyses.find(params[:environmental_analysis_id])
-		@factor = @environmental_analysis.factors.find(params[:id])
+		@factor = @environmental_analysis.environmental_analysis_factors.find(params[:id])
 	end
 
 	def update
 		@environmental_analysis = current_user.environmental_analyses.find(params[:environmental_analysis_id])
-		@factor = @environmental_analysis.factors.find(params[:id])
+		@factor = @environmental_analysis.environmental_analysis_factors.find(params[:id])
 		if @factor.update factor_params
 			@factor.update_grade!
 			@environmental_analysis.activate_update_flag!
@@ -21,7 +21,7 @@ class User::FactorsController < UserController
 	private
 
 	def factor_params
-		params.require(:factor).permit(:id, :sub_factors_attributes => [:id, :name, :description, :importance, :situation, :_destroy])
+		params.require(:environmental_analysis_factor).permit(:id, :factor_sub_factors_attributes => [:id, :name, :description, :importance, :situation, :_destroy])
 	end
 
 end

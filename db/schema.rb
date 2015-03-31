@@ -37,14 +37,13 @@ ActiveRecord::Schema.define(version: 20150330230814) do
   end
 
   create_table "factor_sub_factors", force: :cascade do |t|
-    t.integer  "factor_id",                              null: false
-    t.integer  "sub_factor_id",                          null: false
-    t.text     "description",               default: ""
-    t.integer  "situation",                 default: 5,  null: false
-    t.integer  "importance",                default: 5,  null: false
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.integer  "environmental_analysis_id",              null: false
+    t.integer  "environmental_analysis_factor_id",              null: false
+    t.integer  "sub_factor_id",                                 null: false
+    t.text     "description",                      default: ""
+    t.integer  "situation",                        default: 5,  null: false
+    t.integer  "importance",                       default: 5,  null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "factors", force: :cascade do |t|
