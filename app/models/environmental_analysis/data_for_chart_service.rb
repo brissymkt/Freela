@@ -41,7 +41,7 @@ class EnvironmentalAnalysis::DataForChartService
 				data_for_chart[:analyses] << analysis.grade
 				factors.each do |factor|
 					if analysis.environmental_analysis_factors.where(:factor_id => factor.id).any?
-						data_for_chart[:factors][factor.name][:data] << analysis.environmental_analysis_factors.find(factor.id).grade
+						data_for_chart[:factors][factor.name][:data] << analysis.environmental_analysis_factors.find_by(:factor_id => factor.id).grade
 					else
 						data_for_chart[:factors][factor.name][:data] << 0.0
 					end	
