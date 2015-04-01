@@ -3,6 +3,17 @@ class User::EnvironmentalAnalysisFactorsController < UserController
 	def edit
 		@environmental_analysis = current_user.environmental_analyses.find(params[:environmental_analysis_id])
 		@factor = @environmental_analysis.environmental_analysis_factors.find(params[:id])
+		if @factor.factor_sub_factors.empty?
+			base_analysis = EnvironmentalAnalysis.where('year_and_month < ? ', @environmental_analysis.year_and_month).first
+			unless base_analysis.nil?
+				if base_analysis.environmental_analysis_factors.where(:factor_id => @factor.factor_id).any?
+					base_factor = base_analysis.environmental_analysis_factors.find_by(:factor_id =>  @factor.factor_id)
+					base_factor.factor_sub_factors.each do |fsf|
+						@factor.factor_sub_factors.build(name: fsf.name, description: fsf.description, importance: fsf.importance, situation: fsf.situation)
+					end
+				end
+			end
+		end
 	end
 
 	def update
