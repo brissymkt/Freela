@@ -5,6 +5,9 @@ class User::EnvironmentalAnalysisFactorsController < UserController
 		@factor = @environmental_analysis.environmental_analysis_factors.find(params[:id])
 		if @factor.factor_sub_factors.empty?
 			base_analysis = EnvironmentalAnalysis.where('year_and_month < ? ', @environmental_analysis.year_and_month).first
+			if base_analysis.nil?
+				base_analysis = EnvironmentalAnalysis.where('year_and_month > ? ', @environmental_analysis.year_and_month).last
+			end
 			unless base_analysis.nil?
 				if base_analysis.environmental_analysis_factors.where(:factor_id => @factor.factor_id).any?
 					base_factor = base_analysis.environmental_analysis_factors.find_by(:factor_id =>  @factor.factor_id)

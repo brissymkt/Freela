@@ -2,7 +2,7 @@
 	="#{t :environmental_analysis_title}"
 
 = content_for :analysis_title_header
-	= l @analysis.year_and_month
+	= l @environmental_analysis.year_and_month
 
 
 .row.form-header
@@ -11,7 +11,7 @@
 	.col-md-2.col-lg-2.col-sm-2.col-xs-2
 .row.form-container
 	.col-md-12.col-lg-12.col-sm-12.col-xs-12
-		= simple_form_for([:user, @analysis], :html => {:class => "horizontal-form"}) do |f|
+		= simple_form_for([:user, @environmental_analysis], :html => {:class => "horizontal-form"}) do |f|
 			.fields-container
 				= f.hidden_field :id
 				.row.field-container
@@ -21,19 +21,19 @@
 						.links.othsys-insert-hoverable
 							= link_to_add_association "#{t :add_factors_text}", f, :environmental_analysis_factors
 					.col-md-2.col-lg-2.col-xs-2.col-sm-2
-						.grade-container class="#{@analysis.needs_to_be_updated ? 'move-top': ''}"
+						.grade-container class="#{@environmental_analysis.needs_to_be_updated ? 'move-top': ''}"
 							h3.grade
-								span.signal= "#{@analysis.grade >= 0 ? '+' : '–'}"
-								= "#{number_with_precision(@analysis.grade.abs, :precision => 0)}%"
-							- if @analysis.needs_to_be_updated
+								span.signal= "#{@environmental_analysis.grade >= 0 ? '+' : '–'}"
+								= "#{number_with_precision(@environmental_analysis.grade.abs, :precision => 0)}%"
+							- if @environmental_analysis.needs_to_be_updated
 								h3.caption-outdated
-									= link_to update_environmental_grade_user_environmental_analysis_path(@analysis.id), :method => :patch do
+									= link_to update_environmental_grade_user_environmental_analysis_path(@environmental_analysis.id), :method => :patch do
 										.fa.fa-refresh.my-button.refresh-button
 									span.caption
 										= "#{t :update_environmental_analysis_warning}"
 							- else
 								h3.caption
 									= "#{t :environmental_grade_caption}"
-							- if @analysis.needs_to_be_updated
+							- if @environmental_analysis.needs_to_be_updated
 								
 			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => url_for()}

@@ -1,14 +1,14 @@
 = content_for :analysis_title 
 	= "#{t :new_environmental_analysis_title}"
 
-- if @analysis
+- if @environmental_analysis
 	.row.form-header
 		.col-md-12.col-lg-12.col-sm-12.col-xs-12.form-title-container
 			h2.form-title
 				= "#{t :form_new_environmental_analysis_title}"
 	.row.form_container
 		.col-md-12.col-lg-12.col-sm-12.col-xs-12
-			= simple_form_for([:user, @analysis], :html => {:class => "horizontal-form"}) do |f|
+			= simple_form_for([:user, @environmental_analysis], :html => {:class => "horizontal-form"}) do |f|
 				.fields_container
 					.row.field-container
 						.col-md-12.col-lg-12.col-sm-12.col-xs-12
