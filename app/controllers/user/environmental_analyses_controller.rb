@@ -27,7 +27,7 @@ class User::EnvironmentalAnalysesController < UserController
 			base_analysis = EnvironmentalAnalysis.where('year_and_month < ? ', @analysis.year_and_month).first
 			unless base_analysis.nil?
 				base_analysis.environmental_analysis_factors.each do |ea_factor|
-					@analysis.factors << ea_factor.factor.dup
+					@analysis.environmental_analysis_factors.build(name: ea_factor.name, description: ea_factor.description, importance: ea_factor.importance)
 				end
 			end
 		end
