@@ -28,6 +28,7 @@ group :development, :test do
   gem 'byebug'
   gem 'thin'
   gem 'spring'
+  gem 'quiet_assets'
 end
 
 gem 'rails_12factor', group: :production

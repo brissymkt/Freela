@@ -25,7 +25,7 @@ class EnvironmentalAnalysis::DataForChartService
 	end
 
 	def self.get_factors_to_be_plotted(analyses)
-		return Factor.where(:id => EnvironmentalAnalysisFactor.where(:id => analyses.pluck(:id)).pluck(:factor_id))
+		return Factor.where(:id => EnvironmentalAnalysisFactor.where(:environmental_analysis_id => analyses.pluck(:id)).pluck(:factor_id))
 	end
 
 	def self.assembly_data(analyses, factors)
@@ -34,16 +34,17 @@ class EnvironmentalAnalysis::DataForChartService
 		data_for_chart[:analyses] = []
 		data_for_chart[:factors] = {}
 		factors.each do |factor| 
-			data_for_chart[:factors][factor.name] = {:name => factor.name, :data => []}
+			data_for_chart[:factors][factor.id] = {:name => factor.name, :data => []}
 		end
+
 		analyses.each do |analysis|
 			(repeat_data_n_times(analysis.type_of_analysis)).times do 
 				data_for_chart[:analyses] << analysis.grade
 				factors.each do |factor|
 					if analysis.environmental_analysis_factors.where(:factor_id => factor.id).any?
-						data_for_chart[:factors][factor.name][:data] << analysis.environmental_analysis_factors.find_by(:factor_id => factor.id).grade
+						data_for_chart[:factors][factor.id][:data] << analysis.environmental_analysis_factors.find_by(:factor_id => factor.id).grade
 					else
-						data_for_chart[:factors][factor.name][:data] << 0.0
+						data_for_chart[:factors][factor.id][:data] << 0.0
 					end	
 				end
 			end
