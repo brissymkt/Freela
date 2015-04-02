@@ -9,11 +9,45 @@ yojs.define('OthsysUser.user.environmental_analyses.edit', function() {
 	yojs.call('OthsysUser.user.editButton', 'factors');
 	yojs.call('OthsysUser.user.placeboButton', 'factors');
 
+	hasShownUpdateMessage = yojs.get('shouldUpdate');
 
 	$('.factors-container').on('click', '.row.with-text', function(element){
 		if (!$(element.target).hasClass('my-button') && !$(element.target).hasClass('can-alert-changes') && !$(element.target).hasClass('hidden-delete-button')) {
-			window.location.href = $(this).find('.js-link-to-factor').attr('href');
+			if (alertForChanges) {
+				url = $(this).find('.js-link-to-factor').attr('href');
+				bootbox.confirm({
+					title: $('title').html(),
+					message: $(this).find('.js-link-to-factor').attr('data-message'),
+					buttons: {
+						cancel: {
+							label: $(this).find('.js-link-to-factor').attr('data-option-no')
+						},
+						confirm: {
+							label: $(this).find('.js-link-to-factor').attr('data-option-yes')
+						}
+					},
+					callback: function(result) {
+						if (result) {
+							window.location.href = url;
+						}
+					}
+				});
+				return false;
+			}
 		}
+	});
+
+	
+	$('.factors-container').on('change', '.js-importance-input', function() {
+		if (!hasShownUpdateMessage) {
+			hasShownUpdateMessage = true;
+			$('.outdated-container').toggle();
+			$('.up-to-date-container').toggle();
+		}
+	});
+
+	$('.refresh-button').click(function() {
+		$('form').submit();
 	});
 
 	$('.factors-container input, .factors-container .placebo-button').click(function() {

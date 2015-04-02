@@ -10,7 +10,7 @@ yojs.define('OthsysUser.user.environmental_analysis_factors.edit', function(){
 	yojs.call('OthsysUser.user.contractButton', 'sub-factors');
 	yojs.call('OthsysUser.user.editButton', 'sub-factors');
 	yojs.call('OthsysUser.user.placeboButton', 'sub-factors');
-
+	hasShownUpdateMessage =  false;
 	//Function to add sliders. If slider exists, it will be updated. Otherwise, a slider will be created
 	$('.sub-factors-container').on('cocoon:after-insert', function(e, insertedElement){
 		$(insertedElement).find('.js-sub-factor-importance-slider').slider({ 

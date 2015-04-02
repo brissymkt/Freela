@@ -21,19 +21,21 @@
 						.links.othsys-insert-hoverable
 							= link_to_add_association "#{t :add_factors_text}", f, :environmental_analysis_factors
 					.col-md-2.col-lg-2.col-xs-2.col-sm-2
-						.grade-container class="#{@environmental_analysis.needs_to_be_updated ? 'move-top': ''}"
+						.grade-container.move-top
 							h3.grade
 								span.signal= "#{@environmental_analysis.grade >= 0 ? '+' : '–'}"
 								= "#{number_with_precision(@environmental_analysis.grade.abs, :precision => 0)}%"
-							- if @environmental_analysis.needs_to_be_updated
+							div class="#{@environmental_analysis.needs_to_be_updated ? 'up-to-date-container' : 'outdated-container'}"
 								h3.caption-outdated
-									= link_to update_environmental_grade_user_environmental_analysis_path(@environmental_analysis.id), :method => :patch do
+									a.refresh-button href="javascript:void(0)"
 										.fa.fa-refresh.my-button.refresh-button
 									span.caption
 										= "#{t :update_environmental_analysis_warning}"
-							- else
+							div class="#{@environmental_analysis.needs_to_be_updated ? 'outdated-container' : 'up-to-date-container'}"
 								h3.caption
 									= "#{t :environmental_grade_caption}"
 							- if @environmental_analysis.needs_to_be_updated
+						javascript: 
+							yojs.set('shouldUpdate', #{@environmental_analysis.needs_to_be_updated})
 								
 			= render :partial => "/user/shared/form_buttons", :locals => {:f => f, :return_path => url_for()}

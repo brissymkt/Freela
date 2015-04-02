@@ -3,7 +3,9 @@ yojs.define('OthsysUser.user.editButton', function(containerName) {
 		if ($(this).parents('.text-inputs-container').hasClass('edit')) {
 			$(this).parents('.text-inputs-container').removeClass('edit');
 			$(this).parents('.text-inputs-container').find('.name-display').show();
-			$(this).parents('.text-inputs-container').find('.description-display').show();
+			if ($(this).parents('.text-inputs-container').hasClass('expanded')) {
+				$(this).parents('.text-inputs-container').find('.description-display').show();
+			}
 		} else {
 			$(this).parents('.text-inputs-container').addClass('edit');
 			$(this).parents('.text-inputs-container').find('.name-display').hide();

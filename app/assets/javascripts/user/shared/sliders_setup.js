@@ -8,6 +8,11 @@ yojs.define('OthsysUser.user.sliderSetup', function(sliderName, variableName) {
 			$(this).parents('.'+variableName+'-container').find('.js-'+variableName+'-input').val(ui.value);
 			$(this).parents('.'+variableName+'-container').find('.js-slider-caption').html(ui.value);
 			alertForChanges = true;
+			if (!hasShownUpdateMessage) {
+				hasShownUpdateMessage = true;
+				$('.outdated-container').toggle();
+				$('.up-to-date-container').toggle();
+			}
 		}
 	});
 });
