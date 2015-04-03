@@ -12,9 +12,9 @@ yojs.define('OthsysUser.user.environmental_analyses.edit', function() {
 	hasShownUpdateMessage = yojs.get('shouldUpdate');
 
 	$('.factors-container').on('click', '.row.with-text', function(element){
+		var url = $(this).find('.js-link-to-factor').attr('href');
 		if (!$(element.target).hasClass('my-button') && !$(element.target).hasClass('can-alert-changes') && !$(element.target).hasClass('hidden-delete-button')) {
 			if (alertForChanges) {
-				url = $(this).find('.js-link-to-factor').attr('href');
 				bootbox.confirm({
 					title: $('title').html(),
 					message: $(this).find('.js-link-to-factor').attr('data-message'),
@@ -33,6 +33,8 @@ yojs.define('OthsysUser.user.environmental_analyses.edit', function() {
 					}
 				});
 				return false;
+			} else {
+				window.location.href = url;
 			}
 		}
 	});
