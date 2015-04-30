@@ -1,0 +1,17 @@
+h2
+	= link_to "Cadastrar novo usuário", new_user_user_path, :class => 'btn btn-primary btn-large'
+table.table.table-striped
+	thead
+		tr
+			th ID
+			th Nome
+			th Email
+			th Ações
+	tbody
+		- @users.each do |user|
+			tr
+				th = "#{user.id}"
+				th = "#{user.name}"
+				th = "#{user.email}"
+				th
+					= link_to "Editar", edit_user_user_path(user.id)

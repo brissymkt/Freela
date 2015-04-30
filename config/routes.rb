@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 					get :chart
 				end
 			end
+			resources :users, :except => [:destroy, :show]
 		end
 	root :to => "public#home"
 	end
-	
 end

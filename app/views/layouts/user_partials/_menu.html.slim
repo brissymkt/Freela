@@ -31,7 +31,6 @@
 				.caption-container
 					span.caption
 						= "#{t :menu_chart_text}" 
-		
 		= link_to destroy_user_session_path, :method => :delete do
 			li.left-menu-item
 				.icon-container
@@ -39,6 +38,14 @@
 				.caption-container
 					span.caption
 						= "#{t :logout_text_message}" 
+		- if current_user.is_super_user
+			= link_to user_users_path, :class => 'changes-observer', 'data-message' => "#{I18n.t(:changes_alert)}", 'data-option-yes'=> "#{I18n.t(:changes_alert_discard)}", 'data-option-no'=> "#{I18n.t(:changes_alert_stay)}"do
+				li.left-menu-item
+					.icon-container
+						span.fa.fa-user.icon
+					.caption-container
+						span.caption
+							| Usuários
 p.change-language
 	-	if params[:locale] == "en"
 		= link_to "#{t :change_language_message}", user_environmental_analyses_path(:locale => "pt-BR")
