@@ -1,17 +1,26 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In order to get this application up and running one must install the followin software.
+
+- Ruby                            https://www.ruby-lang.org/en/documentation/installation/                
+- Rails                           http://installrails.com/
+- heroku-toolbelt                 https://toolbelt.heroku.com/
+- git                             https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 Things you may want to cover:
 
 * Ruby version
+	ruby 2.1.5p273
 
 * System dependencies
+  see Genfile
+  bundle install
 
 * Configuration
 
 * Database creation
+
+	rake db:create && rake db:migrate
 
 * Database initialization
 
