@@ -1,37 +1,71 @@
-== README
+# The Brissy Project#
 
-In order to get this application up and running one must install the followin software.
+This README documents the necessary steps to get the application up and running.
+ 
+The objective of this repository is to maintain and manage the source code of the project in which we are developing the BI-Strategy-Marketing modeller/classifier based on the Prof. Dr. Mitsuru Yanaze's theory.
+Through this tool, our clients may have more precise insights on their business.
+The source code is stored in bitbucket and the platform is maintained in heroku PaaS.
+ 
 
-- Ruby                            https://www.ruby-lang.org/en/documentation/installation/                
-- Rails                           http://installrails.com/
-- heroku-toolbelt                 https://toolbelt.heroku.com/
-- git                             https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+The project is currently in its pre beta version, i.e., It is still a premature prototype.
 
-Things you may want to cover:
+# Development Environment SETUP #
 
-* Ruby version
-	ruby 2.1.5p273
+There are two options:
 
-* System dependencies
-  see Genfile
-  bundle install
+## 1-) Development on VM ##
 
-* Configuration
+Just download the VM in the www.hiojo.com and code.
 
-* Database creation
+The project is on the folder named Brissy-DevelopmentEnvironment
 
-	rake db:create && rake db:migrate
+## 2-) Development on own machine ##
+If one prefer to develop inhouse, one must then install the following software:
 
-* Database initialization
+* Ruby 2.1.5 https://www.ruby-lang.org/en/documentation/installation/
 
-* How to run the test suite
+* Bundler 1.9.7 http://bundler.io/
 
-* Services (job queues, cache servers, search engines, etc.)
+* heroku-toolbelt https://toolbelt.heroku.com/
 
-* Deployment instructions
+* Git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-* ...
+All other necessary software will be installed via pip with the command bundler install .
 
+After Ruby, Bundler, heroku-toolbelt and git are all installed locally one must clone the application from heroku, which is supposed to be syncd with the bitbucket repository.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+git clone https://git.heroku.com/othsys-test.git
+Install all necessary libraries to run the application
+####bundler install####
+
+Test if the application is running, go to the working directory and type:
+
+python manage.py runserver
+
+Type 127.0.0.1:3000 in you browser and check if it is ok. So far, you must get a database error, it is natural. It happens because you haven't setup the database.
+
+#Dependencies#
+All applications dependencies are within the Gemfile
+
+#Database configuration#
+The database must be setup locally, hence one must run the following commands:
+To create the models' tables in the database from the migration's folders
+#### rake db:create ####
+#### rake db:migrate ####
+
+# Running the Server #
+In order to get the server running locally, type:
+#### rails server
+# Deployment instructions #
+In order to deploy source code updates one must use:
+#### git add [file updated]
+
+or 
+#### git add . 
+to add all files in folder
+#### git commit -m "comment on push"####
+#### git push heroku master####
+
+# Team #
+
+Vítor Reis (Project Master) reis.vitore@gmail.com
