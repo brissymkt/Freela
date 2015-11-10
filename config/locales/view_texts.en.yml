@@ -64,5 +64,5 @@ en:
   update_environmental_grade_caption: "Update factor"
   range_text: "Range"
   range_separator: "to"
-  update_environmental_analysis_warning: "Outdated factor"
+  update_environmental_analysis_warning: "Not Saved"
   environmental_factors_chart_title: "Factors' evolution over time"
