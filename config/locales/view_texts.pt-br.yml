@@ -65,3 +65,4 @@ pt-BR:
   range_separator: "a"
   update_environmental_analysis_warning: "Não Salvo"
   environmental_factors_chart_title: "Evolução dos fatores ao longo do tempo"
+  update_environmental_analysis_warning_explanation: "A análise está desatualizada pois as alterações ainda não foram salvas, para atualizá-la, salve as alterações."
