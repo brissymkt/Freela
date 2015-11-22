@@ -67,3 +67,4 @@ en:
   update_environmental_analysis_warning: "Not Saved"
   environmental_factors_chart_title: "Factors' evolution over time"
   update_environmental_analysis_warning_explanation: "The analysis is outdated due to unsaved changes. Save changes to update it."
+  discard_message: "Discard changes"
